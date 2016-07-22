@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<types xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types isSubType="false">
+    <name>AccountCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>AccountOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>AnalyticSnapshot</name>
+  </types>
+  <types isSubType="false">
+    <members>CodingPricingsListViewControllerTest</members>
+    <name>ApexClass</name>
+    <members>CodingPricingsListViewController</members>
+    <members>MassSubmitCodingPricingApprovals</members>
+  </types>
+  <types isSubType="false">
+    <name>ApexComponent</name>
+  </types>
+  <types isSubType="false">
+    <name>ApexPage</name>
+    <members>CodingPricingsListView</members>
+    <members>MassSubmitCodingPricingApproval</members>
+    <members>OpportunityRevenueProjectionView</members>
+    <members>Training</members>
+  </types>
+  <types isSubType="false">
+    <name>ApexTrigger</name>
+  </types>
+  <types isSubType="false">
+    <name>ApprovalProcess</name>
+    <members>Coding_Specs__c.Revenue_Multiple1</members>
+    <members>Coding_Specs__c.Revenue_Multiple2</members>
+    <members>Coding_Specs__c.Revenue_Multiple4</members>
+  </types>
+  <types isSubType="false">
+    <name>AssignmentRule</name>
+  </types>
+  <types isSubType="false">
+    <name>AuthProvider</name>
+  </types>
+  <types isSubType="false">
+    <name>AutoResponseRule</name>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>BusinessProcess</name>
+  </types>
+  <types isSubType="false">
+    <name>CallCenter</name>
+  </types>
+  <types isSubType="false">
+    <name>CampaignCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CampaignOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CaseCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CaseOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>Community</name>
+    <members>Internal Ideas</members>
+  </types>
+  <types isSubType="false">
+    <name>ContactCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>ContactOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomApplication</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomApplicationComponent</name>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>CustomField</name>
+    <members>Account.Account_Manager__c</members>
+    <members>Account.Account_Nickname__c</members>
+    <members>Account.Charts_Month__c</members>
+    <members>Account.Client_Billing_ID__c</members>
+    <members>Account.Client_ProCoder_ID__c</members>
+    <members>Account.Client_Website__c</members>
+    <members>Account.Coding_Manager__c</members>
+    <members>Account.Educator_Type__c</members>
+    <members>Account.Facility_Type_del__c</members>
+    <members>Account.Lead_Source_Details__c</members>
+    <members>Account.Modality__c</members>
+    <members>Account.No_of_Facilities_Locations__c</members>
+    <members>Account.No_of_Students__c</members>
+    <members>Account.of_Physicians__c</members>
+    <members>Account.Primary_Specialt__c</members>
+    <members>Account.Referral_Account__c</members>
+    <members>Account.Referral_Source__c</members>
+    <members>Account.Secondary_Specialties__c</members>
+    <members>Coding_Specs__c.Access__c</members>
+    <members>Coding_Specs__c.Approval_Stage__c</members>
+    <members>Coding_Specs__c.Coder_Cost__c</members>
+    <members>Coding_Specs__c.Coder_Cost_Notes__c</members>
+    <members>Coding_Specs__c.Contract_Revenue__c</members>
+    <members>Coding_Specs__c.Estimated_Charts_Per_Hour__c</members>
+    <members>Coding_Specs__c.Estimated_Hourly_Pay__c</members>
+    <members>Coding_Specs__c.Monthly_Cost__c</members>
+    <members>Coding_Specs__c.Monthly_Quantity__c</members>
+    <members>Coding_Specs__c.Monthly_Revenue__c</members>
+    <members>Coding_Specs__c.Opportunity__c</members>
+    <members>Coding_Specs__c.Revenue_Multiple__c</members>
+    <members>Coding_Specs__c.Specialty__c</members>
+    <members>Coding_Specs__c.Term__c</members>
+    <members>Coding_Specs__c.Type_of_Coding__c</members>
+    <members>Contact.Act_On_Behavior_Score__c</members>
+    <members>Contact.Credentials__c</members>
+    <members>Contact.Lead_Source_Details__c</members>
+    <members>Contact.Owner_ID__c</members>
+    <members>Contact.Web_Site__c</members>
+    <members>Lead.Client_Notes__c</members>
+    <members>Lead.Current_Billing_Process__c</members>
+    <members>Lead.Current_Coding_Process__c</members>
+    <members>Lead.Current_PMS_Software__c</members>
+    <members>Lead.Documentation_Type__c</members>
+    <members>Lead.Educator_Type__c</members>
+    <members>Lead.Facility_Type__c</members>
+    <members>Lead.Interested_In__c</members>
+    <members>Lead.Interface_Requirement__c</members>
+    <members>Lead.Lead_Source_Details__c</members>
+    <members>Lead.Modality__c</members>
+    <members>Lead.Next_Step__c</members>
+    <members>Lead.No_of_Coders__c</members>
+    <members>Lead.No_of_Facilities_Locations__c</members>
+    <members>Lead.No_of_Providers__c</members>
+    <members>Lead.No_of_Students__c</members>
+    <members>Lead.Number_of_patient_encounters__c</members>
+    <members>Lead.Physician_or_Facility_Component__c</members>
+    <members>Lead.Purchase_Timeframe__c</members>
+    <members>Lead.Referral_Account__c</members>
+    <members>Lead.Referral_Source__c</members>
+    <members>Lead.Resolved_Date_Time__c</members>
+    <members>Lead.Specialty__c</members>
+    <members>Opportunity.Can_Provide_PDF_No_EMR_Interface__c</members>
+    <members>Opportunity.Client_Notes__c</members>
+    <members>Opportunity.Closed_Lost_Reason__c</members>
+    <members>Opportunity.Closed_Won_Reason__c</members>
+    <members>Opportunity.Coding_Manager__c</members>
+    <members>Opportunity.Coding_Services_Manager__c</members>
+    <members>Opportunity.Contract_Term__c</members>
+    <members>Opportunity.Current_Billing_Process__c</members>
+    <members>Opportunity.Current_Coding_Process__c</members>
+    <members>Opportunity.Current_PMS_HIM_Software__c</members>
+    <members>Opportunity.Document_No_EMR__c</members>
+    <members>Opportunity.Documentation_Type__c</members>
+    <members>Opportunity.Educator_Type__c</members>
+    <members>Opportunity.EMR_In_Use__c</members>
+    <members>Opportunity.Est_Monthly_Revenue__c</members>
+    <members>Opportunity.EstimatedContractValue__c</members>
+    <members>Opportunity.Expected_Start_Date__c</members>
+    <members>Opportunity.Facility_Type__c</members>
+    <members>Opportunity.HL7_Interfaces_In_Use__c</members>
+    <members>Opportunity.Implementation_Type__c</members>
+    <members>Opportunity.Interested_In__c</members>
+    <members>Opportunity.Interface_Requirement__c</members>
+    <members>Opportunity.Lead_Source_Details__c</members>
+    <members>Opportunity.Management_System_In_Use__c</members>
+    <members>Opportunity.Modality__c</members>
+    <members>Opportunity.Monthly_Patient_Encounters__c</members>
+    <members>Opportunity.No_of_Coders__c</members>
+    <members>Opportunity.No_of_Providers__c</members>
+    <members>Opportunity.No_of_Students__c</members>
+    <members>Opportunity.Physician_or_Facility_Component__c</members>
+    <members>Opportunity.ProCoder_ID__c</members>
+    <members>Opportunity.Product__c</members>
+    <members>Opportunity.Progression_Level__c</members>
+    <members>Opportunity.Purchase_Timeframe__c</members>
+    <members>Opportunity.Reason_Lost__c</members>
+    <members>Opportunity.Reason_Won__c</members>
+    <members>Opportunity.Recieve_Documents__c</members>
+    <members>Opportunity.Referral_Account__c</members>
+    <members>Opportunity.Referral_Source__c</members>
+    <members>Opportunity.Return_Documents__c</members>
+    <members>Opportunity.Specialty__c</members>
+    <members>Opportunity.VPN__c</members>
+    <members>RevenueProjection__c.April__c</members>
+    <members>RevenueProjection__c.August__c</members>
+    <members>RevenueProjection__c.December__c</members>
+    <members>RevenueProjection__c.February__c</members>
+    <members>RevenueProjection__c.January__c</members>
+    <members>RevenueProjection__c.July__c</members>
+    <members>RevenueProjection__c.June__c</members>
+    <members>RevenueProjection__c.March__c</members>
+    <members>RevenueProjection__c.May__c</members>
+    <members>RevenueProjection__c.November__c</members>
+    <members>RevenueProjection__c.October__c</members>
+    <members>RevenueProjection__c.Opportunity__c</members>
+    <members>RevenueProjection__c.September__c</members>
+    <members>RevenueProjection__c.Total__c</members>
+    <members>RevenueProjection__c.Year__c</members>
+    <members>User.coder_cost_approver__c</members>
+  </types>
+  <types isSubType="true" parent="CustomLabels">
+    <name>CustomLabel</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomLabels</name>
+    <members>CustomLabels</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomObject</name>
+    <members>Coding_Specs__c</members>
+    <members>RevenueProjection__c</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomObjectCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomObjectOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomObjectTranslation</name>
+    <members>ActOn__AccountInfo__c-en_US</members>
+    <members>Coding_Specs__c-en_US</members>
+    <members>RevenueProjection__c-en_US</members>
+    <members>SFGA__Ad_Group__c-en_US</members>
+    <members>SFGA__Google_Campaign__c-en_US</members>
+    <members>SFGA__Keyword__c-en_US</members>
+    <members>SFGA__Search_Phrase__c-en_US</members>
+    <members>SFGA__Text_Ad__c-en_US</members>
+    <members>SFGA__Version_33_0_3__c-en_US</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomPageWebLink</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomSite</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomTab</name>
+    <members>Training</members>
+  </types>
+  <types isSubType="false">
+    <name>Dashboard</name>
+    <members>CompanyDashboards</members>
+    <members>Sales_Marketing_Dashboards</members>
+    <members>SalesDashboards04t500000001mNe</members>
+    <members>Danny_s_Dashboards</members>
+    <members>SalesDashboards</members>
+    <members>CompanyDashboards/AdoptionDashboard</members>
+    <members>CompanyDashboards/CompanyPerformanceDashboard</members>
+    <members>CompanyDashboards/Sales_Dashboard</members>
+    <members>Danny_s_Dashboards/Danny_s_Dashboard</members>
+    <members>Sales_Marketing_Dashboards/Sales_Manager_Dashboard</members>
+    <members>Sales_Marketing_Dashboards/Sales_Rep_Pipeline_Dashboard</members>
+    <members>SalesDashboards/x1LeadFlowDashboardGeneral</members>
+    <members>SalesDashboards/x2SalesExecutiveDashboardfromAppX</members>
+    <members>SalesDashboards04t500000001mNe/x1LeadFlowDashboardGeneral04t500000001mNe</members>
+    <members>SalesDashboards04t500000001mNe/x2SalesExecutiveDashboardfromAppX04t500000001mNe</members>
+  </types>
+  <types isSubType="false">
+    <name>DataCategoryGroup</name>
+  </types>
+  <types isSubType="false">
+    <name>Document</name>
+    <members>Aviacode</members>
+    <members>Marketing_Documentation</members>
+    <members>SharedDocuments</members>
+  </types>
+  <types isSubType="false">
+    <name>EmailTemplate</name>
+    <members>Product_Approvals</members>
+    <members>unfiled$public</members>
+    <members>Product_Approvals/Code_Spec_Approval</members>
+    <members>Product_Approvals/Coder_Cost</members>
+    <members>Product_Approvals/Coder_Cost_Is_Changed</members>
+    <members>unfiled$public/ContactFollowUpSAMPLE</members>
+    <members>unfiled$public/LeadsNewassignmentnotificationSAMPLE</members>
+    <members>unfiled$public/LeadsWebtoLeademailresponseSAMPLE</members>
+    <members>unfiled$public/SUPPORTCaseescalationnotificationSAMPLE</members>
+    <members>unfiled$public/SUPPORTCaseResponsewithSolutionSAMPLE</members>
+    <members>unfiled$public/SUPPORTNewassignmentnotificationSAMPLE</members>
+    <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
+    <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
+    <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE</members>
+    <members>unfiled$public/SUPPORTWebtoCaseemailresponseSAMPLE</members>
+  </types>
+  <types isSubType="false">
+    <name>EscalationRule</name>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>FieldSet</name>
+  </types>
+  <types isSubType="false">
+    <name>Flow</name>
+  </types>
+  <types isSubType="false">
+    <name>Group</name>
+    <members>Opportunity_Access</members>
+  </types>
+  <types isSubType="false">
+    <name>HomePageComponent</name>
+  </types>
+  <types isSubType="false">
+    <name>HomePageLayout</name>
+    <members>Dashboard Home Page Default</members>
+  </types>
+  <types isSubType="false">
+    <name>Layout</name>
+    <members>Account-Account Layout</members>
+    <members>Asset-Asset Layout</members>
+    <members>Campaign-Campaign Layout</members>
+    <members>CampaignMember-Campaign Member Page Layout</members>
+    <members>Case-Case Layout</members>
+    <members>CaseClose-Close Case Layout</members>
+    <members>Coding_Specs__c-Coding Spec Layout</members>
+    <members>Contact-Contact Layout</members>
+    <members>ContentVersion-General</members>
+    <members>Contract-Contract Layout</members>
+    <members>Event-Event Layout</members>
+    <members>Global-Global Layout</members>
+    <members>Idea-Idea Layout</members>
+    <members>Lead-Lead Layout</members>
+    <members>Opportunity-Opportunity Layout</members>
+    <members>OpportunityLineItem-Opportunity Product Layout</members>
+    <members>Pricebook2-Price Book Layout</members>
+    <members>PricebookEntry-Price Book Entry Layout</members>
+    <members>Product2-Product Layout</members>
+    <members>RevenueProjection__c-Revenue Projection Layout</members>
+    <members>Solution-Solution Layout</members>
+    <members>Task-Task Layout</members>
+    <members>User-User Layout</members>
+  </types>
+  <types isSubType="false">
+    <name>LeadCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>LeadOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>Letterhead</name>
+    <members>Aviacode2013Theme</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>ListView</name>
+    <members>Account.All_Accounts</members>
+    <members>Activity.MyActivities</members>
+    <members>Activity.MyDelegatedActivities</members>
+    <members>Activity.MyTeamsActivities</members>
+    <members>Activity.TodaysTasks</members>
+    <members>Activity.UpcomingEvents</members>
+    <members>Asset.AllAssets</members>
+    <members>Campaign.AllActiveCampaigns</members>
+    <members>Campaign.MyActiveCampaigns</members>
+    <members>Case.AllOpenCases</members>
+    <members>Case.MyCases</members>
+    <members>Case.MyOpenCases</members>
+    <members>Contact.BirthdaysThisMonth</members>
+    <members>Contact.NewThisWeek</members>
+    <members>Contract.AllActivatedContracts</members>
+    <members>Contract.AllContracts</members>
+    <members>Contract.AllDraftContracts</members>
+    <members>Contract.AllInApprovalContracts</members>
+    <members>Contract.MyActivatedContracts</members>
+    <members>Contract.MyDraftContracts</members>
+    <members>Contract.MyInApprovalContracts</members>
+    <members>Idea.Ideas_Last_7_Days</members>
+    <members>Lead.AllOpenLeads</members>
+    <members>Lead.hfma_leads</members>
+    <members>Lead.Kim_Gray_Leads</members>
+    <members>Lead.Missing_Lead_Source</members>
+    <members>Lead.MyUnreadLeads</members>
+    <members>Lead.TodaysLeads</members>
+    <members>Opportunity.AllOpenOpportunities</members>
+    <members>Opportunity.ClosingNextMonth</members>
+    <members>Opportunity.ClosingThisMonth</members>
+    <members>Opportunity.MyOpportunities</members>
+    <members>Opportunity.NewThisWeek</members>
+    <members>Opportunity.Won</members>
+    <members>Product2.AllProducts</members>
+    <members>Product2.ProductListPracticode</members>
+    <members>Solution.AllReviewedSolutions</members>
+    <members>Solution.AllUnreviewedSolutions</members>
+    <members>User.ActiveUsers</members>
+    <members>User.AdminUsers</members>
+    <members>User.AllUsers</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>NamedFilter</name>
+    <members>Contact.Opportunity_00NF0000008gBRYMA2</members>
+  </types>
+  <types isSubType="false">
+    <name>OpportunityCriteriaBasedSharingRule</name>
+    <members>Wendy_Access</members>
+  </types>
+  <types isSubType="false">
+    <name>OpportunityOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>PermissionSet</name>
+  </types>
+  <types isSubType="false">
+    <name>Profile</name>
+    <members>Admin</members>
+    <members>Chatter External User</members>
+    <members>Chatter Free User</members>
+    <members>Chatter Moderator User</members>
+    <members>ContractManager</members>
+    <members>Custom Standard User</members>
+    <members>Guest License User</members>
+    <members>MarketingProfile</members>
+    <members>ReadOnly</members>
+    <members>SolutionManager</members>
+    <members>Standard</members>
+  </types>
+  <types isSubType="false">
+    <name>Queue</name>
+  </types>
+  <types isSubType="false">
+    <name>QuickAction</name>
+    <members>LogACall</members>
+    <members>NewAccount</members>
+    <members>NewCase</members>
+    <members>NewChildCase</members>
+    <members>NewContact</members>
+    <members>NewEvent</members>
+    <members>NewGroup</members>
+    <members>NewGroupMember</members>
+    <members>NewLead</members>
+    <members>NewNote</members>
+    <members>NewOpportunity</members>
+    <members>NewTask</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>RecordType</name>
+  </types>
+  <types isSubType="false">
+    <name>RemoteSiteSetting</name>
+    <members>Act_On_Service</members>
+  </types>
+  <types isSubType="false">
+    <name>Report</name>
+    <members>Sales_Marketing_Dashboard_Reports</members>
+    <members>Danny_s_Reports</members>
+    <members>SalesVisibilityDashboard</members>
+    <members>SalesVisibilityDashboard04t500000001mNe</members>
+    <members>LeadDashboardFolder04t500000001mNe</members>
+    <members>unfiled$public</members>
+    <members>LeadDashboardFolder</members>
+    <members>Danny_s_Reports/Agreements_Signed_This_And_Last_Month</members>
+    <members>Danny_s_Reports/Closed_Opps_by_Type_This_and_Last_Mo2</members>
+    <members>Danny_s_Reports/Coder_Cost_Pending</members>
+    <members>Danny_s_Reports/Converted_Leads_YTD</members>
+    <members>Danny_s_Reports/Invoice_Sent_to_Cust_This_and_Last_Mo</members>
+    <members>Danny_s_Reports/Lead_to_Opp_Totals_This_and_Last_Mo</members>
+    <members>Danny_s_Reports/New_Leads_YTD</members>
+    <members>Danny_s_Reports/Open_Opps_by_Type</members>
+    <members>Danny_s_Reports/Proposals_Sent_This_and_Last_Month</members>
+    <members>Danny_s_Reports/X2015_Pipeline</members>
+    <members>LeadDashboardFolder/Converted_Lead_Opp_Values</members>
+    <members>LeadDashboardFolder/Converted_Leads_This_Q_by_Rep</members>
+    <members>LeadDashboardFolder/Converted_Leads_This_Q_by_Source</members>
+    <members>LeadDashboardFolder/ConvertedwithOpptys</members>
+    <members>LeadDashboardFolder/Lead_Conversion_Rates_by_Rep</members>
+    <members>LeadDashboardFolder/Lead_Conversion_Rates_by_Source</members>
+    <members>LeadDashboardFolder/LeadOwnerBreakdown</members>
+    <members>LeadDashboardFolder/LeadSourceandStatus</members>
+    <members>LeadDashboardFolder04t500000001mNe/ConvertedwithOpptys04t500000001mNe</members>
+    <members>LeadDashboardFolder04t500000001mNe/Lead_Conversion_Rates_by_Rep04t500000001mNe</members>
+    <members>LeadDashboardFolder04t500000001mNe/LeadOwnerBreakdown04t500000001mNe</members>
+    <members>LeadDashboardFolder04t500000001mNe/LeadsbySource04t500000001mNe</members>
+    <members>LeadDashboardFolder04t500000001mNe/LeadSourceandStatus04t500000001mNe</members>
+    <members>LeadDashboardFolder04t500000001mNe/Opps_Win_Rate_from_Lead_Conversion04t500000001mNe</members>
+    <members>LeadDashboardFolder04t500000001mNe/Total_Conversions_by_Rep04t500000001mNe</members>
+    <members>Sales_Marketing_Dashboard_Reports/Activities_by_Salesperson</members>
+    <members>Sales_Marketing_Dashboard_Reports/Sales_Exec_Top_Closed_Deals</members>
+    <members>Sales_Marketing_Dashboard_Reports/Sales_Manager_Forecast_Summary_QTR</members>
+    <members>Sales_Marketing_Dashboard_Reports/Sales_Manager_Open_Pipeline</members>
+    <members>Sales_Marketing_Dashboard_Reports/Sales_Manager_Pipeline_Next_90_days</members>
+    <members>Sales_Marketing_Dashboard_Reports/Sales_Manager_Won_Opps_by_Rep_QTD</members>
+    <members>Sales_Marketing_Dashboard_Reports/SM_Remaining_Best_Case_to_Close_this_Q</members>
+    <members>Sales_Marketing_Dashboard_Reports/SM_Remaining_Commit_to_Close_this_Quart</members>
+    <members>Sales_Marketing_Dashboard_Reports/SM_Remaining_Pipeline_to_Close_this_Q</members>
+    <members>Sales_Marketing_Dashboard_Reports/SM_Watch_List</members>
+    <members>Sales_Marketing_Dashboard_Reports/SR_Closed_Won_Opps_QTD</members>
+    <members>Sales_Marketing_Dashboard_Reports/SR_Pipeline_Added_This_Quarter</members>
+    <members>Sales_Marketing_Dashboard_Reports/SR_Pipeline_Next_90_days</members>
+    <members>Sales_Marketing_Dashboard_Reports/SR_Pipeline_SUmmary_This_Quarter</members>
+    <members>Sales_Marketing_Dashboard_Reports/SR_Remaining_Best_Case_to_Close_this_Q</members>
+    <members>Sales_Marketing_Dashboard_Reports/SR_Remaining_Commit_This_Quarter</members>
+    <members>Sales_Marketing_Dashboard_Reports/SR_Remaining_Pipeline_to_Close_this_Q</members>
+    <members>Sales_Marketing_Dashboard_Reports/SR_Top_Deals_Closing_This_Q</members>
+    <members>Sales_Marketing_Dashboard_Reports/SR_Watch_List</members>
+    <members>SalesVisibilityDashboard/SALESLastMonthvsThisMonthClsd</members>
+    <members>SalesVisibilityDashboard/SALESMonthOverMonthCloseTrend</members>
+    <members>SalesVisibilityDashboard/SALESOpenDealsbyIndustryType</members>
+    <members>SalesVisibilityDashboard/SALESTopAccountsCreatingRevenues</members>
+    <members>SalesVisibilityDashboard/SALESTotalClosedLASTMONTH</members>
+    <members>SalesVisibilityDashboard/SALESTotalClosedQTR</members>
+    <members>SalesVisibilityDashboard/SALESTotalClosedTHISMONTH</members>
+    <members>SalesVisibilityDashboard/SALESTotalClosedYEAR</members>
+    <members>SalesVisibilityDashboard/SALESTotalDealsOpenThisMonth</members>
+    <members>SalesVisibilityDashboard/SALESWinLossRatio</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/Open_Sales_Funnel04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/SALESDealsGreaterthan50Prob04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/SALESLastMonthvsThisMonthClsd04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/SALESMonthOverMonthCloseTrend04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/SALESTopAccountsCreatingRevenues04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/SALESTotalClosedLASTMONTH04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/SALESTotalClosedQTR04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/SALESTotalClosedTHISMONTH04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/SALESTotalClosedYEAR04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/SALESWinLossRatio04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/Win_Loss_Ratio_by_Rep_All_Time04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/Win_Loss_Ratio_by_Rep_dollar04t500000001mNe</members>
+    <members>SalesVisibilityDashboard04t500000001mNe/Win_Rate_by_Lead_Source04t500000001mNe</members>
+    <members>unfiled$public/Act_On_Report_Prospects_Assigned_to_Sale</members>
+    <members>unfiled$public/Act_On_Report_Prospects_in_Opportunities</members>
+    <members>unfiled$public/Coding_Pricing_Approval_Stage</members>
+    <members>unfiled$public/Daily_Activity_Log</members>
+    <members>unfiled$public/Opp_Pipeline_by_Stage</members>
+    <members>unfiled$public/Opps_in_Negotiation_Stage_by_Rep</members>
+    <members>unfiled$public/RevenueProjectionsDetail</members>
+    <members>unfiled$public/SampleReportActiveUsers</members>
+    <members>unfiled$public/SampleReportCasesStatusbyRep</members>
+    <members>unfiled$public/SampleReportClosedSales</members>
+    <members>unfiled$public/SampleReportCompletedActivities</members>
+    <members>unfiled$public/SampleReportCustomReportsbyUser</members>
+    <members>unfiled$public/SampleReportDocumentLibrary</members>
+    <members>unfiled$public/SampleReportLastModifiedBy</members>
+    <members>unfiled$public/SampleReportLeadsbyLeadSource</members>
+    <members>unfiled$public/SampleReportLoginLeaderboard</members>
+    <members>unfiled$public/SampleReportLoginWallofShame</members>
+    <members>unfiled$public/SampleReportMonthtoDateTrending</members>
+    <members>unfiled$public/SampleReportofAccounts</members>
+    <members>unfiled$public/SampleReportofCases</members>
+    <members>unfiled$public/SampleReportofContacts</members>
+    <members>unfiled$public/SampleReportofDocuments</members>
+    <members>unfiled$public/SampleReportofLeads</members>
+    <members>unfiled$public/SampleReportofOpenTasks</members>
+    <members>unfiled$public/SampleReportofOpportunities</members>
+    <members>unfiled$public/SampleReportofReports</members>
+    <members>unfiled$public/SampleReportofSolutions</members>
+    <members>unfiled$public/SampleReportofTasksandActivities</members>
+    <members>unfiled$public/SampleReportOpenCasesByPriority</members>
+    <members>unfiled$public/SampleReportOpenDeals</members>
+    <members>unfiled$public/SampleReportPipelineByCloseMonth</members>
+    <members>unfiled$public/SampleReportPipelineHistory</members>
+    <members>unfiled$public/SampleReportSalesLeaderboard</members>
+    <members>unfiled$public/SampleReportSalesPipelinebyStage</members>
+    <members>unfiled$public/SampleReportsLeadsbyStatus</members>
+    <members>unfiled$public/SampleReportSolutionsAdded</members>
+    <members>unfiled$public/SampleReportTopAccounts</members>
+    <members>unfiled$public/SampleReportUsersLoggedIn</members>
+  </types>
+  <types isSubType="false">
+    <name>ReportType</name>
+  </types>
+  <types isSubType="false">
+    <name>Role</name>
+    <members>AccountManager</members>
+    <members>CEO</members>
+    <members>CFO</members>
+    <members>Client_Services</members>
+    <members>Coding_Operations</members>
+    <members>DirectorClientServices</members>
+    <members>DirectorSales</members>
+    <members>Executive</members>
+    <members>SalesEngineer</members>
+    <members>SalesExecutive</members>
+    <members>VP_of_Coding_Operations</members>
+  </types>
+  <types isSubType="false">
+    <name>Scontrol</name>
+  </types>
+  <types isSubType="false">
+    <name>Settings</name>
+    <members>Activities</members>
+    <members>Address</members>
+    <members>Case</members>
+    <members>ChatterAnswers</members>
+    <members>Company</members>
+    <members>Contract</members>
+    <members>Entitlement</members>
+    <members>Ideas</members>
+    <members>Knowledge</members>
+    <members>LiveAgent</members>
+    <members>Mobile</members>
+    <members>Opportunity</members>
+    <members>Product</members>
+    <members>Quote</members>
+    <members>Security</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>SharingReason</name>
+  </types>
+  <types isSubType="false">
+    <name>StandardObject</name>
+    <members>Account</members>
+    <members>AccountContactRole</members>
+    <members>Activity</members>
+    <members>Asset</members>
+    <members>Campaign</members>
+    <members>CampaignMember</members>
+    <members>Case</members>
+    <members>CaseContactRole</members>
+    <members>Contact</members>
+    <members>ContentVersion</members>
+    <members>Contract</members>
+    <members>ContractContactRole</members>
+    <members>Event</members>
+    <members>Idea</members>
+    <members>Lead</members>
+    <members>Opportunity</members>
+    <members>OpportunityCompetitor</members>
+    <members>OpportunityContactRole</members>
+    <members>OpportunityLineItem</members>
+    <members>PartnerRole</members>
+    <members>Pricebook2</members>
+    <members>PricebookEntry</members>
+    <members>Product2</members>
+    <members>Site</members>
+    <members>Solution</members>
+    <members>Task</members>
+    <members>User</members>
+  </types>
+  <types isSubType="false">
+    <name>StaticResource</name>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>ValidationRule</name>
+    <members>Coding_Specs__c.Coder_Cost</members>
+    <members>Opportunity.Closed_Lost</members>
+    <members>Opportunity.Closed_Won</members>
+    <members>Opportunity.Lost_Reason_Other_requires_notes</members>
+    <members>Opportunity.Require_Progression_Level_at_Proposal</members>
+    <members>Opportunity.Won_Reason_Other_requires_notes</members>
+    <members>RevenueProjection__c.PastCantChangeApril</members>
+    <members>RevenueProjection__c.PastCantChangeAugust</members>
+    <members>RevenueProjection__c.PastCantChangeDecember</members>
+    <members>RevenueProjection__c.PastCantChangeFebruary</members>
+    <members>RevenueProjection__c.PastCantChangeJanuary</members>
+    <members>RevenueProjection__c.PastCantChangeJuly</members>
+    <members>RevenueProjection__c.PastCantChangeJune</members>
+    <members>RevenueProjection__c.PastCantChangeMarch</members>
+    <members>RevenueProjection__c.PastCantChangeMay</members>
+    <members>RevenueProjection__c.PastCantChangeNovember</members>
+    <members>RevenueProjection__c.PastCantChangeOctober</members>
+    <members>RevenueProjection__c.PastCantChangeSeptember</members>
+    <members>RevenueProjection__c.YearCantBeChanged</members>
+    <members>RevenueProjection__c.YearIsCurrentOrFuture</members>
+    <members>RevenueProjection__c.YearIsValid</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>WebLink</name>
+    <members>Account.AltavistaNews</members>
+    <members>Account.GoogleMaps</members>
+    <members>Account.GoogleNews</members>
+    <members>Account.GoogleSearch</members>
+    <members>Account.HooversProfile</members>
+    <members>Account.YahooMaps</members>
+    <members>Campaign.ViewAllCampaignMembers</members>
+    <members>Campaign.ViewCampaignInfluenceReport</members>
+    <members>Coding_Specs__c.View</members>
+    <members>Contact.GoogleMaps</members>
+    <members>Contact.GoogleSearch</members>
+    <members>Contact.SendGmail</members>
+    <members>Contact.YahooMaps</members>
+    <members>Contact.YahooWeather</members>
+    <members>Lead.AltavistaNews</members>
+    <members>Lead.GoogleMaps</members>
+    <members>Lead.GoogleNews</members>
+    <members>Lead.GoogleSearch</members>
+    <members>Lead.HooversProfile</members>
+    <members>Lead.Log_A_Call</members>
+    <members>Lead.SendGmail</members>
+    <members>Lead.YahooMaps</members>
+    <members>Opportunity.CodingPricingListView</members>
+    <members>Opportunity.New_Revenue_Projection2</members>
+    <members>RevenueProjection__c.New_Revenue_Projection_Opp</members>
+    <members>Task.Account_Log_a_Call</members>
+    <members>Task.Account_Log_a_Memo</members>
+    <members>Task.Account_New_To_Do</members>
+    <members>Task.Contact_Log_a_Call</members>
+    <members>Task.Contact_Log_a_Memo</members>
+    <members>Task.Contact_New_To_Do</members>
+    <members>Task.Lead_Log_a_Memo</members>
+    <members>Task.Lead_New_To_Do</members>
+    <members>Task.Log_A_Call_Lead</members>
+    <members>Task.Opp_Log_a_Call</members>
+    <members>Task.Opp_Log_a_Memo</members>
+    <members>Task.Opp_New_To_Do</members>
+  </types>
+  <types isSubType="false">
+    <name>Workflow</name>
+    <members>Account</members>
+    <members>Asset</members>
+    <members>Campaign</members>
+    <members>CampaignMember</members>
+    <members>Case</members>
+    <members>Coding_Specs__c</members>
+    <members>Contact</members>
+    <members>Contract</members>
+    <members>EmailMessage</members>
+    <members>Event</members>
+    <members>Idea</members>
+    <members>Lead</members>
+    <members>Opportunity</members>
+    <members>OpportunityLineItem</members>
+    <members>Organization</members>
+    <members>Product2</members>
+    <members>RevenueProjection__c</members>
+    <members>Site</members>
+    <members>Solution</members>
+    <members>Task</members>
+    <members>User</members>
+    <members>UserLicense</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowAlert</name>
+    <members>Coding_Specs__c.Coder_Cost_c</members>
+    <members>Coding_Specs__c.Coder_Cost_Needed</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowFieldUpdate</name>
+    <members>Coding_Specs__c.Approval_Stage</members>
+    <members>Coding_Specs__c.Approved</members>
+    <members>Coding_Specs__c.CEO_Approval</members>
+    <members>Coding_Specs__c.CFO_Approval</members>
+    <members>Coding_Specs__c.Rejected</members>
+    <members>Coding_Specs__c.VP_of_Coding_Approval</members>
+    <members>Coding_Specs__c.VP_of_Sales_Approval_Update</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowKnowledgePublish</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowOutboundMessage</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowRule</name>
+    <members>Coding_Specs__c.Coder Cost</members>
+    <members>Coding_Specs__c.Coder Cost Is Changed</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowSend</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowTask</name>
+  </types>
+</types>

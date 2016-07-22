@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Coding Pricing</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Coding Pricings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Access --></label>
+        <name>Access__c</name>
+        <picklistValues>
+            <masterLabel>Audit</masterLabel>
+            <translation><!-- Audit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ProCoder</masterLabel>
+            <translation><!-- ProCoder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VPN</masterLabel>
+            <translation><!-- VPN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Stage --></label>
+        <name>Approval_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Approval</masterLabel>
+            <translation><!-- Needs Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending CEO Approval</masterLabel>
+            <translation><!-- Pending CEO Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending CFO Approval</masterLabel>
+            <translation><!-- Pending CFO Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending VP of Sales Approval</masterLabel>
+            <translation><!-- Pending VP of Sales Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pricing Notes --></label>
+        <name>Coder_Cost_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Coder Cost --></label>
+        <name>Coder_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Price --></label>
+        <name>Contract_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Charts Per Hour --></label>
+        <name>Estimated_Charts_Per_Hour__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Hourly Pay --></label>
+        <name>Estimated_Hourly_Pay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Cost --></label>
+        <name>Monthly_Cost__c</name>
+    </fields>
+    <fields>
+        <help><!-- For monthly coding, this is the quantity per month.  For backlog, give total back log.  For audit, give chart totals. --></help>
+        <label><!-- Quantity --></label>
+        <name>Monthly_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monthly Revenue --></label>
+        <name>Monthly_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Coding Pricings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Revenue Multiple --></label>
+        <name>Revenue_Multiple__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specialty --></label>
+        <name>Specialty__c</name>
+        <picklistValues>
+            <masterLabel>Anesthesiology</masterLabel>
+            <translation><!-- Anesthesiology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audiology</masterLabel>
+            <translation><!-- Audiology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cardiology</masterLabel>
+            <translation><!-- Cardiology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cardiothorasic Surgery</masterLabel>
+            <translation><!-- Cardiothorasic Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cardiovascular Surgery</masterLabel>
+            <translation><!-- Cardiovascular Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chiropractic</masterLabel>
+            <translation><!-- Chiropractic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colon &amp; Rectal Surgery</masterLabel>
+            <translation><!-- Colon &amp; Rectal Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Critical Care</masterLabel>
+            <translation><!-- Critical Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dermatology</masterLabel>
+            <translation><!-- Dermatology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E&amp;M</masterLabel>
+            <translation><!-- E&amp;M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency Medicine</masterLabel>
+            <translation><!-- Emergency Medicine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Endocrinology</masterLabel>
+            <translation><!-- Endocrinology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family Practice</masterLabel>
+            <translation><!-- Family Practice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gastroenterology</masterLabel>
+            <translation><!-- Gastroenterology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gastrointestinal Surgery</masterLabel>
+            <translation><!-- Gastrointestinal Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General &amp; Vascular Surgery</masterLabel>
+            <translation><!-- General &amp; Vascular Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General Surgery</masterLabel>
+            <translation><!-- General Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Geriatrics</masterLabel>
+            <translation><!-- Geriatrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hand Surgery</masterLabel>
+            <translation><!-- Hand Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Head &amp; Neck Surgery</masterLabel>
+            <translation><!-- Head &amp; Neck Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hematology Labs:</masterLabel>
+            <translation><!-- Hematology Labs: --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitalist</masterLabel>
+            <translation><!-- Hospitalist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In-Patient</masterLabel>
+            <translation><!-- In-Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infectious Disease</masterLabel>
+            <translation><!-- Infectious Disease --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Medicine</masterLabel>
+            <translation><!-- Internal Medicine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interventional Cardiology</masterLabel>
+            <translation><!-- Interventional Cardiology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Naturopath</masterLabel>
+            <translation><!-- Naturopath --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neonatology</masterLabel>
+            <translation><!-- Neonatology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nephrology</masterLabel>
+            <translation><!-- Nephrology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neurological Surgery</masterLabel>
+            <translation><!-- Neurological Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neurology</masterLabel>
+            <translation><!-- Neurology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuclear Medicine</masterLabel>
+            <translation><!-- Nuclear Medicine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Observations</masterLabel>
+            <translation><!-- Observations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Obstetrics / Gynecology</masterLabel>
+            <translation><!-- Obstetrics / Gynecology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oncology Med Secs:</masterLabel>
+            <translation><!-- Oncology Med Secs: --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opthalmology</masterLabel>
+            <translation><!-- Opthalmology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oral Surgery</masterLabel>
+            <translation><!-- Oral Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orthopedic Surgery</masterLabel>
+            <translation><!-- Orthopedic Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Otolaryngology (ENT)</masterLabel>
+            <translation><!-- Otolaryngology (ENT) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out-Patient</masterLabel>
+            <translation><!-- Out-Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pain Management</masterLabel>
+            <translation><!-- Pain Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pathology Labs:</masterLabel>
+            <translation><!-- Pathology Labs: --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pediatrics</masterLabel>
+            <translation><!-- Pediatrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical Therapy Visits:</masterLabel>
+            <translation><!-- Physical Therapy Visits: --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plastic &amp; Reconstructive Surgery</masterLabel>
+            <translation><!-- Plastic &amp; Reconstructive Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Podiatry</masterLabel>
+            <translation><!-- Podiatry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Procedures</masterLabel>
+            <translation><!-- Procedures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Psychiatry</masterLabel>
+            <translation><!-- Psychiatry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pulmonology</masterLabel>
+            <translation><!-- Pulmonology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radiology - Diagnostic</masterLabel>
+            <translation><!-- Radiology - Diagnostic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radiology - Interventional</masterLabel>
+            <translation><!-- Radiology - Interventional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rheumatology</masterLabel>
+            <translation><!-- Rheumatology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sleep Medicine Studies:</masterLabel>
+            <translation><!-- Sleep Medicine Studies: --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thoracic Surgery</masterLabel>
+            <translation><!-- Thoracic Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urology</masterLabel>
+            <translation><!-- Urology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Term --></label>
+        <name>Term__c</name>
+        <picklistValues>
+            <masterLabel>Audit - Monthly</masterLabel>
+            <translation><!-- Audit - Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audit - One Time</masterLabel>
+            <translation><!-- Audit - One Time --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Audit - Quarterly</masterLabel>
+            <translation><!-- Audit - Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coding - 1YR</masterLabel>
+            <translation><!-- Coding - 1YR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coding - 2YR</masterLabel>
+            <translation><!-- Coding - 2YR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coding - 3YR</masterLabel>
+            <translation><!-- Coding - 3YR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coding -Backlog</masterLabel>
+            <translation><!-- Coding -Backlog --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of Coding --></label>
+        <name>Type_of_Coding__c</name>
+        <picklistValues>
+            <masterLabel>Audit</masterLabel>
+            <translation><!-- Audit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility - ASC</masterLabel>
+            <translation><!-- Facility - ASC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility - Hospital</masterLabel>
+            <translation><!-- Facility - Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Fees</masterLabel>
+            <translation><!-- Professional Fees --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Coding Spec Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Finacials --></label>
+            <section>Finacials</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Only Wendy can edit coder cost. --></errorMessage>
+        <name>Coder_Cost</name>
+    </validationRules>
+</CustomObjectTranslation>

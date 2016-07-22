@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#66FF99</backgroundEndColor>
+    <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+    <backgroundStartColor>#FF6666</backgroundStartColor>
+    <leftSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <legendPosition>Bottom</legendPosition>
+            <report>unfiled$public/SampleReportofLeads</report>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Leads</title>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>BarStacked100</componentType>
+            <displayUnits>Auto</displayUnits>
+            <legendPosition>Bottom</legendPosition>
+            <report>unfiled$public/SampleReportPipelineByCloseMonth</report>
+            <sortBy>RowLabelAscending</sortBy>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Medium</columnSize>
+        <components>
+            <chartAxisRange>Auto</chartAxisRange>
+            <componentType>Column</componentType>
+            <displayUnits>Auto</displayUnits>
+            <legendPosition>Bottom</legendPosition>
+            <report>unfiled$public/SampleReportSalesLeaderboard</report>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>Sales Leaderboard</title>
+        </components>
+    </rightSection>
+    <runningUser>danny.overy@aviacode.com.default</runningUser>
+    <textColor>#000000</textColor>
+    <title>Sales Dashboard</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

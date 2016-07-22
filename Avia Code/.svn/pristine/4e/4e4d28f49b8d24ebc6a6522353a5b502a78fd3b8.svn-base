@@ -1,0 +1,33 @@
+<apex:page standardStylesheets="false">
+<apex:image url="/servlet/servlet.FileDownload?file=015F0000002X1fu"/>
+<apex:form >
+<br></br><br></br>
+Welcome to Aviacode's Salesforce Training Page. Here you will find links and information to help you get to know and understand the Aviacode Salesforce System.
+<br></br><br></br>
+<h1 style="text-align:center;color:blue;">Get Started With the Basics</h1><br></br><br></br>
+<apex:outputLink value="http://info.kyazmallc.com/salesforcecom-new-user-training-august-2-recording" target="_blank"> <strong>Kyazma Consulting New User Training</strong> - Generic </apex:outputLink><br></br>
+(This video is about 40 minutes long. You may want to watch it in sections.)
+<br></br><br></br>
+<h1 style="text-align:center;color:blue;">How to Create Tasks</h1><br></br>
+<object width="560" height="315"><param name="movie" value="//www.youtube-nocookie.com/v/ZvP6I0PScB8?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube-nocookie.com/v/ZvP6I0PScB8?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<br></br><br></br>
+<h1 style="text-align:center;color:blue;">Get the Most Out of Chatter</h1><br></br>
+<object width="560" height="315"><param name="movie" value="//www.youtube-nocookie.com/v/rlmfykFnXjA?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube-nocookie.com/v/rlmfykFnXjA?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<br></br><br></br>
+<h1 style="text-align:center;color:blue;">Manage Leads and Opportunities</h1><br></br>
+<object width="560" height="315"><param name="movie" value="//www.youtube-nocookie.com/v/Ry8D2jwkz0M?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube-nocookie.com/v/Ry8D2jwkz0M?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<br></br><br></br>
+<h1 style="text-align:center;color:blue;">How to Merge Contacts</h1><br></br>
+<object width="560" height="315"><param name="movie" value="//www.youtube-nocookie.com/v/PEwZMDX3hu0?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube-nocookie.com/v/PEwZMDX3hu0?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<br></br><br></br>
+<h1 style="text-align:center;color:blue;">How to Track Calls, Emails, Meetings</h1><br></br>
+<object width="560" height="315"><param name="movie" value="//www.youtube-nocookie.com/v/1l4EKXIjI28?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube-nocookie.com/v/1l4EKXIjI28?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<br></br><br></br>
+<h1 style="text-align:center;color:blue;">How to set up the Salesforce for Outlook tool</h1><br></br>
+<object width="560" height="315"><param name="movie" value="//www.youtube-nocookie.com/v/oseq895H8RI?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube-nocookie.com/v/oseq895H8RI?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+<br></br><br></br>
+<h1 style="text-align:center;color:blue;">How to use the Salesforce Sidebar in Microsoft Outlook</h1><br></br>
+<object width="560" height="315"><param name="movie" value="//www.youtube-nocookie.com/v/ffzF-WYmS0g?version=3&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="//www.youtube-nocookie.com/v/ffzF-WYmS0g?version=3&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+</apex:form>
+
+</apex:page>

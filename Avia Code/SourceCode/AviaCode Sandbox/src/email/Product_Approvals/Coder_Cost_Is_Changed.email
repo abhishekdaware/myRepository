@@ -1,0 +1,9 @@
+Hello {!Coding_Specs__c.CreatedBy},
+
+Coder cost on "{!Coding_Specs__c.Name}" for account "{!Opportunity.Account}",  opportunity
+"{!Opportunity.Name}" created on {!Coding_Specs__c.CreatedDate} has been updated:
+
+Updated Coder Cost: {!Coding_Specs__c.Coder_Cost__c}
+
+Please be sure to enter pricing and submit for approval:
+{!Coding_Specs__c.Link}

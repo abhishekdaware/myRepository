@@ -1,0 +1,1276 @@
+<apex:page standardController="Opportunity" extensions="CodingPricingsListViewController" showHeader="false" sidebar="false" >
+
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"/>
+    
+    <script type="text/javascript">
+        
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");
+            for(var i=0; i<inputCheckBox.length; i++){
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                    var isDisabled = inputCheckBox[i].disabled;
+                    if(!isDisabled) {
+                        inputCheckBox[i].checked = obj.checked;
+                    }
+                }
+            }
+        }
+        
+    </script>
+    
+   <!--   <style>
+   table {border-collapse:collapse; table-layout:fixed; width:1300px;}
+   table td {word-wrap:break-word;}
+   
+    </style>-->
+    <apex:form id="frm" >
+        <apex:pageMessages />
+    
+        <div id="loadingImage" >
+            <center>
+                <apex:actionStatus style="width: 20px; margin-left: 50px" id="status">
+                    <apex:facet name="start">
+                        <img src="/img/loading.gif" />Loading...
+                    </apex:facet>
+                </apex:actionStatus>
+            </center>
+        </div>
+        
+        <apex:pageBlock title="{!opportunity.Name}" id="pb1" > <!-- mode="inlineEdit"  -->
+            <style>
+                body .bPageBlock .pbBody .orange .pbSubheader{
+                    background-color: #FF7D4D;
+                }
+                
+            </style>
+            
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Submit For Approval" action="{!SubmitForApproval}" status="status" rerender="frm" />
+                <apex:commandButton value="Recall From Approval" action="{!recallFromApproval}" status="status" rerender="frm" />
+                <apex:commandButton value="Approve All" action="{!approvedRecord}" status="status" rerender="frm" />
+                <apex:commandButton value="Reject All" action="{!rejectRecord}" status="status" rerender="frm" />
+                <apex:commandButton value="Save" action="{!save}"  id="btnSave" rerender="frm"  />
+                <apex:commandButton value="Cancel" action="{!cancel}" id="btnCancel"  reRender="frm" />
+            </apex:pageBlockButtons>
+           
+            <table float="right" style="font-weight: bold;" >
+                <tr>
+                    <td >{!$Label.TOTAL_MONTHLY_REVENUE} : </td>
+                    <td>${!dblTotalRevenue}</td>
+                </tr>
+                <tr>
+                    <td>{!$Label.TOTAL_CUSTOMER_PRICE} : </td>
+                    <td>${!dblTotalPrice}</td>
+                </tr>
+                <tr>
+                    <td>{!$Label.TOTAL_CODER_COST} : </td>
+                    <td>${!dblTotalCost}</td>
+                </tr>
+                <tr>
+                    <td>{!$Label.TOTAL_AVERAGE_REVENUE_MULTIPLE} : </td>
+                    <td>{!dblTotalAvgMulRevenue}</td>
+                </tr>
+                <tr>
+                    <td>{!$Label.TOTAL_QUANTITY} : </td>
+                    <td>{!dblTotalQuantity}</td>
+                </tr>
+                <tr>
+                    <td>{!$Label.TOTAL_MONTHLY_COST} : </td>
+                    <td>${!dblTotalMonthlyCost}</td>
+                </tr>
+                <tr>
+                    <td>{!$Label.TOTAL_ESTIMATED_HOURLY_PAY} : </td>
+                    <td>${!dblTotalEstimatedHourlyPay}</td>
+                </tr>
+                <tr>
+                    <td>{!$Label.TOTAL_ESTIMATED_CHARTS_PER_HOUR} : </td>
+                    <td>{!dblTotalEstimatedCharts}</td>
+                </tr>
+                
+            </table>
+            
+            <apex:outputPanel styleClass="orange" layout="block">
+                <apex:pageBlockSection title="Professionl Fees" collapsible="true" columns="1">
+                
+                    <apex:outputPanel rendered="{!(codingSpecs_PF_ToBeSelectList == null || codingSpecs_PF_ToBeSelectList.size == 0)}" >
+                        <apex:outputLabel value="There is no Coding Specs whose type of coding is 'Professional Fees' for this Opportunity." />
+                        <br/>
+                        <apex:commandButton action="{!addNewRowforProf}" value="Add New Row"  immediate="true"/>
+                        <apex:pageblockTable value="{!lstAddnewforProf}" var="objCodingSpecs"  rendered="{!showTableforProf}">
+                            <apex:column ></apex:column>
+                            <apex:column style="word:wrap:break-word; ">
+                                <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                                <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                            </apex:column>
+                            <apex:column style="word:wrap:break-word; ">
+                                <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                                <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                            </apex:column>
+                            <apex:column style="word:wrap:break-word; ">
+                                <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                                <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                            </apex:column>
+                    <apex:column style="word:wrap:break-word;" >
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; " >
+                    <apex:facet name="header"></apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!(codingSpecs_PF_ToBeSelectList!= null && codingSpecs_PF_ToBeSelectList.size > 0)}" >
+                    <apex:actionRegion >
+                <apex:pageBlocktable value="{!codingSpecs_PF_ToBeSelectList}" var="codSpecs" rows="{!intCounterProfessional}">
+                <apex:column style=" background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), 
+                                    codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                <apex:facet name="header"><apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId1')"/></apex:facet>
+                <apex:inputCheckbox value="{!codSpecs.isSelect}" id="inputId1"
+                                                        disabled="{!NOT(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'),codSpecs.isEditable == true))}"/>
+                </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval')),true,false)}" />  
+
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};" >
+                             <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Name}"/>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), 
+                codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), 
+                            codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Specialty__c}"/>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Access__c}"/>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost__c}" />
+                            <apex:facet name="footer">${!dblCoderCostforProfessional}</apex:facet>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Contract_Revenue__c}"/>
+                              <apex:facet name="footer">${!dblCustomerPriceProfessional}</apex:facet>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" /> 
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Revenue__c}"/>
+                            <apex:facet name="footer">${!dblRevenueforProfessional}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Approval_Stage__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Term__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Revenue_Multiple__c}"/>
+                            <apex:facet name="footer">{!dblAverageforProfessional}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Quantity__c}"/>
+                            <apex:facet name="footer">{!dblTotalQuantityforProfessional}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Cost__c}"/>
+                            <apex:facet name="footer">${!dblMonthlyCostforProfessional}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Hourly_Pay__c}"/>
+                            <apex:facet name="footer">${!dblEstimatedHourPayforProfessional}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                            <apex:facet name="footer">{!dblEstimatedChartsforProfessional}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost_Notes__c}"/>
+                            </apex:column>        
+                </apex:pageBlocktable>
+                </apex:actionRegion>
+                     <br/>
+                    <apex:commandButton action="{!addNewRowforProf}" value="Add New Row"  immediate="true"/>
+                    <apex:pageblockTable value="{!lstAddnewforProf}" var="objCodingSpecs"  rendered="{!showTableforProf}">
+                    <apex:column ></apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                    </apex:column>
+                   <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>
+                    
+                </apex:outputPanel>
+                
+            </apex:pageBlockSection>
+           </apex:outputPanel>
+           
+           
+           <apex:outputPanel styleClass="orange" layout="block">
+            <apex:pageBlockSection title="Facility - ASC" collapsible="true" columns="1">
+                <apex:outputPanel rendered="{!(codingSpecs_FA_ToBeSelectList == null || codingSpecs_FA_ToBeSelectList.size == 0)}" >
+                    <apex:outputLabel value="There is no Coding Specs whose type of coding is 'Facility - ASC' for this Opportunity." />
+                    <br/>
+                    <apex:commandButton action="{!addNewRowforASC}" value="Add New Row"  immediate="true"/>
+                    <apex:pageblockTable value="{!lstAddnewforASC}" var="objCodingSpecs"  rendered="{!showTableforASC}">
+                    <apex:column ></apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                    </apex:column>
+                   <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!(codingSpecs_FA_ToBeSelectList!= null && codingSpecs_FA_ToBeSelectList.size > 0)}" >
+                
+                <apex:actionRegion >
+                <apex:pageBlocktable value="{!codingSpecs_FA_ToBeSelectList}" var="codSpecs" >
+                <apex:column style=" background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), 
+                                    codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                <apex:facet name="header"><apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId2')"/></apex:facet>
+                <apex:inputCheckbox value="{!codSpecs.isSelect}" id="inputId2"
+                                                        disabled="{!NOT(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'),codSpecs.isEditable == true))}"/>
+                </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />   
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header" >{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Name}"/>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Specialty__c}"/>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Access__c}"/>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost__c}"/>
+                            <apex:facet name="footer">${!dblCoderCostforFacilityASC}</apex:facet>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Contract_Revenue__c}"/>
+                            <apex:facet name="footer">${!dblCustomerPriceFacilityASC}</apex:facet>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" /> 
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Revenue__c}"/>
+                            <apex:facet name="footer">${!dblRevenueforFacilityASC}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Approval_Stage__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Term__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Revenue_Multiple__c}"/>
+                            <apex:facet name="footer">{!dblAverageforFacilityASC}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Quantity__c}"/>
+                            <apex:facet name="footer">{!dblTotalQuantityforFacilityASC}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Cost__c}"/>
+                            <apex:facet name="footer">${!dblMonthlyCostforFacilityASC}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Hourly_Pay__c}"/>
+                            <apex:facet name="footer">${!dblEstimatedHourPayforFacilityASC}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                            <apex:facet name="footer">{!dblEstimatedChartsforFacilityASC}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word;  background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost_Notes__c}"/>
+                            </apex:column>        
+                </apex:pageBlocktable>
+                </apex:actionRegion>
+                   <br/>
+                    <apex:commandButton action="{!addNewRowforASC}" value="Add New Row"  immediate="true"/>
+                    <apex:pageblockTable value="{!lstAddnewforASC}" var="objCodingSpecs"  rendered="{!showTableforASC}">
+                    <apex:column ></apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                    </apex:column>
+                   <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            </apex:outputPanel>
+            <apex:outputPanel styleClass="orange" layout="block">
+            <apex:pageBlockSection title="Audit" collapsible="true" columns="1">
+                <apex:outputPanel rendered="{!(codingSpecs_A_ToBeSelectList == null || codingSpecs_A_ToBeSelectList.size == 0)}" >
+                    <apex:outputLabel value="There is no Coding Specs whose type of coding is 'Audit' for this Opportunity." />
+                    <br/>
+                    <apex:commandButton action="{!addNewRowforAudit}" value="Add New Row"  immediate="true"/>
+                    <apex:pageblockTable value="{!lstAddnewforAud}" var="objCodingSpecs"  rendered="{!showTableforAudit}">
+                    <apex:column ></apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                    </apex:column>
+                   <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!(codingSpecs_A_ToBeSelectList!= null && codingSpecs_A_ToBeSelectList.size > 0)}" >
+                <apex:actionRegion >
+                <apex:pageBlocktable value="{!codingSpecs_A_ToBeSelectList}" var="codSpecs" >
+                <apex:column style=" background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), 
+                                    codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                <apex:facet name="header"><apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId3')"/></apex:facet>
+                <apex:inputCheckbox value="{!codSpecs.isSelect}" id="inputId3"
+                                                        disabled="{!NOT(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'),codSpecs.isEditable == true))}"/>
+                </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />   
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header" >{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Name}"/>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Specialty__c}"/>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Access__c}"/>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost__c}"/>
+                            <apex:facet name="footer">${!dblCoderCostforAudit}</apex:facet>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Contract_Revenue__c}"/>
+                            <apex:facet name="footer">${!dblCustomerPriceAudit}</apex:facet>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" /> 
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Revenue__c}"/>
+                            <apex:facet name="footer">${!dblRevenueforAudit}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Approval_Stage__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Term__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Revenue_Multiple__c}"/>
+                            <apex:facet name="footer">{!dblAverageforAudit}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Quantity__c}"/>
+                            <apex:facet name="footer">{!dblTotalQuantityforAudit}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Cost__c}"/>
+                            <apex:facet name="footer">${!dblMonthlyCostforAudit}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Hourly_Pay__c}"/>
+                            <apex:facet name="footer">${!dblEstimatedHourPayforAudit}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                            <apex:facet name="footer">{!dblEstimatedChartsforAudit}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost_Notes__c}"/>
+                            </apex:column>        
+                </apex:pageBlocktable>
+                <apex:commandButton action="{!addNewRowforAudit}" value="Add New Row"  immediate="true"/>
+                    <apex:pageblockTable value="{!lstAddnewforAud}" var="objCodingSpecs"  rendered="{!showTableforAudit}">
+                    <apex:column ></apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                    </apex:column>
+                   <apex:column style="word:wrap:break-word; ">
+                   <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>
+                </apex:actionRegion>
+                  <br/>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            </apex:outputPanel>
+            <apex:outputPanel styleClass="orange" layout="block">
+            <apex:pageBlockSection title="Facility - Hospital" collapsible="true" columns="1">
+                <apex:outputPanel rendered="{!(codingSpecs_FH_ToBeSelectList == null || codingSpecs_FH_ToBeSelectList.size == 0)}" >
+                    <apex:outputLabel value="There is no Coding Specs whose type of coding is 'Facility - Hospital' for this Opportunity." />
+                    <br/>
+                    <apex:commandButton action="{!addNewRowforHosp}" value="Add New Row"  immediate="true"/>
+                     <apex:pageblockTable value="{!lstAddnewforHosp}" var="objCodingSpecs"  rendered="{!showTableforHosp}">
+                    <apex:column ></apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                    </apex:column>
+                   <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                  <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet> 
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>  
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!(codingSpecs_FH_ToBeSelectList!= null && codingSpecs_FH_ToBeSelectList.size > 0)}" >
+
+                <apex:actionRegion >
+                <apex:pageBlocktable value="{!codingSpecs_FH_ToBeSelectList}" var="codSpecs" >
+                <apex:column style=" background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), 
+                                    codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                <apex:facet name="header"><apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId4')"/></apex:facet>
+                <apex:inputCheckbox value="{!codSpecs.isSelect}" id="inputId4"
+                                                        disabled="{!NOT(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'),codSpecs.isEditable == true))}"/>
+                </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />   
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header" >{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Name}"/>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Specialty__c}"/>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Access__c}"/>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost__c}"/>
+                            <apex:facet name="footer">${!dblCoderCostforFacilityHospital}</apex:facet>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Contract_Revenue__c}"/>
+                            <apex:facet name="footer"> ${!dblCustomerPriceFacilityHospital}</apex:facet>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" /> 
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Revenue__c}"/>
+                            <apex:facet name="footer">${!dblRevenueforFacilityHospital}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Approval_Stage__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Term__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Revenue_Multiple__c}"/>
+                            <apex:facet name="footer">{!dblAverageforFacilityHospital}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Quantity__c}"/>
+                            <apex:facet name="footer">{!dblTotalQuantityforFacilityHospital}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Cost__c}"/>
+                            <apex:facet name="footer">${!dblMonthlyCostforFacilityHospital}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.codingSpecs.Approval_Stage__c == 'Pending VP of Sales Approval'), codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Hourly_Pay__c}"/>
+                            <apex:facet name="footer">${!dblEstimatedHourPayforFacilityHospital}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                            <apex:facet name="footer">{!dblEstimatedChartsforFacilityHospital}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost_Notes__c}"/>
+                            </apex:column>        
+                </apex:pageBlocktable>
+                </apex:actionRegion>
+                    <br/>
+                    
+                    <apex:commandButton action="{!addNewRowforHosp}" value="Add New Row" id="button4" immediate="true"/>
+                    <apex:pageblockTable value="{!lstAddnewforHosp}" var="objCodingSpecs" id="table4" rendered="{!showTableforHosp}">
+                    <apex:column ></apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                    </apex:column>
+                   <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                  <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet> 
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>  
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>
+                </apex:outputPanel>
+               </apex:pageBlockSection>
+            </apex:outputPanel>
+             <apex:outputPanel styleClass="orange" layout="block">
+            <apex:pageBlockSection title="Other" collapsible="true" columns="1">
+                <apex:outputPanel rendered="{!(codingSpecs_O_ToBeSelectList == null || codingSpecs_O_ToBeSelectList.size == 0)}" >
+                    <apex:outputLabel value="There is no Coding Specs whose type of coding is 'Other' for this Opportunity." />
+                    <br/>
+                    <apex:commandButton action="{!addNewRowforOther}" value="Add New Row"  immediate="true"/>
+                     <apex:pageblockTable value="{!lstAddnewforOther}" var="objCodingSpecs"  rendered="{!showTableforOther}">
+                    <apex:column ></apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                    </apex:column>
+                   <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                  <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet> 
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>  
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!(codingSpecs_O_ToBeSelectList!= null && codingSpecs_O_ToBeSelectList.size > 0)}" >
+
+                <apex:actionRegion >
+                <apex:pageBlocktable value="{!codingSpecs_O_ToBeSelectList}" var="codSpecs" >
+                <apex:column style=" background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                <apex:facet name="header"><apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId5')"/></apex:facet>
+                <apex:inputCheckbox value="{!codSpecs.isSelect}" id="inputId5"
+                                                        disabled="{!NOT(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval',codSpecs.isEditable == true))}"/>
+                </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />   
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header" >{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Name}"/>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Specialty__c}"/>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Access__c}"/>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost__c}"/>
+                            <apex:facet name="footer">${!dblCoderCostforOther}</apex:facet>
+                            </apex:column>
+                            
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Contract_Revenue__c}"/>
+                            <apex:facet name="footer">${!dblCustomerPriceOther}</apex:facet>
+                            </apex:column>
+                
+                <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" /> 
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Revenue__c}"/>
+                            <apex:facet name="footer">${!dblRevenueforOther}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Approval_Stage__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Term__c}"/>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Revenue_Multiple__c}"/>
+                            <apex:facet name="footer">${!dblAverageforOther}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Quantity__c}"/>
+                            <apex:facet name="footer">{!dblTotalQuantityforOther}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Cost__c}"/>
+                            <apex:facet name="footer">${!dblMonthlyCostforOther}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Hourly_Pay__c}"/>
+                            <apex:facet name="footer">${!dblEstimatedHourPayforOther}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                            <apex:facet name="footer">{!dblEstimatedChartsforOther}</apex:facet>
+                            </apex:column>
+                            
+                            <apex:inlineEditSupport event="ondblClick" showOnEdit="btnSave,btnCancel" rendered="{!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),true,false)}" />  
+                            <apex:column style="word:wrap:break-word; background: {!IF(OR(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval', codSpecs.isEditable == true),'#99FF66','#D9D9D9')};">
+                            <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>
+                            <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost_Notes__c}"/>
+                            </apex:column>        
+                </apex:pageBlocktable>
+                </apex:actionRegion>
+                    <br/>
+                    
+                    <apex:commandButton action="{!addNewRowforOther}" value="Add New Row"  immediate="true"/>
+                    <apex:pageblockTable value="{!lstAddnewforOther}" var="objCodingSpecs"  rendered="{!showTableforOther}">
+                    <apex:column ></apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Name.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Name}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Specialty__c}"/>
+                    </apex:column>
+                   <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Access__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Access__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Contract_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Revenue__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Approval_Stage__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Term__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Term__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Revenue_Multiple__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Quantity__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Quantity__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Monthly_Cost__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Monthly_Cost__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                     <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Hourly_Pay__c.label}</apex:facet>
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Hourly_Pay__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word;">
+                  <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Estimated_Charts_Per_Hour__c.label}</apex:facet> 
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Estimated_Charts_Per_Hour__c}"/>
+                    </apex:column>
+                    <apex:column style="word:wrap:break-word; ">
+                    <apex:facet name="header">{!$ObjectType.Coding_Specs__c.fields.Coder_Cost_Notes__c.label}</apex:facet>  
+                    <apex:inputField style="width:100%" value="{!objCodingSpecs.Coder_Cost_Notes__c}"/>
+                    </apex:column>
+                    </apex:pageblockTable>                    
+                </apex:outputPanel>
+               </apex:pageBlockSection>
+            </apex:outputPanel>
+         </apex:pageBlock>
+</apex:form>
+</apex:page>

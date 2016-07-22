@@ -1,0 +1,923 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Can_Provide_PDF_No_EMR_Interface__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Can Provide PDF(No EMR/Interface)</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Client_Notes__c</fullName>
+        <label>Client Notes</label>
+        <length>32000</length>
+        <trackHistory>true</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Closed_Lost_Reason__c</fullName>
+        <label>Closed Lost Reason</label>
+        <length>250</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Won_Reason__c</fullName>
+        <label>Closed Won Reason</label>
+        <length>250</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Coding_Manager__c</fullName>
+        <label>Coding Manager</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Coding_Services_Manager__c</fullName>
+        <description>Coding Services Manager</description>
+        <inlineHelpText>Please select the Client Services Manager from the drop down list.</inlineHelpText>
+        <label>Coding Services Manager</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Jenny Cox</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ryan Price</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Term__c</fullName>
+        <label>Contract Term</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1 YR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 YR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3 YR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Project</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Current_Billing_Process__c</fullName>
+        <label>Current Billing Process</label>
+        <picklist>
+            <picklistValues>
+                <fullName>In-House</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outsourced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Combination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Current_Coding_Process__c</fullName>
+        <label>Current Coding Process</label>
+        <picklist>
+            <picklistValues>
+                <fullName>In House</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outsourced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Combination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Current_PMS_HIM_Software__c</fullName>
+        <label>Current PMS/HIM Software</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Document_No_EMR__c</fullName>
+        <label>Document(No EMR)</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Dictation &amp; Transcription</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Handwritten</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scribe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fee Ticket</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Documentation_Type__c</fullName>
+        <label>Documentation Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Electronic Records</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paper Records</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paper Records (already scanned)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Combination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EMR_In_Use__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>EMR In Use</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Educator_Type__c</fullName>
+        <label>Educator Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>2 Year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4 Year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Career Ed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Est_Monthly_Revenue__c</fullName>
+        <label>Est. Monthly Revenue</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EstimatedContractValue__c</fullName>
+        <description>The lifetime revenue this opportunity is projected to create.</description>
+        <label>Estimated Contract Value</label>
+        <summarizedField>RevenueProjection__c.Total__c</summarizedField>
+        <summaryForeignKey>RevenueProjection__c.Opportunity__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Start_Date__c</fullName>
+        <label>Expected Start Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Facility_Type__c</fullName>
+        <label>Facility Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ASC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Billing Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consultant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hospital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Physician Practice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>HL7_Interfaces_In_Use__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>HL7 Interfaces In Use</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Implementation_Type__c</fullName>
+        <label>Implementation Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>VPN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SS –OCR Implemetation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SS – Digital Implementation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS – OCR Implementation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS – Digital Implementation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Interested_In__c</fullName>
+        <label>Interested In</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Coding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auditing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software License</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Interface_Requirement__c</fullName>
+        <label>Interface Requirement</label>
+        <picklist>
+            <picklistValues>
+                <fullName>SS-Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SS-OCR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS-Digital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS-OCR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VPN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HAFTA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Source_Details__c</fullName>
+        <formula>Account.Lead_Source_Details__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This is displayed from the Account.</inlineHelpText>
+        <label>Lead Source Details</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Management_System_In_Use__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Management System In Use</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Modality__c</fullName>
+        <label>Modality</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Ground</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Both</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Monthly_Patient_Encounters__c</fullName>
+        <label>Monthly Patient Encounters</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>No_of_Coders__c</fullName>
+        <label>No. of Coders</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>No_of_Providers__c</fullName>
+        <label>No. of Providers</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>No_of_Students__c</fullName>
+        <label>No. of Students</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Physician_or_Facility_Component__c</fullName>
+        <label>Physician or Facility Component</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Physician</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Both</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProCoder_ID__c</fullName>
+        <label>ProCoder ID</label>
+        <length>150</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <label>Product</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Audit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coding - ProCoder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Coding - VPN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Denials</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software - PractiCode</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software - ProAuditor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software - ProCoder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Progression_Level__c</fullName>
+        <label>Progression Level</label>
+        <picklist>
+            <controllingField>StageName</controllingField>
+            <picklistValues>
+                <fullName>Multiple Vendors</fullName>
+                <controllingFieldValues>Proposal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vendor of Choice</fullName>
+                <controllingFieldValues>Proposal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Verbal Commitment</fullName>
+                <controllingFieldValues>Proposal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Timeframe__c</fullName>
+        <label>Purchase Timeframe</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0-90 Days</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>90-180 Days</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>+ 180 Days</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Lost__c</fullName>
+        <label>Reason Lost?</label>
+        <picklist>
+            <controllingField>StageName</controllingField>
+            <picklistValues>
+                <fullName>Client Indecision</fullName>
+                <controllingFieldValues>Closed Lost</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitor</fullName>
+                <controllingFieldValues>Closed Lost</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Integration Failed</fullName>
+                <controllingFieldValues>Closed Lost</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Too Expensive</fullName>
+                <controllingFieldValues>Closed Lost</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>References Weak</fullName>
+                <controllingFieldValues>Closed Lost</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Audit Results</fullName>
+                <controllingFieldValues>Closed Lost</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <controllingFieldValues>Closed Lost</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Won__c</fullName>
+        <label>Reason Won?</label>
+        <picklist>
+            <controllingField>StageName</controllingField>
+            <picklistValues>
+                <fullName>P&amp;F</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systems Integration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quick Implementation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Workflow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Relationship</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Recieve_Documents__c</fullName>
+        <label>Recieve Documents</label>
+        <picklist>
+            <picklistValues>
+                <fullName>HL7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HAFTA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OTHER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Referral_Account__c</fullName>
+        <formula>Account.Referral_Account__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referral Account</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Referral_Source__c</fullName>
+        <formula>Account.Referral_Source__r.FirstName &amp;&quot; &quot;&amp; Account.Referral_Source__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referral Source</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Return_Documents__c</fullName>
+        <label>Return Documents</label>
+        <picklist>
+            <picklistValues>
+                <fullName>HL7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HAFTA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OTHER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Specialty__c</fullName>
+        <label>Specialty</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Anesthesiology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bariatric surgery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Breast surgery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cardiology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cardiovascular</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dermatology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Diagnostic Radiology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emergency Medicine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ENT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Evaluation and Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family Practice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gastroenterology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Medicine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>General Surgery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Geriatric Assessment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IM-internal med</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infusion Therapy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interventional Radiology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Laboratory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mental Health &amp; Psychology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multi Specialty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Multi-specialty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neurology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OB/GYN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opthomology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Orthopedics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pain Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pathology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pediatrics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plastics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Podiatry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre/Post Natal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radiation Oncology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Radiology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Surgical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trama Surgical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Urgent Care</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Urology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wound Care</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>8</visibleLines>
+    </fields>
+    <fields>
+        <fullName>VPN__c</fullName>
+        <label>VPN</label>
+        <picklist>
+            <picklistValues>
+                <fullName>VPN(Will need system Demo)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ProCoder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <validationRules>
+        <fullName>Closed_Lost</fullName>
+        <active>true</active>
+        <description>If Stage is closed lost require reason</description>
+        <errorConditionFormula>AND(ISPICKVAL(StageName , &quot;Closed Lost&quot;),
+ISBLANK(TEXT(Reason_Lost__c )))</errorConditionFormula>
+        <errorDisplayField>Reason_Lost__c</errorDisplayField>
+        <errorMessage>Enter a reason why it&apos;s Closed Lost.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Closed_Won</fullName>
+        <active>true</active>
+        <description>If stage is Closed Won please require reason</description>
+        <errorConditionFormula>AND(ISPICKVAL( StageName , &quot;Closed Won&quot;),
+ISBLANK( TEXT(Reason_Won__c )))</errorConditionFormula>
+        <errorDisplayField>Reason_Won__c</errorDisplayField>
+        <errorMessage>Enter a reason why this is Closed Won.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lost_Reason_Other_requires_notes</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL( Reason_Lost__c ,&quot;Other&quot;),
+ISBLANK( Closed_Lost_Reason__c ))</errorConditionFormula>
+        <errorDisplayField>Closed_Lost_Reason__c</errorDisplayField>
+        <errorMessage>Lost Reason notes are required if you select &quot;Other&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_Progression_Level_at_Proposal</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+ISPICKVAL( StageName , &quot;Proposal&quot;) ,
+ISBLANK( TEXT(Progression_Level__c )))</errorConditionFormula>
+        <errorDisplayField>Progression_Level__c</errorDisplayField>
+        <errorMessage>Select a progression level option at proposal stage.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Won_Reason_Other_requires_notes</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL( Reason_Won__c ,&quot;Other&quot;),
+ISBLANK( Closed_Won_Reason__c ))</errorConditionFormula>
+        <errorDisplayField>Closed_Won_Reason__c</errorDisplayField>
+        <errorMessage>Won Reason notes are required if you select &quot;Other&quot;</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Coding_Pricing_List_View</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Coding Pricing List View</masterLabel>
+        <openType>newWindow</openType>
+        <page>CodingPricingsListView</page>
+        <position>none</position>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Revenue_Projection2</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New Revenue Projection2</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>https://aviacode.my.salesfor{!Opportunity.Est_Monthly_Revenue__c}ce.com/a06/e?CF00NF0000008gN1Z={!Opportunity.Name}&amp;CF00NF0000008gN1Z_lkid={!Opportunity.Id}&amp;retURL=%2F{!Opportunity.Id}&amp;00NF0000008gN1j={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN1o={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN1={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN1y={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN23={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2D={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2N={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN1k={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2S={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2I={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2X={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2c={!Opportunity.Est_Monthly_Revenue__c}</url>
+    </webLinks>
+</CustomObject>

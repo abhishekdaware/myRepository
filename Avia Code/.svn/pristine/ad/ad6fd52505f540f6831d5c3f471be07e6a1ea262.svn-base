@@ -1,0 +1,25 @@
+<apex:page standardController="Opportunity"  extensions="MassSubmitCodingPricingApprovals">
+	<apex:form id="formId">
+		<apex:pageBlock title="Submit Healthcare Regional Medical Centre" mode="edit" id="Block">
+		<apex:pageMessages />
+		
+			<apex:pageBlockButtons location="top">
+                	<apex:commandButton value="Submit For Approval" action="{!SubmitForApproval}" />
+                	<apex:commandButton value="Approve All" action="{!approvedRecord}" rendered="{!(isVisible)}"/>
+            </apex:pageBlockButtons>
+				<apex:pageBlockSection id="section"> 
+					<apex:pageBlockTable value="{!lstCodingSpecs}" var="item" >    
+		                <apex:column value="{!item.name}"  />
+		                <apex:column value="{!item.Specialty__c}" />
+		                <apex:column value="{!item.Access__c}"  />
+		                <apex:column value="{!item.Type_of_Coding__c}"  />
+		                <apex:column value="{!item.Coder_Cost__c}"  />
+		                <apex:column value="{!item.Contract_Revenue__c}"  />
+		                <apex:column value="{!item.Revenue_Multiple__c}"  />
+		                <apex:column value="{!item.Monthly_Revenue__c}"  />
+		                <apex:column value="{!item.Approval_Stage__c}"  />
+	                </apex:pageBlockTable>			
+				</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

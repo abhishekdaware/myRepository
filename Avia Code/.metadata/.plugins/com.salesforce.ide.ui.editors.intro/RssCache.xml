@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" xmlns:slash="http://purl.org/rss/1.0/modules/slash/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" version="2.0">
+
+<channel>
+	<title>Salesforce Developers Blogs</title>
+	
+	<link>http://developer.salesforce.com/blogs</link>
+	<description>Elevating developer skills and connecting with the Salesforce Developers community</description>
+	<lastBuildDate>Mon, 29 Sep 2014 22:01:04 +0000</lastBuildDate>
+	<language>en-US</language>
+		<sy:updatePeriod>hourly</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+	
+	<atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" href="http://feeds.feedburner.com/SforceBlog" rel="self" type="application/rss+xml"/><feedburner:info uri="sforceblog"/><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" href="http://pubsubhubbub.appspot.com/" rel="hub"/><feedburner:emailServiceId>SforceBlog</feedburner:emailServiceId><feedburner:feedburnerHostname>https://feedburner.google.com</feedburner:feedburnerHostname><feedburner:feedFlare href="http://add.my.yahoo.com/rss?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif">Subscribe with My Yahoo!</feedburner:feedFlare><feedburner:feedFlare href="http://www.newsgator.com/ngs/subscriber/subext.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://www.newsgator.com/images/ngsub1.gif">Subscribe with NewsGator</feedburner:feedFlare><feedburner:feedFlare href="http://feeds.my.aol.com/add.jsp?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://o.aolcdn.com/favorites.my.aol.com/webmaster/ffclient/webroot/locale/en-US/images/myAOLButtonSmall.gif">Subscribe with My AOL</feedburner:feedFlare><feedburner:feedFlare href="http://www.bloglines.com/sub/http://feeds.feedburner.com/SforceBlog" src="http://www.bloglines.com/images/sub_modern11.gif">Subscribe with Bloglines</feedburner:feedFlare><feedburner:feedFlare href="http://www.netvibes.com/subscribe.php?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://www.netvibes.com/img/add2netvibes.gif">Subscribe with Netvibes</feedburner:feedFlare><feedburner:feedFlare href="http://fusion.google.com/add?feedurl=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://buttons.googlesyndication.com/fusion/add.gif">Subscribe with Google</feedburner:feedFlare><feedburner:feedFlare href="http://www.pageflakes.com/subscribe.aspx?url=http%3A%2F%2Ffeeds.feedburner.com%2FSforceBlog" src="http://www.pageflakes.com/ImageFile.ashx?instanceId=Static_4&amp;fileName=ATP_blu_91x17.gif">Subscribe with Pageflakes</feedburner:feedFlare><item>
+		<title>Everyone Wins at this Year’s Salesforce Partner Keynote</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/wIrfr5ShZ1M/everyone-wins-years-salesforce-partner-keynote.html</link>
+		<comments>http://developer.salesforce.com/blogs/isv/2014/09/everyone-wins-years-salesforce-partner-keynote.html#comments</comments>
+		<pubDate>Mon, 29 Sep 2014 22:01:04 +0000</pubDate>
+		<dc:creator><![CDATA[Eddy Perez]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[#DFPartners]]></category>
+		<category><![CDATA[dreamforce]]></category>
+		<category><![CDATA[ISV]]></category>
+		<category><![CDATA[keynote]]></category>
+		<category><![CDATA[Partners]]></category>
+
+		<guid isPermaLink="false">http://30.22971</guid>
+		<description><![CDATA[<a href="http://developer.salesforce.com/blogs/isv/2014/09/everyone-wins-years-salesforce-partner-keynote.html"><img align="right" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1412026134/curve-2_sn795a.png" class="alignright wp-post-image tfe" alt="curve-2_sn795a" title="" /></a>Attend the Salesforce Partner Keynote on Monday, October 13th at 10am in Moscone West to find out what you've won!]]></description>
+				<content:encoded><![CDATA[<p>As if you don’t have enough reasons to attend this year’s Salesforce Partner Keynote at Dreamforce, which features various top Salesforce executives and important announcements, here’s one more… um wait, actually, it’s more like eight:</p>
+<p><a class="overlay" href="http://res.cloudinary.com/hzxejch6p/image/upload/v1412026134/curve-2_sn795a.png"><img class="alignright  wp-image-23051" alt="curve-2_sn795a" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1412026134/curve-2_sn795a.png" width="288" height="288" /></a></p>
+<ol>
+<li><i></i><i>Samsung 55’ Curved TV</i></li>
+<li><i></i><i>Apple MacBook Pro laptop with Retina Display</i></li>
+<li><i style="line-height: 1.5em">Apple iPad Air</i></li>
+<li><i></i><i>Sonos Play 5 Wireless Speaker</i></li>
+<li><i></i><i>Big Jawbone Jambox</i></li>
+<li><i></i><i>Livescribe Pen</i></li>
+<li><i></i><i>Epic Cellulon Virtual Keyboard</i></li>
+<li><i> </i><i>AppExchange Silicone iWallet</i></li>
+</ol>
+<p>As you can see, this is a list of prizes! And, I’m happy to report you’re guaranteed to win one of these just by (a) having a mobile phone and (b) attending the <a href="https://success.salesforce.com/loginswitcher?startURL=%2FEv_Sessions" target="_blank">Salesforce Partner Keynote</a> on Monday, October 13 at 10:00 a.m. in Moscone West, Product Keynote Room.</p>
+<p>&nbsp;</p>
+<p><a class="overlay" href="http://res.cloudinary.com/hzxejch6p/image/upload/v1412026135/mac-book-pro_hpummg.png"><img class="alignleft size-full wp-image-23111" alt="mac-book-pro_hpummg" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1412026135/mac-book-pro_hpummg.png" width="150" height="87" /></a></p>
+<p>Interested in finding out what I’m talking about? Go ahead and text “<strong>DF14</strong>” to <strong>40691</strong> on your mobile phone. You’ll get a special link that will take you to the splash page of our contest.</p>
+<p><a class="overlay" href="http://res.cloudinary.com/hzxejch6p/image/upload/v1412026134/epic_kyxrbt.png"><img class="wp-image-23061 alignright" alt="epic_kyxrbt" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1412026134/epic_kyxrbt.png" width="216" height="216" /></a></p>
+<p>&nbsp;</p>
+<p>The contest begins at the Salesforce Partner Keynote. Attend and listen up for the “secret word” announcement. Then, enter the word in the blank field on the landing page to unlock your unique opportunity to win. The only way to find out and claim what you’ve won is to visit the Partner Zone at the Westin Market St. Hotel after the keynote. You’ll get one chance to win, but that chance could turn out to be a prize worth thousand of dollars.</p>
+<p>So, don’t forget to make the Salesforce Partner Keynote a favorite session on <a href="http://www.salesforce.com/dreamforce/DF14/register.jsp" target="_blank">Agenda Builder</a> and attend the event at Dreamforce. Oh, and crossing some fingers (and toes) won’t hurt as well.</p>
+<p><a class="overlay" href="http://res.cloudinary.com/hzxejch6p/image/upload/v1412027382/prizes_czhjlj.jpg"><img class="aligncenter size-full wp-image-23301" alt="prizes_czhjlj" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1412027382/prizes_czhjlj.jpg" width="500" height="500" /></a></p>
+<p>&nbsp;</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=wIrfr5ShZ1M:BqxPHwQI4EA:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=wIrfr5ShZ1M:BqxPHwQI4EA:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=wIrfr5ShZ1M:BqxPHwQI4EA:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=wIrfr5ShZ1M:BqxPHwQI4EA:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=wIrfr5ShZ1M:BqxPHwQI4EA:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=wIrfr5ShZ1M:BqxPHwQI4EA:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=wIrfr5ShZ1M:BqxPHwQI4EA:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/wIrfr5ShZ1M" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/isv/2014/09/everyone-wins-years-salesforce-partner-keynote.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/isv/2014/09/everyone-wins-years-salesforce-partner-keynote.html</feedburner:origLink></item>
+		<item>
+		<title>Building Buzz at Dreamforce</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/QdeZSpfJklY/building-buzz-dreamforce.html</link>
+		<comments>http://developer.salesforce.com/blogs/isv/2014/09/building-buzz-dreamforce.html#comments</comments>
+		<pubDate>Fri, 26 Sep 2014 18:48:02 +0000</pubDate>
+		<dc:creator><![CDATA[Lauren Muenter Clark]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[dreamforce]]></category>
+		<category><![CDATA[salesforce]]></category>
+		<category><![CDATA[sponsors]]></category>
+
+		<guid isPermaLink="false">http://30.22791</guid>
+		<description><![CDATA[<a href="http://developer.salesforce.com/blogs/isv/2014/09/building-buzz-dreamforce.html"><img align="right" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411671645/BUILDING-BUZZ-FINAL-1_nwsmln.jpg" class="alignright wp-post-image tfe" alt="BUILDING-BUZZ-FINAL-1_nwsmln" title="" /></a>Want to know how to create excitement at Dreamforce? Look no further! We've compiled these tips from over a decade of Dreamforce events to show you how to make your Sponsorship shine.]]></description>
+				<content:encoded><![CDATA[<p style="text-align: left">Want to know how to create excitement at Dreamforce? Look no further! We&#8217;ve compiled these tips from over a decade of Dreamforce events to show you how to make your Sponsorship shine.</p>
+<p style="text-align: left">From creating compelling content to spreading your message and utilizing mobile channels, here is a three step plan to help your company build buzz around your Sponsorship at Dreamforce &#8217;14.</p>
+<p>&nbsp;</p>
+<p style="text-align: center"><a class="overlay" href="http://res.cloudinary.com/hzxejch6p/image/upload/v1411671645/BUILDING-BUZZ-FINAL-1_nwsmln.jpg"><img class="aligncenter  wp-image-22821" alt="BUILDING-BUZZ-FINAL-1_nwsmln" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411671645/BUILDING-BUZZ-FINAL-1_nwsmln.jpg" width="2295" height="5940" /></a></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=QdeZSpfJklY:f0qHmExo2_I:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=QdeZSpfJklY:f0qHmExo2_I:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=QdeZSpfJklY:f0qHmExo2_I:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=QdeZSpfJklY:f0qHmExo2_I:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=QdeZSpfJklY:f0qHmExo2_I:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=QdeZSpfJklY:f0qHmExo2_I:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=QdeZSpfJklY:f0qHmExo2_I:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/QdeZSpfJklY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/isv/2014/09/building-buzz-dreamforce.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/isv/2014/09/building-buzz-dreamforce.html</feedburner:origLink></item>
+		<item>
+		<title>Announcing the Open-Source WSDL2Apex Generator</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/gXriuoxgl2g/announcing-open-source-wsdl2apex-generator.html</link>
+		<comments>http://developer.salesforce.com/blogs/engineering/2014/09/announcing-open-source-wsdl2apex-generator.html#comments</comments>
+		<pubDate>Fri, 26 Sep 2014 18:23:18 +0000</pubDate>
+		<dc:creator><![CDATA[Josh Kaplan]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[apex]]></category>
+		<category><![CDATA[apex code]]></category>
+		<category><![CDATA[eclipse]]></category>
+		<category><![CDATA[force.com ide]]></category>
+		<category><![CDATA[Tools]]></category>
+
+		<guid isPermaLink="false">http://25.29301</guid>
+		<description><![CDATA[I am back with another open-source project. By popular demand, the WSDL2Apex generator is now available for you to improve and repair.]]></description>
+				<content:encoded><![CDATA[<p dir="ltr">I am back with another open-source project. By popular demand, the WSDL2Apex generator is now available for you to improve and repair.</p>
+<p dir="ltr">One of the ways in which the Force.com platform is awesome is that you can integrate your logic with other systems. Apex offers nice ways to expose your logic as web services, and it offers nice ways to make callouts using REST. It also offers a &#8220;nice&#8221; way to make callouts using SOAP, known as WSDL2Apex.</p>
+<p dir="ltr">Prior to being product manager for Apex, I was writing Apex in my day-to-day job.  I have used this “nice” way to make callouts, which begins with the WSDL2Apex generator.  I know what that feature does, and I know many of the things you are forced to do in order for it to do what it does.  I have shredded a WSDL down to the bare minimum in Notepad in order to get any class output at all. I have then un-shredded the things it turned out I needed for the callouts to actually go to the right place, and retrieve the right data. I have furrowed my brow and scratched my head trying to figure out how to call the generated methods. I know some of you have done other unspeakable things to make it easier to ingest existing WSDLs and use them in your Apex code.</p>
+<p dir="ltr">That nonsense stops now. The WSDL2Apex generator is now open-source. From now on, you, dear reader, are going to be able to work with us, and everyone else reading this, to make this feature complete.</p>
+<h1>Fish, or Cut Bait</h1>
+<p dir="ltr">The WSDL2Apex generator has lived behind a button on the old setup UI pages for longer than I can remember. It has remained in the same state, functionality-wise, for that same period of time. Dictatorships have been toppled, and the governments that replaced them have subsequently been toppled, all since the last improvement to the capabilities of that WSDL2Apex feature was made.</p>
+<p dir="ltr">What happened? Did we forget about this feature? Were we perhaps afraid to challenge the shadowy w3.org and its schema? Were we too busy keeping up on world events?</p>
+<p dir="ltr">Truth be told, this feature fell between teams. One team built it, another helped, but, in the end, nobody officially owned it. As Otto von Bismark said back in 1865, “software, like sausage, ceases to inspire respect when you know how it is made.”  (Note: I can&#8217;t back that quote attribution up, but I can quickly update Wikipedia to back it up.)</p>
+<p dir="ltr">On the one hand, your first demand of us is stability. And, on that front, we have delivered! The WSDL2Apex feature has been quite stable! On the other hand, you want multiple port-type bindings, and don’t care how hard it is to maintain Apex. We have spent much of our time focused on the stability of Apex in general, and thus have not been able to add any of the very legitimate enhancement requests that have come in for the WSDL2Apex feature.</p>
+<p dir="ltr">This is where you come in to the picture.</p>
+<h1>Another Open-Source Feature!</h1>
+<p dir="ltr">The Apex generation logic behind that old setup UI button is now available as open-source. You now share ownership of this feature with us. Welcome to the team!</p>
+<p dir="ltr">There is a brand new open-source project which contains the WSDL parsing and code generation logic. This is all helpfully contained in an eclipse wizard flow, which can be conveniently built into a JAR, which can be conveniently included in the open-source Force.com IDE. (Yes! The star of my previous blog post is back for the sequel! More on that later.)</p>
+<p dir="ltr">You will find the repository at: <a href="https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fforcedotcom%2FWSDL2Apex&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNF8k9L1HIOC7xUvtucknKTzYceBZg" target="_blank">https://github.com/forcedotcom/WSDL2Apex</a></p>
+<p dir="ltr">The exiting WSDL2Apex generator has been split into two main steps: parsing the WSDL file, and spitting out Apex code based on the parsed input. You can dig into each of these steps, modifying them as you see fit for your project needs.  In addition, you can add logic prior to each of these steps to make the whole process easier.</p>
+<p dir="ltr">The Eclipse wizard has nice stopping points for you to add any user interaction you wish to add. You could ask if the user really wanted all 15,000 methods, or would they instead like to select the parts they need. You could offer a new &amp; improved variable naming option, for which the user could provide input prior to code generation.</p>
+<p dir="ltr">The code generation itself could use some new features. We don’t auto-generate tests, even though we do count the code against you for test coverage.  Perhaps some automated test coverage would be useful! (We had talked about ignoring generated classes in the calculation, but, now that we are no longer in charge of the code generation, it is going to remain included.) Something I have always done to my generated classes is to add human-readable method stubs that call the generated methods; do with that idea as you will.</p>
+<p dir="ltr">I want to point out that the code we are releasing is pretty much the unaltered code that has been there since Qaddafi and Mubarak’s last meeting. We didn’t change it. We just encapsulated it in a way that we thought would (a) make it easy to modify and (b) get it to you as soon as possible.</p>
+<h1>Putting It Together</h1>
+<p dir="ltr">As mentioned, this project will compile into a JAR that can be included in the Eclipse plug-in.  As a part of this open-source effort, we added a menu item to the plug-in for generating a new class from a WSDL. That hook gives you all you need to start generating your classes in the plug-in.</p>
+<p dir="ltr">Eclipse will be the vehicle for advancements in the code generator.  But, Josh, what about that button in the setup UI, the one that predates the existence of South Sudan? It will not get any benefit from any advancements, whether you code them or we do. It may remain; it may vanish. If it remains, it will remain unchanged in terms of capability.</p>
+<p dir="ltr">The governance for the WSDL2Apex generator project will be the same as that of the Eclipse plug-in.  This has been discussed at length in other places (including my recent blog post), so I won’t cover it here.  I’ll summarize by saying we will maintain a “supported’ branch of the code, and we will accept pull requests from you as they arrive and are deemed fit for inclusion.</p>
+<p dir="ltr">If your changes are not generic enough that we want to support them, you’ll still be able to use your changes to generate Apex classes for your org.  You will be able to build a plug-in from the supported code line, but include your JAR for WSDL-based class generation.  Alternatively, you could just use the parsing and code-gen code as a standalone widget, and copy/paste the output into the IDE of your choice.</p>
+<h1>I Want This Now!</h1>
+<p>The latest beta of the Eclipse plug-in has New-Class-From-WSDL feature in it. If you build the latest version, you will have this.  Our next official release of the plug-in will have the feature, for anyone who prefers to wait.</p>
+<p>For now, the new plug-in feature has the same limitations as the button you are familiar with, since, as mentioned, we did not change the features in creating the open-source library. As changes are made by the community, and adopted in to the master branch, these limitations will fade away, and new capabilities will appear. Which brings me to&#8230;</p>
+<h1>The $100 Hackathon</h1>
+<p dir="ltr">Unfortunately, I cannot sponsor a million-dollar hackathon. However, I can sponsor a $100 hackathon!</p>
+<p dir="ltr">The challenge I lay down here is this: <span style="text-decoration: underline"><strong>make the best change to the WSDL2Apex generator, before Dreamforce</strong>.</span>  $100 Amazon gift card to the winner.</p>
+<p dir="ltr">I will personally look at all the pull requests, and will choose which one is the best. &#8220;Best&#8221; will probably include basic things like &#8220;it works&#8221; and &#8220;it is generally useful to everyone&#8221;. Salesforce employees are eligible, too &#8211; the internal technical architect community has been asking for access to this for a long time, so I want to challenge them for submissions as well.   I&#8217;m not going to make any fine print rules &#8211; I&#8217;m just going to choose, and I&#8217;ll let you know why I chose, and that will be that.</p>
+<p dir="ltr">If you&#8217;re going to participate, which I am certain that you are, please create an &#8220;issue&#8221; in the git repository, and comment that you will have it done by Dreamforce. Check to see if anyone else is doing the idea already; I&#8217;d rather not get five people building the same feature! Do two features, if you want. But try to finish a bit early, so you can go win the <a href="https://developer.salesforce.com/million-dollar-hackathon">million-dollar hackathon </a>starting on October 10.</p>
+<p dir="ltr"><strong>$100 Amazon gift card to the winner.</strong> You might say, &#8220;meh.&#8221; I say, &#8220;$100 is better than a kick in the pants!&#8221; Second place, third place, and all other places receive undying gratitude from the community (and a shout-out in my next blog post). You and many others will actually be able to use the fruits of your labors immediately&#8230;this is a collaborative hackathon!</p>
+<p dir="ltr">Let&#8217;s see what we can do.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=gXriuoxgl2g:oG619GN_01o:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=gXriuoxgl2g:oG619GN_01o:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=gXriuoxgl2g:oG619GN_01o:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=gXriuoxgl2g:oG619GN_01o:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=gXriuoxgl2g:oG619GN_01o:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=gXriuoxgl2g:oG619GN_01o:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=gXriuoxgl2g:oG619GN_01o:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/gXriuoxgl2g" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/engineering/2014/09/announcing-open-source-wsdl2apex-generator.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/engineering/2014/09/announcing-open-source-wsdl2apex-generator.html</feedburner:origLink></item>
+		<item>
+		<title>Developers at Connection ’14</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/4nXGZXkoxIA/developers-connection-14.html</link>
+		<comments>http://developer.salesforce.com/blogs/developer-relations/2014/09/developers-connection-14.html#comments</comments>
+		<pubDate>Thu, 25 Sep 2014 13:55:32 +0000</pubDate>
+		<dc:creator><![CDATA[Quinton Wall]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[connections]]></category>
+		<category><![CDATA[developer]]></category>
+		<category><![CDATA[journey builder]]></category>
+
+		<guid isPermaLink="false">http://26.80771</guid>
+		<description><![CDATA[Developers at Connections '14 was an amazing mix of great developer content and speakers. Here is a quick summary]]></description>
+				<content:encoded><![CDATA[<p>I&#8217;ve spent the last few days at Connections &#8217;14, a massive digital marketing conference in Indianapolis centered around the ExactTarget Marketing Cloud. I&#8217;ll be honest,  a few months ago when we started working on some internal product activities that would be announced at Connections,  I didn&#8217;t know what to expect. How is marketing relevant to developers? And why should they care about Fuel, a core part of the Salesforce1 platform.</p>
+<p>But something clicked, and I had one of those rare moments where the light switched on and I saw the huge opty for devs to build apps that become sticky. You know the sort of app I mean; the ones you open a dozen times a day, not because you want to check your news feed, but because your app is talking to you &#8211; sending relevant, and contextual updates right to your phone.</p>
+<p>To help other devs with that ah-hah moment, we decided to do our first ever developers at Connections event &#8211; basically a mini  conference for 800 devs inside a larger marketing conference. What better way to get devs and marketers working together? When I saw this tweet from <a href="https://twitter.com/seldo" target="_blank">Laurie Voss</a>, co-founder of NPM, a company and product I admire greatly, that I knew the confluence of app devs and marketing was incredibly important.</p>
+<p><img class="wp-image-80781 aligncenter" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411652111/Laurie_Voss_on_Twitter____adamse_btw__forgot_to_congratulate_you_on_pulling_a_respectable_tech_conference_rabbit_out_of_a_marketing_conference_hat___qeq2dw.png" width="538" height="176" /></p>
+<p>For the past two days, we had speakers and seasons covering Node.js, JavaScript, Heroku, Force.com, and the amazing new Journey Builder for Apps product that finally gives developers and marketers the common &#8216;language&#8217; for them to collaborate to create these engaging apps. Our developer theater was packed from opening to close with a huge mix of attendees.</p>
+<p><img class="alignnone wp-image-80811" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411652722/QRW_0460_du6fhf.png" width="1024" height="651" /></p>
+<p>&nbsp;</p>
+<p>I think my favorite session was from <a href="https://twitter.com/Matt_Creager" target="_blank">Matt Creager</a>, followed closely by <a href="https://twitter.com/codefriar" target="_blank">Kevin Poorman</a> &#8211; who also one an Xbox One for completing all 5 mini hacks in a single day.</p>
+<p><img class="alignnone wp-image-80791" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411652570/QRW_0520_pgy3yg.png" width="1024" height="521" /></p>
+<p>Although I think the fact that Kevin set himself up right beside the free DevZone Cafe may have had something to do with it.</p>
+<p><img class="alignnone wp-image-80801" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411652639/QRW_0402_d20cce.png" width="1024" height="683" /></p>
+<p>&nbsp;</p>
+<p>Whatever the recipe, we had an amazing time at Connections &#8217;14 with some great new stickers, t-shirts, some awesome new workbooks, and books (I was super super excited to co-author the Journey Builder for Apps book with <a href="https://twitter.com/imurdock" target="_blank">Ian Murdock</a>, VP of Platform Product Management at ExactTarget, and Debian creator &#8211; am I dating myself here). Next stop on the journey is Dreamforce next month. Don&#8217;t forget to register for the <a href="https://developer.salesforce.com/million-dollar-hackathon" target="_blank">$1,000,000 hackathon</a>, and we will see you there!</p>
+<p><img class="alignnone wp-image-80821" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411653003/QRW_0405_iofqxo.png" width="1024" height="683" /></p>
+<p><img class="alignnone wp-image-80831" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411653055/QRW_0517_a0pbh2.png" width="1024" height="576" /></p>
+<p><img class="alignnone wp-image-80841" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411653148/QRW_0334_oquhiu.png" width="1024" height="683" /></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=4nXGZXkoxIA:BAyfvSw6mYQ:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=4nXGZXkoxIA:BAyfvSw6mYQ:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=4nXGZXkoxIA:BAyfvSw6mYQ:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=4nXGZXkoxIA:BAyfvSw6mYQ:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=4nXGZXkoxIA:BAyfvSw6mYQ:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=4nXGZXkoxIA:BAyfvSw6mYQ:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=4nXGZXkoxIA:BAyfvSw6mYQ:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/4nXGZXkoxIA" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/developer-relations/2014/09/developers-connection-14.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/developer-relations/2014/09/developers-connection-14.html</feedburner:origLink></item>
+		<item>
+		<title>Startups @Dreamforce</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/VnCzjaORgsY/startups-dreamforce.html</link>
+		<comments>http://developer.salesforce.com/blogs/isv/2014/09/startups-dreamforce.html#comments</comments>
+		<pubDate>Wed, 24 Sep 2014 23:45:35 +0000</pubDate>
+		<dc:creator><![CDATA[Mike Kreaden]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[dreamforce]]></category>
+		<category><![CDATA[ISV]]></category>
+		<category><![CDATA[Partner]]></category>
+		<category><![CDATA[register]]></category>
+		<category><![CDATA[sessions]]></category>
+		<category><![CDATA[startup]]></category>
+
+		<guid isPermaLink="false">http://30.22601</guid>
+		<description><![CDATA[<a href="http://developer.salesforce.com/blogs/isv/2014/09/startups-dreamforce.html"><img align="right" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/h_199,w_300/v1411668885/StartUpImage2_dkmvk5.jpg" class="alignright wp-post-image tfe" alt="StartUpImage2_dkmvk5" title="" /></a>Whether you are new to Dreamforce, or an 10-year veteran, one thing is clear — this is the entrepreneurial event for innovative business leaders and cloud computing entrepreneurs alike.]]></description>
+				<content:encoded><![CDATA[<p dir="ltr"><a href="http://res.cloudinary.com/hzxejch6p/image/upload/v1411668885/StartUpImage2_dkmvk5.jpg"><img class="alignright" alt="StartUpImage2_dkmvk5" src="http://res.cloudinary.com/hzxejch6p/image/upload/h_199,w_300/v1411668885/StartUpImage2_dkmvk5.jpg" width="300" height="199" /></a>Whether you are new to Dreamforce, or a 10-year veteran, one thing is clear — this is the entrepreneurial event for innovative business leaders and cloud computing entrepreneurs alike.</p>
+<p dir="ltr">Salesforce is always focused on innovation, but Dreamforce allows us the opportunity to inspire you with the best in thought leadership and critical advice to accelerate your success. Join us to hear luminaries like Marc Andreessen, Max Levchin, Reid Hoffman, Steve Jurvetson, Jeremy Stoppelman, our own Marc Benioff amongst others who will be featured in our keynotes this year. But there’s more… We have a collection of sessions that talk specifically to you — the tech entrepreneur, on topics from funding to finding your MVP, sales acceleration to scaling your business to $100M.</p>
+<h2>Funding and Growth Sessions: Highlights for Startups</h2>
+<p>Do you have a new business idea or are you a leader at a growth company?  Are you confused about how to take that first step or how to get the funding you need to accelerate growth? Should you even seek outside funding? James Cham, Partner at Bloomberg Beta (and featured speaker at our “Grow or Die!” session) says &#8220;some people used to think of Silicon Valley as a big conspiracy&#8230;one where you work hard to get venture funded&#8230;eventually just to &#8216;give away the company&#8217; in the end. Those days are gone. Most companies don&#8217;t need to seek venture funding. The barriers to launching a new company are now lower than ever and the pathways to growth wider.&#8221; From bootstrapping to angel/seed investment, from venture capital to revenue-based financing, there are endless choices available to startups today. We have assembled a complete roster of world-class CEOs and renowned investors to address some of these options and help you get the answers to your funding questions.</p>
+<p>Join us on Monday, October 13th, from 12pm &#8211; 2pm and Wednesday, October 15th, from 2pm &#8211; 6pm where we will have <a title="Founders Forum" href="http://p.force.com/foundersforum" target="_blank">sessions and panels</a> guiding you all the way from launching a new company to successful exit, whether by acquisition or IPO.</p>
+<h2><strong>The Journey: From Startup to Post-IPO:</strong></h2>
+<p style="padding-left: 30px"><strong>GROW OR DIE! From Idea to IPO: Fund and Grow your Startup</strong></p>
+<p style="padding-left: 60px">Monday, October 13th @ 12pm<br />
+Westin St. Francis, Tower Salon A</p>
+<p style="padding-left: 60px"><em>Featuring James Cham, Partner, Bloomberg Beta; Mike Jensen, CEO, Free &amp; Clear.com; Jason Jue, CMO, Triblio; Robi Ganguly, CEO, Apptentive; Vincent Yang, CEO, EverString; Fred Tsai, Sr. Director, Salesforce.com</em></p>
+<p style="padding-left: 30px"><strong>After the IPO: Lessons from Successful Executives</strong></p>
+<p style="padding-left: 60px">Monday, October 13th @ 1pm<br />
+Westin St. Francis, Tower Salon A</p>
+<p style="padding-left: 60px"><em>Featuring Vinay Bhagat, CEO, TrustRadius; Peter Wooster, former CRO, Marin Software; Andre Yee, CEO, Trlbio; Michael Weening, SVP, Salesforce.com</em></p>
+<p><a class="overlay" href="http://res.cloudinary.com/hzxejch6p/image/upload/v1411668886/StartUpImage3_dg5dam.jpg"><img class="size-medium wp-image-22741 alignright" alt="StartUpImage3_dg5dam" src="http://res.cloudinary.com/hzxejch6p/image/upload/h_177,w_300/v1411668886/StartUpImage3_dg5dam.jpg" width="300" height="177" /></a></p>
+<p style="padding-left: 30px"><strong>Investing in Enterprise Startups &#8211; A Seed Investor’s Perspective</strong></p>
+<p style="padding-left: 60px">Monday, October 13th @ 1pm<br />
+Westin Hotel @ 3rd &amp; Mission, City View Room</p>
+<p style="padding-left: 60px"><em>Featuring Jeff Clavier, Founder, SoftTec VC; Laura Behrens Wu, Founder, Shippo; Adam Marchick, Founder, Kahuna</em></p>
+<p style="padding-left: 30px"><strong>Beyond Friends and Family &#8211; Funding Your Enterprise Startup</strong></p>
+<p style="padding-left: 60px">Wednesday, October 15th @ 2pm<br />
+Westin St. Francis, Elizabethan A, B</p>
+<p style="padding-left: 60px"><em>Featuring BJ Lackland, Founder, Lighter Capital; Claire Lee, Managing Director, Silicon Valley Bank; Kristina Shen, Sr. Associate, Bessemer Venture Partners; Matt Garratt, Corporate Development, salesforce.com, Mike Kreaden, Sr. Director, Startup Relations, salesforce.com</em></p>
+<p style="padding-left: 30px"><strong>The New Cloud Funding Model for Enterprise Apps</strong></p>
+<p style="padding-left: 60px">Wednesday, October 15th @ 3pm<br />
+Westin St. Francis, Elizabethan A, B</p>
+<p style="padding-left: 60px"><em>Featuring Matt Holleran, Founder, Cloud Apps Capital Partners; Judy Loehr, Venture Partner, Cloud Apps Capital Partners; Dave Yarnold, CEO, ServiceMax</em></p>
+<p style="padding-left: 30px"><strong>How to Benchmark Your Enterprise Startup</strong></p>
+<p style="padding-left: 60px">Wednesday, October 15th @ 4:30pm<br />
+Westin St. Francis, Elizabethan C, D</p>
+<p style="padding-left: 60px"><em>Featuring Jason Lemkin, Managing Director, Storm Ventures; Brian Jacobs, General Partner, Emergence Capital Partners; Tiago Paiva, Founder, Talkdesk</em></p>
+<p style="padding-left: 30px"><strong>Meet the Catalysts &#8211; Advice from the Hottest Enterprise Accelerators</strong></p>
+<p style="padding-left: 60px">Wednesday, October 15th @ 5:30pm<br />
+Westin St. Francis, Elizabethan C, D</p>
+<p style="padding-left: 60px"><em>Featuring Ravi Belani, Managing Director, Alchemist Accelerator; Michael Cardamone, Managing Director, Acceleprise SF; Gabriella Draney, Founder, Tech Wildcatters; Sanjay Puri, Founder, 9Mile Labs; Ludovic Ulrich, Director, Startup Relations, salesforce.com</em></p>
+<p>Still hungry for more? Check out our <a href="http://p.force.com/foundersforum">Founders Forum</a> sessions and panels for insight and inspiration from some of the most successful tech and business leaders in our industry. Be sure to drop by the Startup Zone (in the Dev Zone) at Moscone West to meet other startups and learn about the programs and events our Startup Relations team has in store for you.</p>
+<p>See you at Dreamforce!</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=VnCzjaORgsY:kEdSXIrDryI:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=VnCzjaORgsY:kEdSXIrDryI:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=VnCzjaORgsY:kEdSXIrDryI:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=VnCzjaORgsY:kEdSXIrDryI:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=VnCzjaORgsY:kEdSXIrDryI:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=VnCzjaORgsY:kEdSXIrDryI:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=VnCzjaORgsY:kEdSXIrDryI:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/VnCzjaORgsY" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/isv/2014/09/startups-dreamforce.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/isv/2014/09/startups-dreamforce.html</feedburner:origLink></item>
+		<item>
+		<title>Apex Performance Troubleshooting</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/BjBMvXTWXDM/apex-performance-troubleshooting.html</link>
+		<comments>http://developer.salesforce.com/blogs/engineering/2014/09/apex-performance-troubleshooting.html#comments</comments>
+		<pubDate>Wed, 24 Sep 2014 23:44:07 +0000</pubDate>
+		<dc:creator><![CDATA[Dan Yu]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[apex]]></category>
+		<category><![CDATA[architect]]></category>
+		<category><![CDATA[debug log]]></category>
+		<category><![CDATA[developer console]]></category>
+		<category><![CDATA[Performance]]></category>
+		<category><![CDATA[tooling api]]></category>
+
+		<guid isPermaLink="false">http://25.29061</guid>
+		<description><![CDATA[<a href="http://developer.salesforce.com/blogs/engineering/2014/09/apex-performance-troubleshooting.html"><img align="right" hspace="5" width="150" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Loupe.svg/120px-Loupe.svg.png" class="alignright wp-post-image tfe" alt="Troubleshooting Apex Performance Problems" title="Troubleshooting Apex Performance Problems" /></a>For architects and developers working with Apex code, debugging performance problems can be difficult. A new article explores some of the common causes of performance issues, and then looks at the process of using debug logs, the Developer Console, and other tools to find and fix performance issues.]]></description>
+				<content:encoded><![CDATA[<h1>Apex Performance Troubleshooting</h1>
+<p dir="ltr"><a href="https://developer.salesforce.com/page/Troubleshooting_Apex_Performance_Problems"><img class="alignleft wp-image-22711" title="Troubleshooting Apex Performance Problems" alt="Troubleshooting Apex Performance Problems" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Loupe.svg/120px-Loupe.svg.png" width="130" height="129" /></p>
+<p>Force.com is a platform where you can build compelling applications using Visualforce and Apex. However, sometimes you’ll find yourself dealing with unexpected performance problems in your app that impact the user experience. Troubleshooting Apex performance problems can be difficult and time-consuming, so it’s worth understanding the causes and ways to fix any issues that come up.</p>
+<p>We’ve created an article that talks about what can cause Apex performance problems, ways to diagnose these problems, and tools to help you quickly and easily get the information you need. In particular, the article discusses how to work with Apex debug logs, including understanding log time gaps and how overuse of System.Debug can affect logs. Additionally, the article talks about an Apex Timeline tool that uses the Tooling API to programmatically access debug logs.</p>
+<p><a href="https://developer.salesforce.com/page/Troubleshooting_Apex_Performance_Problems">Troubleshooting Apex Performance Problems</a></p>
+<p>Armed with this knowledge, you’ll be able to track down Apex performance issues in no time, and make your app fly!</p>
+<h1>Related Resources</h1>
+<ul>
+<li><a href="https://developer.salesforce.com/page/Troubleshooting_Apex_Performance_Problems">Troubleshooting Apex Performance Problems</a>
+<li><a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_debugging_debug_log.htm">Understanding the Debug Log</a></li>
+<li><a href="https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_debugging_system_log_console.htm">Working with Logs in the Developer Console</a></li>
+<li><a href="https://developer.salesforce.com/blogs/engineering/2013/05/force-com-performance-profiling-using-the-developer-console.html">Force.com Performance Profiling Using the Developer Console</a></li>
+<li><a href="http://help.salesforce.com/HTViewHelpDoc?id=code_monitoring_debug_logs.htm&amp;language=en_US">Monitoring Debug Logs</a></li>
+<li><a href="http://help.salesforce.com/HTViewHelpDoc?id=code_setting_debug_log_levels.htm&amp;language=en_US">Setting Debug Log Filters</a></li>
+<li><a href="https://help.salesforce.com/HTViewHelpDoc?id=code_debug_log_classes.htm&amp;language=en_US">Debug Log Filtering</a></li>
+<li><a href="https://help.salesforce.com/HTViewHelpDoc?id=remoteaccess_authenticate.htm&amp;language=en_US">Authenticating Apps with OAuth</a></li>
+<li><a>Digging Deeper into OAuth 2.0 on Force.com</a></li>
+<li><a href="https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/intro_rest_overview.htm">Tooling API Developer’s Guide</a></li>
+</ul>
+<h1>About the Author and CCE Technical Enablement</h1>
+<p><a href="https://twitter.com/dyforce">Dan Yu</a> is a technical writer within the Technical Enablement team of the salesforce.com Customer-Centric Engineering group. The team’s mission is to help customers understand how to implement technically sound salesforce.com solutions. Check out all of the resources that this team maintains on the <a href="https://developer.salesforce.com/page/Architect_Core_Resources">Architect Core Resources</a> page of Developer Force.</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=BjBMvXTWXDM:CD3uaKll_2w:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=BjBMvXTWXDM:CD3uaKll_2w:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=BjBMvXTWXDM:CD3uaKll_2w:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=BjBMvXTWXDM:CD3uaKll_2w:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=BjBMvXTWXDM:CD3uaKll_2w:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=BjBMvXTWXDM:CD3uaKll_2w:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=BjBMvXTWXDM:CD3uaKll_2w:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/BjBMvXTWXDM" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/engineering/2014/09/apex-performance-troubleshooting.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/engineering/2014/09/apex-performance-troubleshooting.html</feedburner:origLink></item>
+		<item>
+		<title>#SFWITWednesday: Tips for Interviews at the GHC Career Fair</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/ZW0UGiTVOIQ/tips-for-interviews-ghc-career-fair.html</link>
+		<comments>http://developer.salesforce.com/blogs/engineering/2014/09/tips-for-interviews-ghc-career-fair.html#comments</comments>
+		<pubDate>Wed, 24 Sep 2014 23:07:39 +0000</pubDate>
+		<dc:creator><![CDATA[Sukrutha Bhadouria]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[college]]></category>
+		<category><![CDATA[grace hopper celebration]]></category>
+		<category><![CDATA[interview]]></category>
+		<category><![CDATA[network]]></category>
+		<category><![CDATA[research]]></category>
+		<category><![CDATA[wit]]></category>
+		<category><![CDATA[women in tech]]></category>
+
+		<guid isPermaLink="false">http://25.28411</guid>
+		<description><![CDATA[<a href="http://developer.salesforce.com/blogs/engineering/2014/09/tips-for-interviews-ghc-career-fair.html"><img align="right" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1406566533/SF_banner_WIT.png" class="alignright wp-post-image tfe" alt="" title="" /></a>We're increasingly excited about the Grace Hopper Celebration that is less than a month away! We'll have several of our top notch engineers share in various sessions and we'll also have a booth at the career fair where we can't wait to meet all of you! To help you prepare for the upcoming Grace Hopper career fair, we’ve put together a few tips ensure you feel confident and ready to handle any questions that come your way. Without further ado, take a look at these tips for interviews to help you better prepare for the GHC career fair!]]></description>
+				<content:encoded><![CDATA[<p><img alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1406566533/SF_banner_WIT.png" width="1283" height="313" /></p>
+<p><span style="line-height: 1.5em">Welcome to this week&#8217;s edition of salesforce.com’s Women in Tech Wednesday roundup! <a href="https://twitter.com/search?q=%23sfwitwednesday&amp;src=typd" target="_blank">#SFWITWednesday</a></span></p>
+<p><span style="line-height: 1.5em">We&#8217;re increasingly excited about the <a href="http://gracehopper.org">Grace Hopper Celebration</a> that is less than a month away! We&#8217;ll have several of our top notch engineers share in various sessions and we&#8217;ll also have a booth at the career fair where we can&#8217;t wait to meet all of you! To help you prepare for the upcoming Grace Hopper career fair, we’ve put together a few tips ensure you feel confident and ready to handle any questions that come your way. Without further ado, take a look at these tips for interviews to help you better prepare for the GHC career fair!</span></p>
+<h2 style="line-height: 1.5em">1. Have your elevator pitch ready</h2>
+<p><span style="line-height: 1.5em">What projects did you work on? What are you passionate about? Interviewers want to hear how you contributed to a project you&#8217;ve worked on and what you learned in the process.</span></p>
+<h2 style="line-height: 1.5em">2. Research The Companies You Will Be Interviewing With</h2>
+<p><span style="line-height: 1.5em">What does the company do? What are the technologies they use? What are their products? Why do you think you want to work there? Be prepared to answer questions like these!</span></p>
+<h2 style="line-height: 1.5em">3. Network</h2>
+<p><span style="line-height: 1.5em">The Grace Hopper Celebration is a fantastic place to network with 300+ companies participating. Make your connections so you can reach out when you need them! Don&#8217;t forget to carry extra resumes in case you need them!</span></p>
+<h2 style="line-height: 1.5em">4. Interview the Interviewer</h2>
+<p><span style="line-height: 1.5em">Not only do you need to impress the interviewers, you need to find out if you actually want to work at the company! Make sure to compile a specific set of questions for the interviewer, so you can get a sense of what it&#8217;s like to work there. For example: Why did they choose to join the company? What has been their most fun project? What kind of mentorship/guidance is provided to new hires, etc.</span></p>
+<h2 style="line-height: 1.5em">Readers, how are you preparing for the career fair at the Grace Hopper Celebration? Post in the comments below!</h2>
+<div><img style="margin-left: 5px;margin-right: 5px" alt="Sukrutha Bhadouria" src="http://sukruthasays.files.wordpress.com/2014/09/sukrutha.jpg" width="100" height="100" align="left" /><i><strong>About the blogger:</strong>  Sukrutha Bhadouria</i><i> is a Sr Member of Technical Staff at salesforce.com, and the Managing Director of <a href="https://developer.salesforce.com/blogs/engineering/2014/08/www.bayareagirlgeekdinners.com" target="_blank">Bay Area Girl Geek Dinners</a>. Follow Sukrutha on Twitter <a href="https://developer.salesforce.com/blogs/engineering/2014/08/www.twitter.com/sukruthasays" target="_blank">@sukruthasays</a> and follow Salesforce WIT <a href="https://twitter.com/SalesforceWIT" target="_blank">@salesforcewit</a> to keep tabs on other great content and WIT events.</i></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<p>&nbsp;</p>
+<p dir="ltr"><img alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1406211286/SF_Line_xwbquj.png" width="1283" height="3" /></p>
+<p>&nbsp;</p>
+<div></div>
+<div></div>
+<div></div>
+<p>&nbsp;</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=ZW0UGiTVOIQ:RKw-ARnNZWU:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=ZW0UGiTVOIQ:RKw-ARnNZWU:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=ZW0UGiTVOIQ:RKw-ARnNZWU:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=ZW0UGiTVOIQ:RKw-ARnNZWU:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=ZW0UGiTVOIQ:RKw-ARnNZWU:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=ZW0UGiTVOIQ:RKw-ARnNZWU:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=ZW0UGiTVOIQ:RKw-ARnNZWU:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/ZW0UGiTVOIQ" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/engineering/2014/09/tips-for-interviews-ghc-career-fair.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/engineering/2014/09/tips-for-interviews-ghc-career-fair.html</feedburner:origLink></item>
+		<item>
+		<title>Nothing But .Net – Working with the Force.com Toolkit for .Net</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/rkDm6YOBIS0/nothing-but-dotnet-force-toolkit-dotnet.html</link>
+		<comments>http://developer.salesforce.com/blogs/developer-relations/2014/09/nothing-but-dotnet-force-toolkit-dotnet.html#comments</comments>
+		<pubDate>Wed, 24 Sep 2014 18:56:04 +0000</pubDate>
+		<dc:creator><![CDATA[Sara Morgan]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[.Net]]></category>
+
+		<guid isPermaLink="false">http://26.80561</guid>
+		<description><![CDATA[<a href="http://developer.salesforce.com/blogs/developer-relations/2014/09/nothing-but-dotnet-force-toolkit-dotnet.html"><img align="right" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411581630/SaraMorgan_120x120_fwiaaw.jpg" class="alignright wp-post-image tfe" alt="Sara Morgan - Nothing But .Net" title="Sara Morgan - Nothing But .Net" /></a>As open-source tools, the Force.com Toolkits for .Net are new and still growing. Here's what's happened since their release, and what you can do to help expand and enhance the toolkits.]]></description>
+				<content:encoded><![CDATA[<blockquote><p><em><strong>Editors Note</strong>: This is the second post in our blog series Nothing But .Net. Sara Morgan, our resident expert, is an independent Software Developer and long-time .NET programmer who has recently been wooed into the world of Force.com development. She recently filmed her first introductory course covering Visualforce for Lynda.com.</em></p></blockquote>
+<p><img class="alignright wp-image-80621" title="Sara Morgan - Nothing But .Net" alt="Sara Morgan - Nothing But .Net" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411581630/SaraMorgan_120x120_fwiaaw.jpg" width="119" height="120" /></p>
+<p>In January 2014, Salesforce announced the release of two new Open Source <a href="https://github.com/developerforce/Force.com-Toolkit-for-NET">Salesforce Toolkits for .NET</a>. One accessed the <a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/">Force.com REST API</a> and the other the <a href="https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/">Chatter REST API</a>. The new toolkits are just a starting point and they are still a work in progress. However, Salesforce made the very wise decision to make them available as open source and therefore encourage the community to contribute toward their maturation. This article will cover why you would want to use the new toolkits, as well as go over some issues that have been uncovered since their release. It will end with a discussion of what you can do to help expand and enhance the toolkits.</p>
+<h2>Why Use the New Force.com Toolkit for .Net?</h2>
+<p>Both toolkits were built using the <a href="http://msdn.microsoft.com/en-us/library/gg597391.aspx">.NET Framework Portable Class Library </a>project, which means the toolkits can be used to build Windows 7/8/8.1 applications, along with Windows Phone 8, Silverlight 5, and iOS/Android applications using Xamarin and Mono.NET. They also make use of the <a href="http://msdn.microsoft.com/en-us/library/hh191443.aspx">Aync and Await patterns</a> for asynchronous programming and can be installed as NuGet packages. This means they are super fast and easy to install.<br />
+There are plenty of reasons to use the new toolkit when accessing the REST API using oAuth 2.0, but my favorite is the fact that you have to write less code. The REST API returns and accepts data in XML or JSON format. This data must be serialized and de-serialized and even though this process is easier using the new <a href="http://msdn.microsoft.com/en-us/library/system.net.http.httpclient%28v=vs.118%29.aspx">HttpClient library</a> that was made available in .NET 4.5, it is even simpler using the new Toolkits.</p>
+<p>If you have not yet seen the toolkits, I suggest you check out the GitHub repository, which includes documentation as well as four sample applications. The sample applications include a simple console application which uses the username-password flow, as well as Windows 8 and Windows Phone 8 applications. There is also an MVC 5 application that demonstrates how to authenticate using the web-server authentication flow.</p>
+<h2>Supported Visual Studio Versions</h2>
+<p>The new toolkits take advantage of libraries introduced in .NET 4.5 and therefore cannot be used in Visual Studio projects prior to Visual Studio 2012. If you need to work with the Salesforce REST API and you are using an earlier version of Visual Studio (such as Visual Studio 2010), you will need to use an alternative method and deal with all the exhaustive JSON serialization and de-serialization yourself.<br />
+If you find yourself in this unfortunate position, I suggest you check out the last part of this article on the DeveloperForce website. It offers step by step instructions for how to setup your .NET Developer environment and goes over what you need to do to work with the REST API. However, if you are using Visual Studio 2012 or higher and need to connect to the REST API, I suggest you either use the new Force.com Toolkit or utilize the HttpClient class, as described in this <a href="https://developer.salesforce.com/page/Consuming_Force.com_SOAP_and_REST_Web_Services_from_.NET_Applications">Salesforce Developers article</a>.</p>
+<h2>Installing the NuGet Packages</h2>
+<p>The Force.com toolkits come packaged as three NuGet packages available online through Visual Studio’s NuGet Package Manager. There are additional packages that include code templates to give you a jump start to create your application (as seen in Figure 1) however the main toolkit packages are:</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>DeveloperForce.Chatter</strong> – Allows you to interact with the Chatter REST APIs.</li>
+<li><strong>DeveloperForce.Force</strong> – Allows you to interact with the Force.com REST APIs.</li>
+<li><strong>DeveloperForce.Common</strong> – Central library that provides authentication and other common functionality.</li>
+</ul>
+<p><img class="aligncenter wp-image-80591" title="Nothing But .Net" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411579791/Article2-Figure1_scf0zt.png" width="893" height="735" /></p>
+<p>If you happen to be working with an Express version of Visual Studio 2012 or 2013, you may encounter a problem when trying to install the NuGet Packages. The NuGet packages for the Force.com toolkit require that you use NuGet Package Manager 2.8 or higher. As of the printing of this article, Visual Studio Express versions come installed with NuGet 2.7 and thus must be upgraded before you can install the Force.com packages. This can be done by going to the Updates tab in <a href="http://docs.nuget.org/docs/start-here/installing-nuget">Manage NuGet packages</a>.</p>
+<h2>Authenticating to a Sandbox</h2>
+<p>The Force.com toolkit provides two overloaded versions of the <em>UsernamePasswordAsync</em> method used to authenticate a user. These versions allow you to specify the optional <em>userAgent</em> and <em>tokenRequestEndpointURL</em> parameters. If you are logging into a production or developer instance of Salesforce, then you do not need to include these additional parameters. In that case, you can authenticate using the following code:</p>
+<pre>using (var auth = new AuthenticationClient())
+{
+//Authenticate to a Production or Developer Instance
+await auth.UsernamePasswordAsync(
+consumerKey, //Consumer Key found in Connected App Definition
+consumerSecret, //Consumer Secret revealed in Connected App Definition
+userName, //username
+password + token); //password + Token (if needed)
+}</pre>
+<p>If you are authenticating from a Sandbox, then you will need to make sure that your username includes the <em>.sandbox_name</em> at the end (just like you would specify if you were logging into a Sandbox normally). You will also need to include the two additional parameters and make sure the url you specify begins with “test” and not “login”. For example:</p>
+<pre>using (var auth = new AuthenticationClient())
+{
+//Authenticate to a Sandbox Instance
+await auth.UsernamePasswordAsync(
+consumerKey, //Consumer Key found in Connected App Definition
+consumerSecret, //Consumer Secret revealed in Connected App Definition
+userName, //username
+password + token, //password + Token (if needed)
+userAgent, //userAgent
+“https://test.salesforce.com/services/oauth2/token”); //TokenEndpointURL
+}</pre>
+<p>If you are authenticating to a sandbox using the Web-Server authentication flow, you will use first login with a formatted url that must include the “test” prefix for the authorization endpoint URL. For example:</p>
+<pre>var url =
+Common.FormatAuthUrl(
+"https://test.salesforce.com/services/oauth2/authorize", //AuthorizationEndpointURL
+ResponseTypes.Code, //Indicate that we want back authorization code
+consumerKey, //Consumer Key found in Connected App Definition
+HttpUtility.UrlEncode(callbackUrl)); //Callback URL found in Connected App definition
+After the initial login, you will use the WebServerAsync method to handle the callback. With this method the same two overloaded methods are available. Just like with the UserNamePassword flow, if you are connecting to a sandbox, you will need to specify the “test” prefix for the token endpoint URL. For example:
+using (var auth = new AuthenticationClient())
+{
+await auth.WebServerAsync(
+consumerKey, //Consumer Key found in Connected App Definition
+consumerSecret, //Consumer Secret revealed in Connected App Definition
+callbackURL, //Callback URL found in Connected App definition
+code, //authorization code returned from the initial login
+UserAgent, //UserAgent
+"https://test.salesforce.com/services/oauth2/token"); //TokenEndpointURL
+
+}</pre>
+<h2>Known Issues and Enhancements on the Way</h2>
+<p>Since the toolkits introduction back in January, several issues have been reported on the GitHub Repository. Most of these issues have been resolved, but there are still a few outstanding issues. They involve creating a Windows store app package and executing SOQL queries with special characters.</p>
+<p>If you encounter any errors using the new toolkit, I suggest that you report them here on the <a href="https://github.com/developerforce/Force.com-Toolkit-for-NET">GitHub website</a>. The website also lists upcoming enhancements, which at this time include a new WebServerAsync overload and a QueryAll method.</p>
+<h3>What you can do to help</h3>
+<p>One of the biggest drawbacks to using the new toolkits is that they are new and do not support all the API’s that Salesforce offers. This is where the community really needs to step in. There is a big need for more people to get involved by downloading the kit, using it and reporting any issues found. There is also a need for more sample applications and support for additional API’s and oAuth authentications flows. Currently, the new toolkit only supports two of the six available authentication flows: Username-Password and Web-Server.<br />
+I have been a .NET developer for many years now and I know how passionate that community of developers can be. If you work with .NET and Salesforce, this is your big chance. Consider downloading and contributing to the open source code. Get involved and help to build a really great set of .NET toolkits for Force.com.</p>
+<p>Resources:</p>
+<ul>
+<li><a href="https://developer.salesforce.com/blogs/developer-relations/2014/09/accessing-force-com-soap-endpoints-net.html">Other posts in the Nothing But .Net Series</a></li>
+<li><a href="https://developer.salesforce.com/page/Richard_Seroter">Richard Seroter&#8217;s Article Series</a></li>
+</ul>
+<p>&nbsp;</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=rkDm6YOBIS0:w5feVMd1s9Q:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=rkDm6YOBIS0:w5feVMd1s9Q:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=rkDm6YOBIS0:w5feVMd1s9Q:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=rkDm6YOBIS0:w5feVMd1s9Q:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=rkDm6YOBIS0:w5feVMd1s9Q:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=rkDm6YOBIS0:w5feVMd1s9Q:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=rkDm6YOBIS0:w5feVMd1s9Q:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/rkDm6YOBIS0" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/developer-relations/2014/09/nothing-but-dotnet-force-toolkit-dotnet.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/developer-relations/2014/09/nothing-but-dotnet-force-toolkit-dotnet.html</feedburner:origLink></item>
+		<item>
+		<title>The DevZone Technical Consultations are on!  Spots are filling up!</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/g85cIZ01x7U/devzone-technical-consultations-spots-filling-2.html</link>
+		<comments>http://developer.salesforce.com/blogs/developer-relations/2014/09/devzone-technical-consultations-spots-filling-2.html#comments</comments>
+		<pubDate>Wed, 24 Sep 2014 12:00:03 +0000</pubDate>
+		<dc:creator><![CDATA[Sonia Advani]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[dreamforce 2014]]></category>
+
+		<guid isPermaLink="false">http://26.80341</guid>
+		<description><![CDATA[<a href="http://developer.salesforce.com/blogs/developer-relations/2014/09/devzone-technical-consultations-spots-filling-2.html"><img align="right" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411676161/11259689846_f23dba0aee_z_jxv7vi.jpg" class="alignright wp-post-image tfe" alt="" title="" /></a>FREE 1:1 Code Consultations and Career Assessments at Dreamforce 2014 offer you a chance to sit 1:1 with experts to go over code and receive career assessments. Spots are limited, so here's your chance to signup now.]]></description>
+				<content:encoded><![CDATA[<p>This year, there is a lot of amazing things that will be happening within the Developer Zone at Dreamforce 2014, and one of them is the DevZone technical consultations. Your experience won’t be complete without signing up for a FREE 1:1 Code Consultations and Career Assessments using the <a title="Dreamforce Agenda Builder" href="https://success.salesforce.com/loginswitcher?startURL=%2FEv_Sessions">Dreamforce Agenda Builder</a>. Spots are limited, so you&#8217;ll want to sign up in advance for a Technical Consultation and Career Assessment. Doing so will help you get your questions answered by our experts at Dreamforce, and more importantly, boost your developer skills.</p>
+<p><img class="alignnone wp-image-80961" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411676161/11259689846_f23dba0aee_z_jxv7vi.jpg" width="640" height="426" /></p>
+<p>During your Code Consultation session, you will have an opportunity to meet with a Force.com, Heroku and Marketing Cloud experts for 30 minutes in a free private code consultation; From best practice on coding, advice on architecting, current coding you are working or anything else code related! One little tip: do not forget to bring your code for a code walk through!</p>
+<p><img class="alignnone wp-image-80951" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411676153/11261283933_d4e627ed00_z_ul26w6.jpg" width="640" height="427" /></p>
+<p><span style="line-height: 1.5em">Career Assessments are being brought to you courtesy of Hire On-</span><span style="line-height: 1.5em">Demand. They will have two career advisors on site, who will be providing 1:1 advice on the Salesforce1 Platform (Force.com and Heroku) opportunities. Which will help move you to the next level of your career. Take advantage of this great opportunity, and <a title="Devzone Technical Consultations" href="https://success.salesforce.com/loginswitcher?startURL=%2FEv_Sessions">sign up now at the Dreamforce Agenda Builder</a>.</span></p>
+<p><img class="alignnone wp-image-80981" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/v1411676500/11259772145_5ae30cffed_z_buncux.jpg" width="640" height="426" /></p>
+<p><span style="line-height: 1.5em">We will be offering consultations Monday through Thursday, from 8:30am to 6pm, during Dreamforce. Slots have been quickly filling up. So don’t miss out on this great opportunity to receive technical or career guidance from one of our many experts. Go to the </span><a style="line-height: 1.5em" href="https://success.salesforce.com/loginswitcher?startURL=%2FEv_Sessions">Dreamforce Agenda Builder</a><span style="line-height: 1.5em"> to sign up now. See you there!</span></p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=g85cIZ01x7U:AuJtShLLJEE:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=g85cIZ01x7U:AuJtShLLJEE:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=g85cIZ01x7U:AuJtShLLJEE:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=g85cIZ01x7U:AuJtShLLJEE:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=g85cIZ01x7U:AuJtShLLJEE:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=g85cIZ01x7U:AuJtShLLJEE:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=g85cIZ01x7U:AuJtShLLJEE:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/g85cIZ01x7U" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/developer-relations/2014/09/devzone-technical-consultations-spots-filling-2.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/developer-relations/2014/09/devzone-technical-consultations-spots-filling-2.html</feedburner:origLink></item>
+		<item>
+		<title>The 4th Salesforce.com Internal DevOps Conference</title>
+		<link>http://feedproxy.google.com/~r/SforceBlog/~3/U_KNq6-0H-k/the-4th-salesforce-com-internal-devops-conference.html</link>
+		<comments>http://developer.salesforce.com/blogs/engineering/2014/09/the-4th-salesforce-com-internal-devops-conference.html#comments</comments>
+		<pubDate>Tue, 23 Sep 2014 20:11:03 +0000</pubDate>
+		<dc:creator><![CDATA[Dave Mangot]]></dc:creator>
+				<category><![CDATA[Uncategorized]]></category>
+		<category><![CDATA[continuous delivery]]></category>
+		<category><![CDATA[devops]]></category>
+		<category><![CDATA[monitoring]]></category>
+		<category><![CDATA[puppet]]></category>
+		<category><![CDATA[resiliency]]></category>
+		<category><![CDATA[service ownership]]></category>
+		<category><![CDATA[virtualization]]></category>
+
+		<guid isPermaLink="false">http://25.28381</guid>
+		<description><![CDATA[<a href="http://developer.salesforce.com/blogs/engineering/2014/09/the-4th-salesforce-com-internal-devops-conference.html"><img align="right" hspace="5" width="150" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_scale,w_250/v1411502801/IMG_20140909_102915541_tfncrc.jpg" class="alignright wp-post-image tfe" alt="" title="" /></a>At salesforce.com, we're always looking for ways to improve. Delivering value to our customers is something we take very seriously. To that end, we've been holding regular internal DevOps mini-conferences similar in style to the DevOpsDays events. Last week we held our fourth DevOps conference to discuss topics like service ownership and continuous delivery.]]></description>
+				<content:encoded><![CDATA[<p>At salesforce.com, we&#8217;re always looking for ways to improve. Delivering value to our customers is something we take very seriously. To that end, we&#8217;ve been holding regular internal DevOps mini-conferences similar in style to the DevOpsDays events. Recently, we held our fourth DevOps conference.</p>
+<p><img class="wp-image-29021 alignright" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_scale,w_250/v1411502801/IMG_20140909_102915541_tfncrc.jpg" width="250" height="141" /></p>
+<p>We began by taking a look back at all of the things we&#8217;ve been able to accomplish in the last year and a half, and also talked about some of the challenges we see ahead. Then it was time for the Ignite talks – a format that lends itself to the fast exchange of ideas in an entertaining way.</p>
+<p><strong>On the first day of the conference, our Ignite talks were:</strong></p>
+<ul>
+<li>DevOps According to Me: Bala Subramanian, Data.com</li>
+<li>OS Patching Fun: Paul Fitzpatrick</li>
+<li>Puppet &#8211; Self Service: Alan Vaghti</li>
+<li>Resiliency: Keith Stobie</li>
+</ul>
+<p>After our Ignite speakers gave us lots to think about, we broke up into open space breakout session to discuss things like culture, continuous delivery and virtualization.</p>
+<p>Day two began with <a href="https://twitter.com/thefutureian" target="_blank">Ian Varley</a> sharing his thoughts on service ownership and what this looks like at salesforce.com with such a large application and codebase. He was followed by a panel of Salesforce executive leadership including <span style="line-height: 1.5em">Parker Harris, Benji Jasik, Scott Hansma, Paul Constantinides, and Christine Chau who shared their perspectives on the topic with the crowd. The panel turned out to be the driving force behind our discussions the rest of the day.</span></p>
+<p><img class="alignnone wp-image-29011" alt="" src="http://res.cloudinary.com/hzxejch6p/image/upload/c_scale,w_675/v1411502672/IMG_20140910_100132073_HDR_zlzpfx.jpg" width="675" height="380" /></p>
+<p><strong>We again followed with Ignite talks, with a new set of topics:</strong></p>
+<ul>
+<li>Service Engineering 101: Marvin Lam</li>
+<li>Service Ownership for QE : <a href="https://twitter.com/ryanguest" target="_blank">Ryan Guest</a></li>
+<li>Continuous Deployment: Pardot’s Approach: Jan Ulrich, Pardot</li>
+<li>Integration across Businesses: <a href="https://twitter.com/jeaninesw" target="_blank">Jeanine Walters</a></li>
+</ul>
+<p>Our breakout sessions covered topics like monitoring and tools, and more discussion on service ownership and continuous delivery.</p>
+<p>As engineers, we feel very fortunate to be given this opportunity to take time away from our regular jobs to be able to get together and discuss things that we feel we can do even better.   We look forward to sharing our progress with all of you in the community. See you at Dreamforce &#8217;14!</p>
+<p>What do you feel are the drivers that transform a DevOps culture?</p>
+<div class="feedflare">
+<a href="http://feeds.feedburner.com/~ff/SforceBlog?a=U_KNq6-0H-k:m6hUyWxBAdg:yIl2AUoC8zA"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=yIl2AUoC8zA" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=U_KNq6-0H-k:m6hUyWxBAdg:qj6IDK7rITs"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=qj6IDK7rITs" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=U_KNq6-0H-k:m6hUyWxBAdg:V_sGLiPBpWU"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=U_KNq6-0H-k:m6hUyWxBAdg:V_sGLiPBpWU" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=U_KNq6-0H-k:m6hUyWxBAdg:F7zBnMyn0Lo"><img src="http://feeds.feedburner.com/~ff/SforceBlog?i=U_KNq6-0H-k:m6hUyWxBAdg:F7zBnMyn0Lo" border="0"></img></a> <a href="http://feeds.feedburner.com/~ff/SforceBlog?a=U_KNq6-0H-k:m6hUyWxBAdg:l6gmwiTKsz0"><img src="http://feeds.feedburner.com/~ff/SforceBlog?d=l6gmwiTKsz0" border="0"></img></a>
+</div><img src="http://feeds.feedburner.com/~r/SforceBlog/~4/U_KNq6-0H-k" height="1" width="1"/>]]></content:encoded>
+			<wfw:commentRss>http://developer.salesforce.com/blogs/engineering/2014/09/the-4th-salesforce-com-internal-devops-conference.html/feed</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<feedburner:origLink>http://developer.salesforce.com/blogs/engineering/2014/09/the-4th-salesforce-com-internal-devops-conference.html</feedburner:origLink></item>
+	</channel>
+</rss>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>APPROVAL_STAGE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - APPROVAL_STAGE</shortDescription>
+        <value>Needs Approval</value>
+    </labels>
+    <labels>
+        <fullName>CAN_NOT_BE_APPROVED</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - CAN_NOT_BE_APPROVED</shortDescription>
+        <value>Selected Record Cannot be Approved.</value>
+    </labels>
+    <labels>
+        <fullName>CAN_NOT_BE_REJECTED</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - CAN_NOT_BE_REJECTED</shortDescription>
+        <value>Selected Record Cannot be Rejected.</value>
+    </labels>
+    <labels>
+        <fullName>INSERT_CODER_CODE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - INSERT_CODER_CODE</shortDescription>
+        <value>Insert Coder Cost for a record.</value>
+    </labels>
+    <labels>
+        <fullName>PROFESSIONAL_FEES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - PROFESSIONAL FEES</shortDescription>
+        <value>Professional Fees</value>
+    </labels>
+    <labels>
+        <fullName>PROFILE_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - PROFILE_ID</shortDescription>
+        <value>00eA0000000VRx7IAG</value>
+    </labels>
+    <labels>
+        <fullName>SELECT_ATLEAST_RECORD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - SELECT_ATLEAST_RECORD</shortDescription>
+        <value>You have to select at least a record.</value>
+    </labels>
+    <labels>
+        <fullName>STATUS_APPROVED</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - Approved</shortDescription>
+        <value>Approved</value>
+    </labels>
+    <labels>
+        <fullName>STATUS_REJECTED</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - Rejected</shortDescription>
+        <value>Rejected</value>
+    </labels>
+    <labels>
+        <fullName>SUBMITTED_FOR_APPROVAL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - SUBMITTED_FOR_APPROVAL</shortDescription>
+        <value>Submitted Coding Pricing Record for approval.</value>
+    </labels>
+    <labels>
+        <fullName>TOTAL_AVERAGE_REVENUE_MULTIPLE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - TOTAL AVERAGE REVENUE MULTIPLE</shortDescription>
+        <value>TOTAL AVERAGE REVENUE MULTIPLE</value>
+    </labels>
+    <labels>
+        <fullName>TOTAL_CODER_COST</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - TOTAL CODER COST</shortDescription>
+        <value>TOTAL CODER COST</value>
+    </labels>
+    <labels>
+        <fullName>TOTAL_CUSTOMER_PRICE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - TOTAL CUSTOMER PRICE</shortDescription>
+        <value>TOTAL CUSTOMER PRICE</value>
+    </labels>
+    <labels>
+        <fullName>TOTAL_ESTIMATED_CHARTS_PER_HOUR</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - TOTAL ESTIMATED CHARTS PER HOUR</shortDescription>
+        <value>TOTAL ESTIMATED CHARTS PER HOUR</value>
+    </labels>
+    <labels>
+        <fullName>TOTAL_ESTIMATED_HOURLY_PAY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - TOTAL ESTIMATED HOURLY PAY</shortDescription>
+        <value>TOTAL ESTIMATED HOURLY PAY</value>
+    </labels>
+    <labels>
+        <fullName>TOTAL_MONTHLY_COST</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - TOTAL MONTHLY COST</shortDescription>
+        <value>TOTAL MONTHLY COST</value>
+    </labels>
+    <labels>
+        <fullName>TOTAL_MONTHLY_REVENUE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - TOTAL MONTHLY REVENUE</shortDescription>
+        <value>TOTAL MONTHLY REVENUE</value>
+    </labels>
+    <labels>
+        <fullName>TOTAL_QUANTITY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - TOTAL QUANTITY</shortDescription>
+        <value>TOTAL QUANTITY</value>
+    </labels>
+    <labels>
+        <fullName>TYPEOFCODING_AUDIT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - Audit</shortDescription>
+        <value>Audit</value>
+    </labels>
+    <labels>
+        <fullName>TYPEOFCODING_FACILITYASC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - Facility - ASC</shortDescription>
+        <value>Facility - ASC</value>
+    </labels>
+    <labels>
+        <fullName>TYPEOFCODING_FACILITYHOSPITAL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - Facility - Hospital</shortDescription>
+        <value>Facility - Hospital</value>
+    </labels>
+    <labels>
+        <fullName>TYPEOFCODING_OTHER</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - Other</shortDescription>
+        <value>Other</value>
+    </labels>
+    <labels>
+        <fullName>USER_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - USER_ID</shortDescription>
+        <value>005F0000003IUDc</value>
+    </labels>
+    <labels>
+        <fullName>WENDY_CAN_EDIT_COST</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CodingPricingsListViewController - WENDY_CAN_EDIT_COST</shortDescription>
+        <value>Only Wendy can edit coder cost.</value>
+    </labels>
+</CustomLabels>

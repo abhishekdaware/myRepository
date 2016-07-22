@@ -1,0 +1,18 @@
+Hello, 
+
+The following Coder Cost submitted by {!Coding_Specs__c.LastModifiedBy} needs your approval: 
+
+Account: {!Opportunity.Account}
+Opportunity: {!Opportunity.Name}
+Specialty: {!Coding_Specs__c.Specialty__c}
+Monthly Quantity: {!Coding_Specs__c.Monthly_Quantity__c}
+Customer Price: {!Coding_Specs__c.Contract_Revenue__c}
+Coder Cost: {!Coding_Specs__c.Coder_Cost__c}
+Estimated Charts Per Hour: {!Coding_Specs__c.Estimated_Charts_Per_Hour__c}
+Estimated Hourly Pay: {!Coding_Specs__c.Estimated_Hourly_Pay__c}
+Revenue Multiple: {!Coding_Specs__c.Revenue_Multiple__c}
+
+Coder Cost Notes:
+{!Coding_Specs__c.Coder_Cost_Notes__c}
+
+{!Coding_Specs__c.Link}
