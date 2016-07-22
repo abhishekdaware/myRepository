@@ -1,0 +1,24 @@
+public with sharing class Work_Item {
+	
+	 public String ID {get;set;}
+	 public String assignmentID {get;set;}
+	 public String  customerID {get;set;}
+     public dateTime doneDate {get;set;}
+     public string extRefID {get;set;}
+     public boolean isDead {get;set;}
+     public boolean isDone {get;set;}
+     public dateTime lastViewedDate {get;set;}
+     public string objID {get;set;}
+     public string  objObjCode {get;set;}
+     public string opTaskID {get;set;}
+     public  int priority {get;set;}
+     public string projectID {get;set;}
+     public dateTime referenceObjectCommitDate {get;set;}
+     public string referenceObjectName {get;set;}
+     public string securityRootID {get;set;}
+     public string securityRootObjCode {get;set;}
+ 	 public string snoozeDate {get;set;}
+     public string taskID {get;set;}
+     public string userID {get;set;}
+  
+}

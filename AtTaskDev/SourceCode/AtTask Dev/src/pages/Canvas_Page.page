@@ -1,0 +1,3 @@
+<apex:page standardController="Account">
+  <apex:canvasApp applicationName="Canvas_App" entityFields="*"/>
+</apex:page>

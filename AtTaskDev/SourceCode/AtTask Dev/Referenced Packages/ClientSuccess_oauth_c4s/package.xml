@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ClientSuccess_oauth_c4s</fullName>
+    <apiAccessLevel>Unrestricted</apiAccessLevel>
+    <modules>
+        <module>
+            <label>ClientSuccess_oauth_c4s</label>
+            <moduleType>canvas</moduleType>
+            <name>ClientSuccess_oauth_c4s</name>
+            <types>
+                <members>ClientSuccess_oauth_c4sCanvas</members>
+                <name>CanvasMetadata</name>
+            </types>
+            <types>
+                <members>ClientSuccess__ClientSuccess_oauth_c4s</members>
+                <name>Module</name>
+            </types>
+            <version>3.0</version>
+        </module>
+    </modules>
+    <namespacePrefix>ClientSuccess</namespacePrefix>
+    <version>28.0</version>
+</Package>
