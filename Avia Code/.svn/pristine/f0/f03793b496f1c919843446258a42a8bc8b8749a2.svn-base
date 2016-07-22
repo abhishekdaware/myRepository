@@ -1,0 +1,438 @@
+<apex:page standardController="Opportunity" extensions="CodingPricingsListViewController" showHeader="false">
+
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"/>
+    
+    <script type="text/javascript">
+        
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");
+            for(var i=0; i<inputCheckBox.length; i++){
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                    var isDisabled = inputCheckBox[i].disabled;
+                    if(!isDisabled) {
+                        inputCheckBox[i].checked = obj.checked;
+                    }
+                }
+            }
+        }
+        
+    </script>
+    
+    <apex:form id="frm" >
+        <apex:pageBlock title="Submit Healthcare Regional Medical Centre" mode="edit" id="pb1">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Submit For Approval" />
+                <apex:commandButton value="Approve All" />
+                <apex:commandButton value="Reject All" />
+            </apex:pageBlockButtons>
+           
+            <table float="right" style="font-weight: bold;" >
+                <tr>
+                    <td >TOTAL REVENUE : </td>
+                    <td>{!dblTotalRevenue}</td>
+                </tr>
+                <tr>
+                    <td>TOTAL PRICE : </td>
+                    <td>{!dblTotalPrice}</td>
+                </tr>
+                <tr>
+                    <td>TOTAL COST : </td>
+                    <td>{!dblTotalCost}</td>
+                </tr>
+            </table>
+            
+            <apex:pageBlockSection title="Professionl Fees" collapsible="true" columns="1">
+                <apex:outputPanel rendered="{!(codingSpecs_PF_ToBeSelectList == null || codingSpecs_PF_ToBeSelectList.size == 0)}" >
+                    <apex:outputLabel value="There is no Coding Specs whose type of coding is 'Professional Fees' for this Opportunity." />
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!(codingSpecs_PF_ToBeSelectList!= null && codingSpecs_PF_ToBeSelectList.size > 0)}" >
+                    <table border="1" width="100%">
+                        <tr>
+                            <th width="5%" align="left">
+                                <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                            </th>
+                            <th width="15%" align="left"> <!-- Coding Pricing Name -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Name.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Speciality -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Access -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Access__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Type of Coding -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Type_of_Coding__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Coder Cost -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Customer Price -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Revenue Multiple -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Monthly Revenue -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Approval Stage -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}" />
+                            </th>
+                        </tr>
+                        
+                        <apex:repeat value="{!codingSpecs_PF_ToBeSelectList}" var="codSpecs">
+                            <tr>
+                                <td width="5%" align="left" >
+                                    <apex:inputCheckbox value="{!codSpecs.isSelect}" id="inputId"
+                                                        disabled="{!NOT(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval')}" />
+                                </td>
+                                <td width="15%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Name}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Specialty__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Access__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Type_of_Coding__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Contract_Revenue__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Revenue_Multiple__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Revenue__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Approval_Stage__c}"/>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                    
+                    <table float="right" style="font-weight: bold;" >
+                        <tr >
+                            <td> Total Monthly Revenue </td>
+                            <td> {!dblRevenueforProfessional} </td>
+                        </tr>
+                        <tr>
+                            <td> Total Customer Price </td>
+                            <td> {!dblCustomerPriceProfessional} </td>
+                        </tr>
+                        <tr>
+                            <td> Total Coder Cost </td>
+                            <td> {!dblCoderCostforProfessional} </td>
+                        </tr>
+                        <tr>
+                            <td> Average Revenue Multiple </td>
+                            <td> {!dblAverageforProfessional} </td>
+                        </tr>
+                    </table>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Facility - ASC" collapsible="true" columns="1">
+                <apex:outputPanel rendered="{!(codingSpecs_FA_ToBeSelectList == null || codingSpecs_FA_ToBeSelectList.size == 0)}" >
+                    <apex:outputLabel value="There is no Coding Specs whose type of coding is 'Facility - ASC' for this Opportunity." />
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!(codingSpecs_FA_ToBeSelectList!= null && codingSpecs_FA_ToBeSelectList.size > 0)}" >
+                    <table border="1" width="100%">
+                        <tr>
+                            <th width="5%" align="left">
+                                <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                            </th>
+                            <th width="15%" align="left"> <!-- Coding Pricing Name -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Name.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Speciality -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Access -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Access__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Type of Coding -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Type_of_Coding__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Coder Cost -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Customer Price -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Revenue Multiple -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Monthly Revenue -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Approval Stage -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}" />
+                            </th>
+                        </tr>
+                        
+                        <apex:repeat value="{!codingSpecs_FA_ToBeSelectList}" var="codSpecs">
+                            <tr>
+                                <td width="5%" align="left" >
+                                    <apex:inputCheckbox value="{!codSpecs.isSelect}" id="inputId"
+                                                        disabled="{!NOT(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval')}" />
+                                </td>
+                                <td width="15%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Name}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Specialty__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Access__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Type_of_Coding__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Contract_Revenue__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Revenue_Multiple__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Revenue__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Approval_Stage__c}"/>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                    
+                    <table float="right" style="font-weight: bold;" >
+                        <tr >
+                            <td> Total Monthly Revenue </td>
+                            <td> {!dblRevenueforFacilityASC} </td>
+                        </tr>
+                        <tr>
+                            <td> Total Customer Price </td>
+                            <td> {!dblCustomerPriceFacilityASC} </td>
+                        </tr>
+                        <tr>
+                            <td> Total Coder Cost </td>
+                            <td> {!dblCoderCostforFacilityASC} </td>
+                        </tr>
+                        <tr>
+                            <td> Average Revenue Multiple </td>
+                            <td> {!dblAverageforFacilityASC} </td>
+                        </tr>
+                    </table>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Audit" collapsible="true" columns="1">
+                <apex:outputPanel rendered="{!(codingSpecs_A_ToBeSelectList == null || codingSpecs_A_ToBeSelectList.size == 0)}" >
+                    <apex:outputLabel value="There is no Coding Specs whose type of coding is 'Audit' for this Opportunity." />
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!(codingSpecs_A_ToBeSelectList!= null && codingSpecs_A_ToBeSelectList.size > 0)}" >
+                    <table border="1" width="100%">
+                        <tr>
+                            <th width="5%" align="left">
+                                <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                            </th>
+                            <th width="15%" align="left"> <!-- Coding Pricing Name -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Name.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Speciality -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Access -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Access__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Type of Coding -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Type_of_Coding__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Coder Cost -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Customer Price -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Revenue Multiple -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Monthly Revenue -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Approval Stage -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}" />
+                            </th>
+                        </tr>
+                        
+                        <apex:repeat value="{!codingSpecs_A_ToBeSelectList}" var="codSpecs">
+                            <tr>
+                                <td width="5%" align="left" >
+                                    <apex:inputCheckbox value="{!codSpecs.isSelect}" id="inputId"
+                                                        disabled="{!NOT(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval')}" />
+                                </td>
+                                <td width="15%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Name}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Specialty__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Access__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Type_of_Coding__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Contract_Revenue__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Revenue_Multiple__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Revenue__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Approval_Stage__c}"/>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                    
+                    <table float="right" style="font-weight: bold;" >
+                        <tr >
+                            <td> Total Monthly Revenue </td>
+                            <td> {!dblRevenueforAudit} </td>
+                        </tr>
+                        <tr>
+                            <td> Total Customer Price </td>
+                            <td> {!dblCustomerPriceAudit} </td>
+                        </tr>
+                        <tr>
+                            <td> Total Coder Cost </td>
+                            <td> {!dblCoderCostforAudit} </td>
+                        </tr>
+                        <tr>
+                            <td> Average Revenue Multiple </td>
+                            <td> {!dblAverageforAudit} </td>
+                        </tr>
+                    </table>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Facility - Hospital" collapsible="true" columns="1">
+                <apex:outputPanel rendered="{!(codingSpecs_FH_ToBeSelectList == null || codingSpecs_FH_ToBeSelectList.size == 0)}" >
+                    <apex:outputLabel value="There is no Coding Specs whose type of coding is 'Facility - Hospital' for this Opportunity." />
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!(codingSpecs_FH_ToBeSelectList!= null && codingSpecs_FH_ToBeSelectList.size > 0)}" >
+                    <table border="1" width="100%">
+                        <tr>
+                            <th width="5%" align="left">
+                                <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                            </th>
+                            <th width="15%" align="left"> <!-- Coding Pricing Name -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Name.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Speciality -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Specialty__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Access -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Access__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Type of Coding -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Type_of_Coding__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Coder Cost -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Coder_Cost__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Customer Price -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Contract_Revenue__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Revenue Multiple -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Revenue_Multiple__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Monthly Revenue -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Monthly_Revenue__c.label}" />
+                            </th>
+                            <th width="10%" align="left"> <!-- Approval Stage -->
+                                <apex:outputLabel value="{!$ObjectType.Coding_Specs__c.fields.Approval_Stage__c.label}" />
+                            </th>
+                        </tr>
+                        
+                        <apex:repeat value="{!codingSpecs_FH_ToBeSelectList}" var="codSpecs">
+                            <tr>
+                                <td width="5%" align="left" >
+                                    <apex:inputCheckbox value="{!codSpecs.isSelect}" id="inputId"
+                                                        disabled="{!NOT(codSpecs.codingSpecs.Approval_Stage__c == 'Needs Approval')}" />
+                                </td>
+                                <td width="15%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Name}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Specialty__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Access__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Type_of_Coding__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Coder_Cost__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Contract_Revenue__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Revenue_Multiple__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Monthly_Revenue__c}"/>
+                                </td>
+                                <td width="10%" align="left" >
+                                    <apex:outputField value="{!codSpecs.codingSpecs.Approval_Stage__c}"/>
+                                </td>
+                            </tr>
+                        </apex:repeat>
+                    </table>
+                    
+                    <table float="right" style="font-weight: bold;" >
+                        <tr >
+                            <td> Total Monthly Revenue </td>
+                            <td> {!dblRevenueforFacilityHospital} </td>
+                        </tr>
+                        <tr>
+                            <td> Total Customer Price </td>
+                            <td> {!dblCustomerPriceFacilityHospital} </td>
+                        </tr>
+                        <tr>
+                            <td> Total Coder Cost </td>
+                            <td> {!dblCoderCostforFacilityHospital} </td>
+                        </tr>
+                        <tr>
+                            <td> Average Revenue Multiple </td>
+                            <td> {!dblAverageforFacilityHospital} </td>
+                        </tr>
+                    </table>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            
+         </apex:pageBlock>
+</apex:form>
+</apex:page>

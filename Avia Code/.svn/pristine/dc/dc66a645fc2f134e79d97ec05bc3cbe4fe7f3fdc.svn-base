@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#CCCCCC</backgroundColor>
+    <bodyColor>#FAFAFA</bodyColor>
+    <bottomLine>
+        <color>#FAFAFA</color>
+        <height>5</height>
+    </bottomLine>
+    <footer>
+        <backgroundColor>#FAFAFA</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#FAFAFA</backgroundColor>
+        <height>100</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#FAFAFA</color>
+        <height>5</height>
+    </middleLine>
+    <name>Aviacode 2013 Theme</name>
+    <topLine>
+        <color>#FAFAFA</color>
+        <height>5</height>
+    </topLine>
+</Letterhead>

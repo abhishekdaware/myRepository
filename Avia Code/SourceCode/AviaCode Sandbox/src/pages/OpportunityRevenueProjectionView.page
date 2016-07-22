@@ -1,0 +1,34 @@
+<apex:page standardController="Opportunity">
+    <style> .rp-right {text-align:right;} </style>
+    <apex:form >
+        <apex:pageBlock title="Revenue Projections" Mode="edit">            
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton id="New" styleClass="btn" value="New Revenue Projection" action="{!URLFOR($Action.RevenueProjection__c.New, opportunity.id)}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!Opportunity.RevenueProjections__r}" var="projection">
+                <apex:column styleClass="actionColumn" headerValue="Action">
+                    <apex:commandLink styleClass="actionLink" id="Edit" action="{!URLFOR('/'+projection.id+'/e?retURL='+opportunity.id)}" value="Edit" />&nbsp;|&nbsp;
+                    <apex:commandLink styleClass="actionLink" id="Del" onClick="return confirm('Are you sure?');" action="{!URLFOR('/setup/own/deleteredirect.jsp?delID='+projection.id+'&retURL='+opportunity.id)}" value="Del" />
+                </apex:column>
+                <apex:column width="8%" headerValue="Year" style="font-weight:bold;" value="{!projection.Year__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Jan" value="{!projection.January__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Feb" value="{!projection.February__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Mar" value="{!projection.March__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Apr" value="{!projection.April__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="May" value="{!projection.May__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Jun" value="{!projection.June__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Jul" value="{!projection.July__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Aug" value="{!projection.August__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Sep" value="{!projection.September__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Oct" value="{!projection.October__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Nov" value="{!projection.November__c}"/>
+                <apex:column width="5%" headerClass="rp-right" styleClass="rp-right" headerValue="Dec" value="{!projection.December__c}"/>
+                <apex:column width="8%" headerClass="rp-right" styleClass="rp-right" headerValue="Total" style="font-weight:bold;" value="{!projection.Total__c}"/>
+                <apex:column width="20%" headerValue="Last Modified By">
+                    <apex:commandLink id="ModifiedBy" action="/{!projection.LastModifiedBy.Id}" value="{!projection.LastModifiedBy.Name}" />
+                    <apex:outputText value=", {!projection.LastModifiedDate}" /> 
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

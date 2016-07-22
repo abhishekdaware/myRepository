@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Revenue Projection</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Revenue Projections</value>
+    </caseValues>
+    <fields>
+        <label><!-- Apr --></label>
+        <name>April__c</name>
+    </fields>
+    <fields>
+        <label><!-- Aug --></label>
+        <name>August__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dec --></label>
+        <name>December__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feb --></label>
+        <name>February__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jan --></label>
+        <name>January__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jul --></label>
+        <name>July__c</name>
+    </fields>
+    <fields>
+        <label><!-- Jun --></label>
+        <name>June__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mar --></label>
+        <name>March__c</name>
+    </fields>
+    <fields>
+        <label><!-- May --></label>
+        <name>May__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nov --></label>
+        <name>November__c</name>
+    </fields>
+    <fields>
+        <label><!-- Oct --></label>
+        <name>October__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Revenue Projections --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sep --></label>
+        <name>September__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year --></label>
+        <name>Year__c</name>
+    </fields>
+    <layouts>
+        <layout>Revenue Projection Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeApril</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeAugust</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeDecember</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeFebruary</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeJanuary</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeJuly</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeJune</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeMarch</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeMay</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeNovember</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeOctober</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Past revenue projections may not be changed. --></errorMessage>
+        <name>PastCantChangeSeptember</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The year may not be changed once created. --></errorMessage>
+        <name>YearCantBeChanged</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Must be the current year or up to 5 years in the future. --></errorMessage>
+        <name>YearIsCurrentOrFuture</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter the year in the format YYYY. --></errorMessage>
+        <name>YearIsValid</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_Revenue_Projection_Opp --></label>
+        <name>New_Revenue_Projection_Opp</name>
+    </webLinks>
+</CustomObjectTranslation>

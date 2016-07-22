@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Coder Cost Needed</fullName>
+        <protected>false</protected>
+        <recipients>
+            <recipient>wendy.gagnon@aviacode.com.default</recipient>
+            <type>user</type>
+        </recipients>
+        <template>Product_Approvals/Coder_Cost</template>
+    </alerts>
+    <alerts>
+        <fullName>Coder_Cost%5F%5Fc</fullName>
+        <protected>false</protected>
+        <recipients>
+            <type>creator</type>
+        </recipients>
+        <template>Product_Approvals/Coder_Cost_Is_Changed</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval Stage</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Pending VP of Sales Approval</literalValue>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Approved</literalValue>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CEO Approval</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Approved</literalValue>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CFO Approval</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Pending CEO Approval</literalValue>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Recalled</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Recalled</literalValue>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Rejected</literalValue>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VP of Coding Approval</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Pending CFO Approval</literalValue>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>VP of Sales Approval Update</fullName>
+        <field>Approval_Stage__c</field>
+        <literalValue>Pending CFO Approval</literalValue>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Coder Cost</fullName>
+        <actions>
+            <name>Coder Cost Needed</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Workflow rule to alert Wendy when new costing is required</description>
+        <formula>OR(ISCHANGED( Coder_Cost__c ), ISBLANK(Coder_Cost__c) )</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Coder Cost Is Changed</fullName>
+        <actions>
+            <name>Coder_Cost%5F%5Fc</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <formula>ISCHANGED( Coder_Cost__c)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,13 @@
+#Tue Sep 30 16:04:21 IST 2014
+eclipse.preferences.version=1
+endpointApiVersion=28.0
+endpointEnvironment=Sandbox
+endpointServer=test.salesforce.com
+httpsProtocol=true
+ideVersion=28.0
+keependpoint=false
+metadataFormatVersion=28.0
+namespacePrefix=
+packageName=unpackaged
+readTimeout=400
+username=kyazma@aviacode.com.default

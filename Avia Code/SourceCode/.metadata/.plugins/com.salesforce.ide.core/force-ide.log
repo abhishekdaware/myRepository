@@ -1,0 +1,877 @@
+ WARN [2014-12-23 18:09:47,260] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 18:13:14,804] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 18:21:05,634] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 18:39:33,763] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 18:39:47,468] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 18:51:22,159] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 18:56:08,905] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 18:56:31,175] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 19:04:00,529] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 19:04:03,237] (ProjectService.java:handleDeployResult:1909) - Save failed!
+ WARN [2014-12-23 19:04:03,247] (ProjectService.java:handleRetrieveResult:2085) - Nothing to save to project - retrieve result is empty
+ WARN [2014-12-23 19:05:06,518] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 19:20:02,107] (ApexCodeEditor.java:getStatementNear:789) - An error occured while parsing the AST, the last cached version of the AST is being used
+apex.parser.ApexParseException: unexpected token: 'public'
+	at apex.parser.ApexParser.parseClass(ApexParser.java:85)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexClzParser.parseClass(IdeApexClzParser.java:58)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexClzParser.parse(IdeApexClzParser.java:35)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getStatementNear(ApexCodeEditor.java:786)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getSourceElementAt(ApexCodeEditor.java:745)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.computeHighlightRangeSourceReference(ApexCodeEditor.java:741)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.selectionChanged(ApexCodeEditor.java:605)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor$EditorSelectionChangedListener.selectionChanged(ApexCodeEditor.java:598)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2749)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2697)
+	at org.eclipse.jface.text.TextViewer$5.run(TextViewer.java:2676)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4266)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3353)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2530)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3752)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: NoViableAltException(35@[463:1: memberDecl[IContainer c, Modifiers o] : ( memberDeclaration[c, o] | n= identifier m= methodDeclaratorRest[c, null, o, n] | innerTypeDecl[c, o] );])
+	at org.antlr.runtime.DFA.noViableAlt(DFA.java:158)
+	at org.antlr.runtime.DFA.predict(DFA.java:116)
+	at apex.parser.gen.ApexParser.memberDecl(ApexParser.java:2379)
+	at apex.parser.gen.ApexParser.classBodyDeclaration(ApexParser.java:1178)
+	at apex.parser.gen.ApexParser.classDeclaration(ApexParser.java:561)
+	at apex.parser.gen.ApexParser.typeDeclaration(ApexParser.java:397)
+	at apex.parser.ApexParser.parseClass(ApexParser.java:79)
+	... 36 more
+ WARN [2014-12-23 19:25:10,976] (ApexCodeEditor.java:getStatementNear:789) - An error occured while parsing the AST, the last cached version of the AST is being used
+apex.parser.ApexParseException: expecting a semi-colon, found 'codingSpecs_FH_ToBeSelectList'
+	at apex.parser.ApexParser.parseClass(ApexParser.java:85)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexClzParser.parseClass(IdeApexClzParser.java:58)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexClzParser.parse(IdeApexClzParser.java:35)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getStatementNear(ApexCodeEditor.java:786)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getSourceElementAt(ApexCodeEditor.java:745)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.computeHighlightRangeSourceReference(ApexCodeEditor.java:741)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.selectionChanged(ApexCodeEditor.java:605)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor$EditorSelectionChangedListener.selectionChanged(ApexCodeEditor.java:598)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2749)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2697)
+	at org.eclipse.jface.text.TextViewer$5.run(TextViewer.java:2676)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4266)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3353)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2530)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3752)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: MismatchedTokenException(142!=105)
+	at apex.parser.gen.ApexParser.recoverFromMismatchedToken(ApexParser.java:266)
+	at org.antlr.runtime.BaseRecognizer.match(BaseRecognizer.java:115)
+	at apex.parser.gen.ApexParser.localVariableDeclarationStatement(ApexParser.java:1691)
+	at apex.parser.gen.ApexParser.blockStatement(ApexParser.java:1636)
+	at apex.parser.gen.ApexParser.block(ApexParser.java:1590)
+	at apex.parser.gen.ApexParser.methodDeclaratorRest(ApexParser.java:3707)
+	at apex.parser.gen.ApexParser.methodDeclaration(ApexParser.java:3641)
+	at apex.parser.gen.ApexParser.memberDeclaration(ApexParser.java:2458)
+	at apex.parser.gen.ApexParser.memberDecl(ApexParser.java:2385)
+	at apex.parser.gen.ApexParser.classBodyDeclaration(ApexParser.java:1178)
+	at apex.parser.gen.ApexParser.classDeclaration(ApexParser.java:561)
+	at apex.parser.gen.ApexParser.typeDeclaration(ApexParser.java:397)
+	at apex.parser.ApexParser.parseClass(ApexParser.java:79)
+	... 36 more
+ WARN [2014-12-23 19:25:24,035] (ApexCodeEditor.java:getStatementNear:789) - An error occured while parsing the AST, the last cached version of the AST is being used
+apex.parser.ApexParseException: expecting a semi-colon, found 'codingSpecs_FH_ToBeSelectList'
+	at apex.parser.ApexParser.parseClass(ApexParser.java:85)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexClzParser.parseClass(IdeApexClzParser.java:58)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexClzParser.parse(IdeApexClzParser.java:35)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getStatementNear(ApexCodeEditor.java:786)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getSourceElementAt(ApexCodeEditor.java:745)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.computeHighlightRangeSourceReference(ApexCodeEditor.java:741)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.selectionChanged(ApexCodeEditor.java:605)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor$EditorSelectionChangedListener.selectionChanged(ApexCodeEditor.java:598)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2749)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2697)
+	at org.eclipse.jface.text.TextViewer$5.run(TextViewer.java:2676)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4266)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3353)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2530)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3752)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: MismatchedTokenException(142!=105)
+	at apex.parser.gen.ApexParser.recoverFromMismatchedToken(ApexParser.java:266)
+	at org.antlr.runtime.BaseRecognizer.match(BaseRecognizer.java:115)
+	at apex.parser.gen.ApexParser.localVariableDeclarationStatement(ApexParser.java:1691)
+	at apex.parser.gen.ApexParser.blockStatement(ApexParser.java:1636)
+	at apex.parser.gen.ApexParser.block(ApexParser.java:1590)
+	at apex.parser.gen.ApexParser.methodDeclaratorRest(ApexParser.java:3707)
+	at apex.parser.gen.ApexParser.methodDeclaration(ApexParser.java:3641)
+	at apex.parser.gen.ApexParser.memberDeclaration(ApexParser.java:2458)
+	at apex.parser.gen.ApexParser.memberDecl(ApexParser.java:2385)
+	at apex.parser.gen.ApexParser.classBodyDeclaration(ApexParser.java:1178)
+	at apex.parser.gen.ApexParser.classDeclaration(ApexParser.java:561)
+	at apex.parser.gen.ApexParser.typeDeclaration(ApexParser.java:397)
+	at apex.parser.ApexParser.parseClass(ApexParser.java:79)
+	... 36 more
+ WARN [2014-12-23 19:29:44,061] (ApexCodeEditor.java:getStatementNear:789) - An error occured while parsing the AST, the last cached version of the AST is being used
+apex.parser.ApexParseException: multi-line comment not terminated
+	at com.salesforce.ide.ui.editors.apex.outline.AstUtils.removeComments(AstUtils.java:725)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexParserFactory.newParser(IdeApexParserFactory.java:45)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getStatementNear(ApexCodeEditor.java:784)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getSourceElementAt(ApexCodeEditor.java:745)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.computeHighlightRangeSourceReference(ApexCodeEditor.java:741)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.selectionChanged(ApexCodeEditor.java:605)
+	at com.salesforce.ide.ui.editors.apex.AstEditor$1.run(AstEditor.java:45)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4140)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3757)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+ WARN [2014-12-23 19:29:44,091] (ApexCodeEditor.java:getStatementNear:789) - An error occured while parsing the AST, the last cached version of the AST is being used
+apex.parser.ApexParseException: multi-line comment not terminated
+	at com.salesforce.ide.ui.editors.apex.outline.AstUtils.removeComments(AstUtils.java:725)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexParserFactory.newParser(IdeApexParserFactory.java:45)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getStatementNear(ApexCodeEditor.java:784)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getSourceElementAt(ApexCodeEditor.java:745)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.computeHighlightRangeSourceReference(ApexCodeEditor.java:741)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.selectionChanged(ApexCodeEditor.java:605)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor$EditorSelectionChangedListener.selectionChanged(ApexCodeEditor.java:598)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2749)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2697)
+	at org.eclipse.jface.text.TextViewer$5.run(TextViewer.java:2676)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4266)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3353)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2530)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3752)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+ WARN [2014-12-23 19:29:46,461] (ApexCodeEditor.java:getStatementNear:789) - An error occured while parsing the AST, the last cached version of the AST is being used
+apex.parser.ApexParseException: multi-line comment not terminated
+	at com.salesforce.ide.ui.editors.apex.outline.AstUtils.removeComments(AstUtils.java:725)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexParserFactory.newParser(IdeApexParserFactory.java:45)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getStatementNear(ApexCodeEditor.java:784)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getSourceElementAt(ApexCodeEditor.java:745)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.computeHighlightRangeSourceReference(ApexCodeEditor.java:741)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.selectionChanged(ApexCodeEditor.java:605)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor$EditorSelectionChangedListener.selectionChanged(ApexCodeEditor.java:598)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2749)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2697)
+	at org.eclipse.jface.text.TextViewer$5.run(TextViewer.java:2676)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4266)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3353)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2530)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3752)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+ WARN [2014-12-23 19:30:23,331] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 19:30:47,296] (ApexCodeEditor.java:getStatementNear:789) - An error occured while parsing the AST, the last cached version of the AST is being used
+apex.parser.ApexParseException: unexpected token: ')'
+	at apex.parser.ApexParser.parseClass(ApexParser.java:85)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexClzParser.parseClass(IdeApexClzParser.java:58)
+	at com.salesforce.ide.ui.editors.apex.ast.IdeApexClzParser.parse(IdeApexClzParser.java:35)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getStatementNear(ApexCodeEditor.java:786)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.getSourceElementAt(ApexCodeEditor.java:745)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.computeHighlightRangeSourceReference(ApexCodeEditor.java:741)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor.selectionChanged(ApexCodeEditor.java:605)
+	at com.salesforce.ide.ui.editors.apex.ApexCodeEditor$EditorSelectionChangedListener.selectionChanged(ApexCodeEditor.java:598)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2749)
+	at org.eclipse.jface.text.TextViewer.firePostSelectionChanged(TextViewer.java:2697)
+	at org.eclipse.jface.text.TextViewer$5.run(TextViewer.java:2676)
+	at org.eclipse.swt.widgets.Display.runTimer(Display.java:4266)
+	at org.eclipse.swt.widgets.Display.messageProc(Display.java:3353)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2530)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3752)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+Caused by: NoViableAltException(108@[814:1: unaryExpr[IContainer c] returns [IExpression ret] : (t= PLUS e= unaryExpr[c] | t= DASH e= unaryExpr[c] | t= PLUS_PLUS e= unaryExpr[c] | t= MINUS_MINUS e= unaryExpr[c] | t= TILDE e= unaryExpr[c] | t= SCRIPT_NOT e= unaryExpr[c] | ( LPAREN type RPAREN preOperator )=>t= LPAREN dt= type RPAREN e= unaryExpr[c] | ( type '.' CLASS )=>tp= type '.' CLASS | e= primary[c] (e= selector[c, e] )* ( options {backtrack=true; } : t= PLUS_PLUS | t= MINUS_MINUS )? );])
+	at apex.parser.gen.ApexParser$DFA92.specialStateTransition(ApexParser.java:21524)
+	at org.antlr.runtime.DFA.predict(DFA.java:80)
+	at apex.parser.gen.ApexParser.unaryExpr(ApexParser.java:6851)
+	at apex.parser.gen.ApexParser.multDivExpr(ApexParser.java:6762)
+	at apex.parser.gen.ApexParser.addSubExpr(ApexParser.java:6702)
+	at apex.parser.gen.ApexParser.shiftExpr(ApexParser.java:6593)
+	at apex.parser.gen.ApexParser.comparisonExpr(ApexParser.java:6473)
+	at apex.parser.gen.ApexParser.bitwiseExpr(ApexParser.java:6402)
+	at apex.parser.gen.ApexParser.andExpr(ApexParser.java:6330)
+	at apex.parser.gen.ApexParser.orExpr(ApexParser.java:6262)
+	at apex.parser.gen.ApexParser.ternaryExpr(ApexParser.java:6195)
+	at apex.parser.gen.ApexParser.assignExpr(ApexParser.java:6126)
+	at apex.parser.gen.ApexParser.expression(ApexParser.java:6052)
+	at apex.parser.gen.ApexParser.expressionList(ApexParser.java:8647)
+	at apex.parser.gen.ApexParser.arguments(ApexParser.java:8605)
+	at apex.parser.gen.ApexParser.primary(ApexParser.java:7663)
+	at apex.parser.gen.ApexParser.unaryExpr(ApexParser.java:6984)
+	at apex.parser.gen.ApexParser.multDivExpr(ApexParser.java:6762)
+	at apex.parser.gen.ApexParser.addSubExpr(ApexParser.java:6684)
+	at apex.parser.gen.ApexParser.shiftExpr(ApexParser.java:6593)
+	at apex.parser.gen.ApexParser.comparisonExpr(ApexParser.java:6473)
+	at apex.parser.gen.ApexParser.bitwiseExpr(ApexParser.java:6402)
+	at apex.parser.gen.ApexParser.andExpr(ApexParser.java:6330)
+	at apex.parser.gen.ApexParser.orExpr(ApexParser.java:6262)
+	at apex.parser.gen.ApexParser.ternaryExpr(ApexParser.java:6195)
+	at apex.parser.gen.ApexParser.assignExpr(ApexParser.java:6126)
+	at apex.parser.gen.ApexParser.expression(ApexParser.java:6052)
+	at apex.parser.gen.ApexParser.statementExpression(ApexParser.java:4818)
+	at apex.parser.gen.ApexParser.statement(ApexParser.java:4611)
+	at apex.parser.gen.ApexParser.blockStatement(ApexParser.java:1650)
+	at apex.parser.gen.ApexParser.block(ApexParser.java:1590)
+	at apex.parser.gen.ApexParser.methodDeclaratorRest(ApexParser.java:3707)
+	at apex.parser.gen.ApexParser.methodDeclaration(ApexParser.java:3641)
+	at apex.parser.gen.ApexParser.memberDeclaration(ApexParser.java:2458)
+	at apex.parser.gen.ApexParser.memberDecl(ApexParser.java:2385)
+	at apex.parser.gen.ApexParser.classBodyDeclaration(ApexParser.java:1178)
+	at apex.parser.gen.ApexParser.classDeclaration(ApexParser.java:561)
+	at apex.parser.gen.ApexParser.typeDeclaration(ApexParser.java:397)
+	at apex.parser.ApexParser.parseClass(ApexParser.java:79)
+	... 36 more
+ WARN [2014-12-23 19:31:09,195] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-23 21:10:37,350] (ConnectionFactory.java:clearCache:212) - Clearing the following cached connections
+ WARN [2014-12-23 21:10:37,350] (DescribeObjectRegistry.java:clearCache:657) - Clearing cached describes
+ WARN [2014-12-23 21:10:37,360] (MetadataFactory.java:clearCache:123) - Clearing the following cached metadata stubs
+ WARN [2014-12-24 12:42:48,584] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_Bulk_oauth/ConnectivityDevConfigs/Dataloader_Bulk_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,691] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_Bulk_oauth/modules/sf_com_apps__Dataloader_Bulk_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,696] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Dataloader_Bulk', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,700] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_P5r_oauth/ConnectivityDevConfigs/Dataloader_P5r_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,704] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_P5r_oauth/modules/sf_com_apps__Dataloader_P5r_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,707] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Dataloader_Partner', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,712] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_IDE_oauth/ConnectivityDevConfigs/Forcecom_IDE_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,716] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_IDE_oauth/modules/sf_com_apps__Forcecom_IDE_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,721] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Forcecom_IDE', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,725] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_Migration_Tool_oauth/ConnectivityDevConfigs/Forcecom_Migration_Tool_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,729] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_Migration_Tool_oauth/modules/sf_com_apps__Forcecom_Migration_Tool_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,734] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Forcecom_Migration_Tool', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,737] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_M4e_Dashboards_oauth/ConnectivityDevConfigs/S8e_M4e_Dashboards_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,740] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_M4e_Dashboards_oauth/modules/sf_com_apps__S8e_M4e_Dashboards_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,745] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_Mobile_Dashboards', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,748] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_T3h_oauth/ConnectivityDevConfigs/S8e_T3h_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,752] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_T3h_oauth/modules/sf_com_apps__S8e_T3h_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,755] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_Touch', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,759] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_for_Outlook_oauth/ConnectivityDevConfigs/S8e_for_Outlook_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,763] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_for_Outlook_oauth/modules/sf_com_apps__S8e_for_Outlook_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,767] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_for_Outlook', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,770] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth_c4s/Canvases/Workbench_oauth_c4sCanvas.Canvas', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,773] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth_c4s/modules/sf_com_apps__Workbench_oauth_c4s', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,778] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth/ConnectivityDevConfigs/Workbench_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,781] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth/modules/sf_com_apps__Workbench_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-24 12:42:48,785] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Workbench', tagging as component of type 'Unknown'
+ERROR [2014-12-24 12:42:48,788] (ProjectPackageList.java:generateComponents:473) - Filepath-zip mapping is null or empty for package 'Salesforce Connected Apps' [0A3F0000000EXbYKAW] - skipping component generation
+ WARN [2014-12-24 12:42:51,364] (ProjectPackageList.java:saveResources:1153) - Component list in project package 'Salesforce Connected Apps' is empty.  No resources to save.
+ WARN [2014-12-24 12:58:26,328] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-24 12:58:53,608] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-24 15:01:19,969] (ConnectionFactory.java:clearCache:212) - Clearing the following cached connections
+ WARN [2014-12-24 15:01:19,969] (DescribeObjectRegistry.java:clearCache:657) - Clearing cached describes
+ WARN [2014-12-24 15:01:19,979] (MetadataFactory.java:clearCache:123) - Clearing the following cached metadata stubs
+ WARN [2014-12-30 12:17:12,199] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_Bulk_oauth/ConnectivityDevConfigs/Dataloader_Bulk_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,269] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_Bulk_oauth/modules/sf_com_apps__Dataloader_Bulk_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,279] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Dataloader_Bulk', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,289] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_P5r_oauth/ConnectivityDevConfigs/Dataloader_P5r_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,289] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Dataloader_P5r_oauth/modules/sf_com_apps__Dataloader_P5r_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,299] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Dataloader_Partner', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,299] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_IDE_oauth/ConnectivityDevConfigs/Forcecom_IDE_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,299] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_IDE_oauth/modules/sf_com_apps__Forcecom_IDE_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,309] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Forcecom_IDE', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,309] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_Migration_Tool_oauth/ConnectivityDevConfigs/Forcecom_Migration_Tool_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,319] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Forcecom_Migration_Tool_oauth/modules/sf_com_apps__Forcecom_Migration_Tool_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,319] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Forcecom_Migration_Tool', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,319] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_M4e_Dashboards_oauth/ConnectivityDevConfigs/S8e_M4e_Dashboards_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,329] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_M4e_Dashboards_oauth/modules/sf_com_apps__S8e_M4e_Dashboards_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,329] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_Mobile_Dashboards', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,329] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_T3h_oauth/ConnectivityDevConfigs/S8e_T3h_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,349] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_T3h_oauth/modules/sf_com_apps__S8e_T3h_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,349] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_Touch', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,349] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_for_Outlook_oauth/ConnectivityDevConfigs/S8e_for_Outlook_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,363] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/S8e_for_Outlook_oauth/modules/sf_com_apps__S8e_for_Outlook_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,367] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Salesforce_for_Outlook', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,371] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth_c4s/Canvases/Workbench_oauth_c4sCanvas.Canvas', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,375] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth_c4s/modules/sf_com_apps__Workbench_oauth_c4s', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,378] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth/ConnectivityDevConfigs/Workbench_oauth_devConfig.ConnectivityDevConfig', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,382] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'modules/Workbench_oauth/modules/sf_com_apps__Workbench_oauth', tagging as component of type 'Unknown'
+ WARN [2014-12-30 12:17:12,385] (ComponentFactory.java:getComponentByFilePath:613) - No id found for filepath 'applicationManifests/Workbench', tagging as component of type 'Unknown'
+ERROR [2014-12-30 12:17:12,389] (ProjectPackageList.java:generateComponents:473) - Filepath-zip mapping is null or empty for package 'Salesforce Connected Apps' [0A3F0000000EXbYKAW] - skipping component generation
+ WARN [2014-12-30 12:17:15,539] (ProjectPackageList.java:saveResources:1153) - Component list in project package 'Salesforce Connected Apps' is empty.  No resources to save.
+ WARN [2014-12-30 12:34:23,000] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-30 12:36:13,061] (BuilderPayload.java:filterComponentsInConflict:264) - Retrieve result contains problem messages:
+ (1) package.xml: Entity type 'ApprovalProcess' is not available in this api version
+ (2) package.xml: Entity type 'AuthProvider' is not available in this api version
+ (3) package.xml: Entity type 'CallCenter' is not available in this api version
+ (4) package.xml: Entity type 'Community' is not available in this api version
+ (5) package.xml: Entity type 'CustomApplicationComponent' is not available in this api version
+ (6) package.xml: Entity type 'DataCategoryGroup' is not available in this api version
+ (7) package.xml: Entity type 'Flow' is not available in this api version
+ (8) package.xml: Entity type 'Group' is not available in this api version
+ (9) package.xml: Entity type 'PermissionSet' is not available in this api version
+ (10) package.xml: Entity type 'Queue' is not available in this api version
+ (11) package.xml: Entity type 'QuickAction' is not available in this api version
+ (12) package.xml: Entity type 'RemoteSiteSetting' is not available in this api version
+ (13) package.xml: Entity type 'Role' is not available in this api version
+ (14) package.xml: Entity type 'AddressSettings' is not available in this api version
+ (15) package.xml: Entity type 'MobileSettings' is not available in this api version
+ (16) package.xml: Entity type 'ChatterAnswersSettings' is not available in this api version
+ (17) package.xml: Entity type 'IdeasSettings' is not available in this api version
+ (18) package.xml: Entity type 'ContractSettings' is not available in this api version
+ (19) package.xml: Entity type 'QuoteSettings' is not available in this api version
+ (20) package.xml: Entity type 'LiveAgentSettings' is not available in this api version
+ (21) package.xml: Entity type 'ProductSettings' is not available in this api version
+ (22) package.xml: Entity type 'OpportunitySettings' is not available in this api version
+ (23) package.xml: Entity type 'ActivitiesSettings' is not available in this api version
+ (24) package.xml: Entity type 'KnowledgeSettings' is not available in this api version
+ (25) package.xml: Entity type 'CaseSettings' is not available in this api version
+ (26) package.xml: Entity type 'SecuritySettings' is not available in this api version
+ (27) package.xml: Entity type 'EntitlementSettings' is not available in this api version
+ (28) package.xml: Entity type 'CompanySettings' is not available in this api version
+ WARN [2014-12-30 17:32:31,652] (ConnectionFactory.java:clearCache:212) - Clearing the following cached connections
+ WARN [2014-12-30 17:32:31,701] (DescribeObjectRegistry.java:clearCache:657) - Clearing cached describes
+ WARN [2014-12-30 17:32:31,705] (MetadataFactory.java:clearCache:123) - Clearing the following cached metadata stubs

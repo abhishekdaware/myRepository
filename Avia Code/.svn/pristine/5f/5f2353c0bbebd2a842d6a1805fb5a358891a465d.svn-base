@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A &quot;Revenue Projection&quot; is an Aviacode custom object for forecasting future revenue by year.</description>
+    <enableActivities>false</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>April__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Apr</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>August__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Aug</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>December__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Dec</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>February__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Feb</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>January__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Jan</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>July__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Jul</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>June__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Jun</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>March__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Mar</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>May__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>May</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>November__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Nov</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>October__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Oct</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Revenue Projections</relationshipLabel>
+        <relationshipName>RevenueProjections</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>September__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Sep</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total__c</fullName>
+        <description>Total projection for the calendar year.</description>
+        <externalId>false</externalId>
+        <formula>January__c  +  February__c + March__c + April__c + May__c + June__c + July__c + August__c + September__c + October__c + November__c + December__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <defaultValue>TEXT(YEAR(TODAY()))</defaultValue>
+        <description>Calendar year for the projection (YYYY).</description>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <length>4</length>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Revenue Projection</label>
+    <nameField>
+        <displayFormat>RP-{0000}</displayFormat>
+        <label>RevenueProjectionID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Revenue Projections</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>PastCantChangeApril</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(April__c) &amp;&amp; MONTH(today()) &gt; 4)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(April__c))</errorConditionFormula>
+        <errorDisplayField>April__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeAugust</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(August__c) &amp;&amp; MONTH(today()) &gt; 8)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(August__c))</errorConditionFormula>
+        <errorDisplayField>August__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeDecember</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(December__c) &amp;&amp; MONTH(today()) &gt; 12)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(December__c))</errorConditionFormula>
+        <errorDisplayField>December__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeFebruary</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(February__c) &amp;&amp; MONTH(today()) &gt; 2)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(February__c))</errorConditionFormula>
+        <errorDisplayField>February__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeJanuary</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(January__c) &amp;&amp; MONTH(today()) &gt; 1)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(January__c))</errorConditionFormula>
+        <errorDisplayField>January__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeJuly</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(July__c) &amp;&amp; MONTH(today()) &gt; 7)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(July__c))</errorConditionFormula>
+        <errorDisplayField>July__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeJune</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(June__c) &amp;&amp; MONTH(today()) &gt; 6)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(June__c))</errorConditionFormula>
+        <errorDisplayField>June__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeMarch</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(March__c) &amp;&amp; MONTH(today()) &gt; 3)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(March__c))</errorConditionFormula>
+        <errorDisplayField>March__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeMay</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(May__c) &amp;&amp; MONTH(today()) &gt; 5)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(May__c))</errorConditionFormula>
+        <errorDisplayField>May__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeNovember</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(November__c) &amp;&amp; MONTH(today()) &gt; 11)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(November__c))</errorConditionFormula>
+        <errorDisplayField>November__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeOctober</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(October__c) &amp;&amp; MONTH(today()) &gt; 10)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(October__c))</errorConditionFormula>
+        <errorDisplayField>October__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PastCantChangeSeptember</fullName>
+        <active>true</active>
+        <errorConditionFormula>(VALUE(Year__c) = YEAR(today())  &amp;&amp; ISCHANGED(September__c) &amp;&amp; MONTH(today()) &gt; 9)
+||
+(VALUE(Year__c) &lt; YEAR(today()) &amp;&amp;  ISCHANGED(September__c))</errorConditionFormula>
+        <errorDisplayField>September__c</errorDisplayField>
+        <errorMessage>Past revenue projections may not be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>YearCantBeChanged</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED( Year__c )</errorConditionFormula>
+        <errorDisplayField>Year__c</errorDisplayField>
+        <errorMessage>The year may not be changed once created.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>YearIsCurrentOrFuture</fullName>
+        <active>true</active>
+        <errorConditionFormula>VALUE(Year__c) &lt; YEAR(TODAY())  ||  VALUE(Year__c) &gt; YEAR(TODAY()) + 5</errorConditionFormula>
+        <errorDisplayField>Year__c</errorDisplayField>
+        <errorMessage>Must be the current year or up to 5 years in the future.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>YearIsValid</fullName>
+        <active>true</active>
+        <description>Year must be a 4-digit year.</description>
+        <errorConditionFormula>LEN(Year__c) &lt;&gt; 4 &amp;&amp;  ISNUMBER(Year__c)</errorConditionFormula>
+        <errorDisplayField>Year__c</errorDisplayField>
+        <errorMessage>Please enter the year in the format YYYY.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Revenue_Projection_Opp</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Revenue Projection</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>https://aviacode.my.salesforce.com/a06/e?CF00NF0000008gN1Z={!Opportunity.Name}&amp;CF00NF0000008gN1Z_lkid={!Opportunity.Id}&amp;retURL=%2F{!Opportunity.Id}&amp;00NF0000008gN1j={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN1o={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN1t={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN1y={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN23={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2D={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2N={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN1k={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2S={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2I={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2X={!Opportunity.Est_Monthly_Revenue__c}&amp;00NF0000008gN2c={!Opportunity.Est_Monthly_Revenue__c}</url>
+    </webLinks>
+</CustomObject>

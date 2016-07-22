@@ -1,0 +1,1002 @@
+/*
+    Revision History:
+    Version     Version Author      Date            Comments
+    1.0         Lochan Karle        1st Oct'14      Create UI for Coding Specs sections
+    1.1         Kiran Patil         3rd Oct'14      Change in UI
+
+*/
+
+public class CodingPricingsListViewController {
+
+    public static final String TYPEOFCODING_PROFESSIONALFEES    = Label.PROFESSIONAL_FEES;
+    public static final String TYPEOFCODING_FACILITYASC         = Label.TYPEOFCODING_FACILITYASC;
+    public static final String TYPEOFCODING_AUDIT               = Label.TYPEOFCODING_AUDIT;
+    public static final String TYPEOFCODING_FACILITYHOSPITAL    = Label.TYPEOFCODING_FACILITYHOSPITAL;
+    public static final String TYPEOFCODING_OTHER               = Label.TYPEOFCODING_OTHER;
+    public static final String STATUS_APPROVED                  = Label.STATUS_APPROVED;
+    public static final String STATUS_REJECTED                  = Label.STATUS_REJECTED;
+    public static final String SELECT_ATLEAST_RECORD            = Label.SELECT_ATLEAST_RECORD;
+    public static final String INSERT_CODER_CODE                = Label.INSERT_CODER_CODE;
+    public static final String APPROVAL_STAGE                   = Label.APPROVAL_STAGE;
+    public static final String SUBMITTED_FOR_APPROVAL           = Label.SUBMITTED_FOR_APPROVAL;
+    public static final String CAN_NOT_BE_APPROVED              = Label.CAN_NOT_BE_APPROVED;
+    public static final String CAN_NOT_BE_RECALLED              = Label.CAN_NOT_BE_RECALLED;
+    public static final String RECORD_MUST_BE_SUBMITTED         = Label.RECORD_MUST_BE_SUBMITTED;
+    public static final String PROFILE_ID                       = Label.PROFILE_ID;
+    public static final String USER_ID                          = Label.USER_ID;
+    public static final String WENDY_CAN_EDIT_COST              = Label.WENDY_CAN_EDIT_COST;
+    public static final String CAN_NOT_BE_REJECTED              = Label.CAN_NOT_BE_REJECTED;
+    
+    public Coding_Specs__c objCodingSpecs { get; set; } 
+    
+    private Id OpportunityId;
+    private set<Id> setCodingSpecs = new Set<Id>();
+    private set<Id> setInstanceIds = new Set<Id>();
+    set<ID> userSet = new set<ID>();
+    
+    public Integer intCounterProfessional                                       {get;set;}
+    public Integer intCounterFacilityASC                                        {get;set;}
+    public Integer intCounterAudit                                              {get;set;}
+    public Integer intCounterFacilityHospital                                   {get;set;}
+    public Integer intCounterOther                                              {get;set;}
+   
+    public Boolean showTableforASC                                              {get;set;}
+    public Boolean showTableforProf                                             {get;set;}
+    public Boolean showTableforAudit                                            {get;set;}
+    public Boolean showTableforHosp                                             {get;set;}
+    public Boolean showTableforOther                                            {get;set;}
+                       
+    public Boolean isProfessionalFees                                           {get;set;}
+    public Boolean isFacilityASC                                                {get;set;}
+    public Boolean isSpecsAudit                                                 {get;set;}
+    public Boolean isFacilityHospital                                           {get;set;}
+    
+    public Decimal dblRevenueforProfessional                                    {get;set;}
+    public Decimal dblRevenueforFacilityASC                                     {get;set;}
+    public Decimal dblRevenueforAudit                                           {get;set;}
+    public Decimal dblRevenueforFacilityHospital                                {get;set;}
+    public Decimal dblRevenueforOther                                           {get;set;}
+    
+    public Decimal dblCustomerPriceProfessional                                 {get;set;}
+    public Decimal dblCustomerPriceFacilityASC                                  {get;set;}
+    public Decimal dblCustomerPriceAudit                                        {get;set;}
+    public Decimal dblCustomerPriceFacilityHospital                             {get;set;}
+    public Decimal dblCustomerPriceOther                                        {get;set;}
+    
+    public Decimal dblCoderCostforProfessional                                  {get;set;}
+    public Decimal dblCoderCostforFacilityASC                                   {get;set;}
+    public Decimal dblCoderCostforAudit                                         {get;set;}
+    public Decimal dblCoderCostforFacilityHospital                              {get;set;}
+    public Decimal dblCoderCostforOther                                         {get;set;}
+    
+    public Decimal dblRevenueMultipleforProfessional                            {get;set;}
+    public Decimal dblRevenueMultipleforFacilityASC                             {get;set;}
+    public Decimal dblRevenueMultipleforAudit                                   {get;set;}
+    public Decimal dblRevenueMultipletforFacilityHospital                       {get;set;}
+    public Decimal dblRevenueMultipleforOther                                   {get;set;}
+    
+    public Decimal dblAverageforProfessional                                    {get;set;}
+    public Decimal dblAverageforFacilityASC                                     {get;set;}
+    public Decimal dblAverageforAudit                                           {get;set;}
+    public Decimal dblAverageforFacilityHospital                                {get;set;}
+    public Decimal dblAverageforOther                                           {get;set;}
+    
+    public Decimal dblTotalQuantityforProfessional                              {get;set;}
+    public Decimal dblTotalQuantityforFacilityASC                               {get;set;}
+    public Decimal dblTotalQuantityforAudit                                     {get;set;}
+    public Decimal dblTotalQuantityforFacilityHospital                          {get;set;}
+    public Decimal dblTotalQuantityforOther                                     {get;set;}
+    
+    public Decimal dblMonthlyCostforProfessional                                {get;set;}
+    public Decimal dblMonthlyCostforFacilityASC                                 {get;set;}
+    public Decimal dblMonthlyCostforAudit                                       {get;set;}
+    public Decimal dblMonthlyCostforFacilityHospital                            {get;set;}
+    public Decimal dblMonthlyCostforOther                                       {get;set;}
+    
+    public Decimal dblEstimatedHourPayforProfessional                           {get;set;}
+    public Decimal dblEstimatedHourPayforFacilityASC                            {get;set;}
+    public Decimal dblEstimatedHourPayforAudit                                  {get;set;}
+    public Decimal dblEstimatedHourPayforFacilityHospital                       {get;set;}
+    public Decimal dblEstimatedHourPayforOther                                  {get;set;}
+    
+    public Decimal dblEstimatedChartsforProfessional                            {get;set;}
+    public Decimal dblEstimatedChartsforFacilityASC                             {get;set;}
+    public Decimal dblEstimatedChartsforAudit                                   {get;set;}
+    public Decimal dblEstimatedChartsforFacilityHospital                        {get;set;}
+    public Decimal dblEstimatedChartsforOther                                   {get;set;}
+    
+    public Decimal dblTotalRevenue                                              {get;set;}
+    public Decimal dblTotalCost                                                 {get;set;}
+    public Decimal dblTotalPrice                                                {get;set;}
+    public Decimal dblTotalAvgMulRevenue                                        {get;set;}
+    public Decimal dblTotalQuantity                                             {get;set;}
+    public Decimal dblTotalMonthlyCost                                          {get;set;}
+    public Decimal dblTotalEstimatedHourlyPay                                   {get;set;}
+    public Decimal dblTotalEstimatedCharts                                      {get;set;}
+    
+    public list<Coding_Specs__c> lstAllCodingSpecs                              {get;set;}
+    public list<Coding_Specs__c> lstCodingSpecsToSubmitforApproval              {get;set;}
+    public list<ProcessInstance> lstprocessInstance                             {get;set;}
+    public list<Coding_Specs__c> lstAddnewforHosp                               {get;set;}
+    public list<Coding_Specs__c> lstAddnewforOther                              {get;set;}
+    public list<Coding_Specs__c> lstAddnewforProf                               {get;set;}
+    public list<Coding_Specs__c> lstAddnewforASC                                {get;set;}
+    public list<Coding_Specs__c> lstAddnewforAud                                {get;set;}
+    
+    public list<CodingSpecsToBeSelectClass> codingSpecs_PF_ToBeSelectList       {get;set;}
+    public list<CodingSpecsToBeSelectClass> codingSpecs_FA_ToBeSelectList       {get;set;}
+    public list<CodingSpecsToBeSelectClass> codingSpecs_A_ToBeSelectList        {get;set;}
+    public list<CodingSpecsToBeSelectClass> codingSpecs_FH_ToBeSelectList       {get;set;}
+    public list<CodingSpecsToBeSelectClass> codingSpecs_O_ToBeSelectList        {get;set;}
+    public map<string , ProcessInstance> mapObjectIdToProcessInstance           {get;set;}
+    
+    Opportunity objOpp;
+    map<id, Decimal> mapIdtoCoder = new map<Id, Decimal>();
+    public CodingPricingsListViewController(ApexPages.StandardController controller) {
+        OpportunityId = ApexPages.currentPage().getParameters().get('Id');
+        
+        if(objOpp == null) objOpp = new Opportunity();
+        lstAddnewforHosp = new List<Coding_Specs__c>();
+        lstAddnewforProf = new List<Coding_Specs__c>();
+        lstAddnewforASC = new List<Coding_Specs__c>();
+        lstAddnewforAud = new List<Coding_Specs__c>();
+        lstAddnewforOther = new List<Coding_Specs__c>();
+        
+        objCodingSpecs = new Coding_Specs__c();
+        
+        showTableforProf = false;
+        showTableforASC = false;
+        showTableforHosp = false;
+        showTableforAudit = false;
+        showTableforOther = false;
+        
+        dblRevenueforFacilityASC = 0;
+        dblRevenueforProfessional = 0;
+        dblRevenueforAudit = 0;
+        dblRevenueforFacilityHospital = 0;
+        dblRevenueforOther = 0;
+        
+        dblCustomerPriceProfessional = 0;
+        dblCustomerPriceFacilityASC = 0;
+        dblCustomerPriceAudit = 0;
+        dblCustomerPriceFacilityHospital = 0;
+        dblCustomerPriceOther = 0;
+        
+        dblCoderCostforProfessional = 0;
+        dblCoderCostforFacilityASC = 0;
+        dblCoderCostforAudit = 0;
+        dblCoderCostforFacilityHospital = 0;
+        dblCoderCostforOther = 0;
+        
+        dblRevenueMultipleforProfessional = 0;
+        dblRevenueMultipleforFacilityASC = 0;
+        dblRevenueMultipleforAudit = 0;
+        dblRevenueMultipletforFacilityHospital = 0;
+        dblRevenueMultipleforOther = 0;
+        
+        dblAverageforProfessional = 0;
+        dblAverageforFacilityASC = 0;
+        dblAverageforAudit = 0;
+        dblAverageforFacilityHospital = 0;
+        dblAverageforOther = 0;
+        
+        dblTotalQuantityforProfessional = 0;
+        dblTotalQuantityforFacilityASC = 0;
+        dblTotalQuantityforAudit = 0;
+        dblTotalQuantityforFacilityHospital = 0;
+        dblTotalQuantityforOther = 0;
+        
+        dblMonthlyCostforProfessional = 0;
+        dblMonthlyCostforFacilityASC = 0;
+        dblMonthlyCostforAudit = 0;
+        dblMonthlyCostforFacilityHospital = 0;
+        dblMonthlyCostforOther = 0;
+        
+        dblEstimatedHourPayforProfessional = 0;
+        dblEstimatedHourPayforFacilityASC = 0;
+        dblEstimatedHourPayforAudit = 0;
+        dblEstimatedHourPayforFacilityHospital = 0;
+        dblEstimatedHourPayforOther = 0;
+        
+        dblEstimatedChartsforProfessional = 0;
+        dblEstimatedChartsforFacilityASC = 0;
+        dblEstimatedChartsforAudit = 0;
+        dblEstimatedChartsforFacilityHospital = 0;
+        dblEstimatedChartsforOther = 0;
+        
+        intCounterProfessional = 0;
+        intCounterFacilityASC = 0;
+        intCounterAudit = 0;
+        intCounterFacilityHospital = 0;
+        intCounterOther = 0;
+        //isCurrentUser = true;
+        
+        CodingSpecsProfessionalFees();
+        
+    }
+    
+    public void CodingSpecsProfessionalFees() {
+        lstAllCodingSpecs = new List<Coding_Specs__c>();
+        codingSpecs_PF_ToBeSelectList = new List<CodingSpecsToBeSelectClass>();
+        codingSpecs_FA_ToBeSelectList = new List<CodingSpecsToBeSelectClass>();
+        codingSpecs_A_ToBeSelectList = new List<CodingSpecsToBeSelectClass>();
+        codingSpecs_FH_ToBeSelectList = new List<CodingSpecsToBeSelectClass>();
+        codingSpecs_O_ToBeSelectList = new List<CodingSpecsToBeSelectClass>();
+        
+        for(Coding_Specs__c objCode: [
+                               Select Type_of_Coding__c
+                                    , Id
+                                    , Term__c
+                                    , Specialty__c
+                                    , Revenue_Multiple__c
+                                    , Opportunity__c
+                                    , Name
+                                    , Monthly_Revenue__c
+                                    , Monthly_Quantity__c
+                                    , Monthly_Cost__c
+                                    , Estimated_Hourly_Pay__c
+                                    , Estimated_Charts_Per_Hour__c
+                                    , Contract_Revenue__c
+                                    , Coder_Cost__c
+                                    , Coder_Cost_Notes__c
+                                    , Approval_Stage__c
+                                    , Access__c 
+                                 From Coding_Specs__c 
+                                where Opportunity__c =: OpportunityId
+                                  and (Type_of_Coding__c =: TYPEOFCODING_PROFESSIONALFEES
+                                   OR  Type_of_Coding__c =: TYPEOFCODING_FACILITYASC
+                                   OR  Type_of_Coding__c =: TYPEOFCODING_AUDIT
+                                   OR  Type_of_Coding__c =: TYPEOFCODING_FACILITYHOSPITAL
+                                   OR  Type_of_Coding__c =: TYPEOFCODING_OTHER)])
+        {
+            lstAllCodingSpecs.add(objCode);
+            mapIdtoCoder.put(objCode.Id, objCode.Coder_Cost__c);
+        }
+        
+        for(Coding_Specs__c objSpecs: lstAllCodingSpecs)
+        {
+            setCodingSpecs.add(objSpecs.Id);
+        }
+        
+        map<Id, Id> mapUserCustomSpecsId = new map<Id, Id>();
+        for(ProcessInstanceWorkitem objProcessInstanceWorkitem : [
+                                                           Select ProcessInstanceId
+                                                                , OriginalActorId
+                                                                , IsDeleted
+                                                                , Id
+                                                                , ActorId
+                                                                , ProcessInstance.TargetObjectId
+                                                             From ProcessInstanceWorkitem
+                                                            where ProcessInstance.TargetObjectId IN: setCodingSpecs])
+        {
+            mapUserCustomSpecsId.put(objProcessInstanceWorkitem.ProcessInstance.TargetObjectId, objProcessInstanceWorkitem.ActorId);
+        }
+        
+        if(lstAllCodingSpecs != null && lstAllCodingSpecs.size() > 0) {
+            for(Coding_Specs__c objCodingSpecs : lstAllCodingSpecs) {
+                if(objCodingSpecs.Type_of_Coding__c.equals(TYPEOFCODING_PROFESSIONALFEES)) {
+                    
+                    intCounterProfessional++;
+                    
+                    if(objCodingSpecs.Monthly_Revenue__c != null)
+                        dblRevenueforProfessional += (objCodingSpecs.Monthly_Revenue__c).setScale(2);
+                    
+                    if(objCodingSpecs.Contract_Revenue__c != null)
+                        dblCustomerPriceProfessional += (objCodingSpecs.Contract_Revenue__c).setScale(2);
+                    
+                    if(objCodingSpecs.Coder_Cost__c != null)
+                        dblCoderCostforProfessional += (objCodingSpecs.Coder_Cost__c).setScale(2);
+                    
+                    if(objCodingSpecs.Revenue_Multiple__c != null)
+                        dblRevenueMultipleforProfessional += (objCodingSpecs.Revenue_Multiple__c).setScale(2);
+                    
+                    if(objCodingSpecs.Monthly_Quantity__c != null)
+                        dblTotalQuantityforProfessional += (objCodingSpecs.Monthly_Quantity__c).setScale(2);
+                        
+                    if(objCodingSpecs.Monthly_Cost__c != null)
+                        dblMonthlyCostforProfessional += (objCodingSpecs.Monthly_Cost__c).setScale(2);
+                        
+                    if(objCodingSpecs.Estimated_Hourly_Pay__c != null)
+                        dblEstimatedHourPayforProfessional += (objCodingSpecs.Estimated_Hourly_Pay__c).setScale(2);
+                        
+                    if(objCodingSpecs.Estimated_Charts_Per_Hour__c != null)
+                        dblEstimatedChartsforProfessional += (objCodingSpecs.Estimated_Charts_Per_Hour__c).setScale(2);
+                     
+                    CodingSpecsToBeSelectClass objCodingSpecsToBeSelectClass = new CodingSpecsToBeSelectClass(false, objCodingSpecs, false);   
+                    if(mapUserCustomSpecsId.get(objCodingSpecs.Id) == UserInfo.getUserId())
+                    {
+                        objCodingSpecsToBeSelectClass.isEditable = true;
+                    }
+                    codingSpecs_PF_ToBeSelectList.add(objCodingSpecsToBeSelectClass);
+                }
+                else if (objCodingSpecs.Type_of_Coding__c.equals(TYPEOFCODING_FACILITYASC)) {
+                    intCounterFacilityASC++;                    
+                    
+                    if(objCodingSpecs.Monthly_Revenue__c != null)
+                        dblRevenueforFacilityASC += (objCodingSpecs.Monthly_Revenue__c).setScale(2);
+                    
+                    if(objCodingSpecs.Contract_Revenue__c != null)
+                        dblCustomerPriceFacilityASC += (objCodingSpecs.Contract_Revenue__c).setScale(2);
+                   
+                    if(objCodingSpecs.Coder_Cost__c != null)
+                        dblCoderCostforFacilityASC += (objCodingSpecs.Coder_Cost__c).setScale(2);
+                    
+                    if(objCodingSpecs.Revenue_Multiple__c != null)
+                        dblRevenueMultipleforFacilityASC += (objCodingSpecs.Revenue_Multiple__c).setScale(2);
+                        
+                     if(objCodingSpecs.Monthly_Quantity__c != null)
+                        dblTotalQuantityforFacilityASC += (objCodingSpecs.Monthly_Quantity__c).setScale(2);
+                       
+                       if(objCodingSpecs.Monthly_Cost__c != null)
+                        dblMonthlyCostforFacilityASC += (objCodingSpecs.Monthly_Cost__c).setScale(2);
+                    
+                    if(objCodingSpecs.Estimated_Hourly_Pay__c != null)
+                        dblEstimatedHourPayforFacilityASC += (objCodingSpecs.Estimated_Hourly_Pay__c).setScale(2);
+                       
+                       if(objCodingSpecs.Estimated_Charts_Per_Hour__c != null)
+                        dblEstimatedChartsforFacilityASC += (objCodingSpecs.Estimated_Charts_Per_Hour__c).setScale(2);
+                        
+                    CodingSpecsToBeSelectClass objCodingSpecsToBeSelectClass = new CodingSpecsToBeSelectClass(false, objCodingSpecs, false);
+                    if(mapUserCustomSpecsId.get(objCodingSpecs.Id) == UserInfo.getUserId())
+                    {
+                        objCodingSpecsToBeSelectClass.isEditable = true;
+                        //system.debug('!!!!!!!!!isCurrentUser1'+isCurrentUser1);
+                    }
+                    //system.debug('!!!!!!!!!objCodingSpecsToBeSelectClass'+objCodingSpecsToBeSelectClass);
+                    codingSpecs_FA_ToBeSelectList.add(objCodingSpecsToBeSelectClass);
+                }
+                else if (objCodingSpecs.Type_of_Coding__c.equals(TYPEOFCODING_AUDIT)) {
+                    intCounterAudit++;
+                    
+                    if(objCodingSpecs.Monthly_Revenue__c != null)
+                        dblRevenueforAudit += (objCodingSpecs.Monthly_Revenue__c).setScale(2);
+                    
+                    if(objCodingSpecs.Contract_Revenue__c != null) 
+                        dblCustomerPriceAudit += (objCodingSpecs.Contract_Revenue__c).setScale(2);
+                   
+                    if(objCodingSpecs.Coder_Cost__c != null)
+                        dblCoderCostforAudit += (objCodingSpecs.Coder_Cost__c).setScale(2);
+                   
+                    if(objCodingSpecs.Revenue_Multiple__c != null)
+                        dblRevenueMultipleforAudit += (objCodingSpecs.Revenue_Multiple__c).setScale(2);
+                    
+                    if(objCodingSpecs.Monthly_Quantity__c != null)
+                        dblTotalQuantityforAudit += (objCodingSpecs.Monthly_Quantity__c).setScale(2);
+                    
+                    if(objCodingSpecs.Monthly_Cost__c != null)
+                        dblMonthlyCostforAudit += (objCodingSpecs.Monthly_Cost__c).setScale(2);
+                    
+                    if(objCodingSpecs.Estimated_Hourly_Pay__c != null)
+                        dblEstimatedHourPayforAudit += (objCodingSpecs.Estimated_Hourly_Pay__c).setScale(2);
+                    
+                    if(objCodingSpecs.Estimated_Charts_Per_Hour__c != null)
+                        dblEstimatedChartsforAudit += (objCodingSpecs.Estimated_Charts_Per_Hour__c).setScale(2);
+                        
+                      CodingSpecsToBeSelectClass objCodingSpecsToBeSelectClass = new CodingSpecsToBeSelectClass(false, objCodingSpecs, false);  
+                       if(mapUserCustomSpecsId.get(objCodingSpecs.Id) == UserInfo.getUserId())
+                    {
+                        objCodingSpecsToBeSelectClass.isEditable = true;
+                    }
+                    
+                    codingSpecs_A_ToBeSelectList.add(objCodingSpecsToBeSelectClass);
+                }
+                else if(objCodingSpecs.Type_of_Coding__c.equals(TYPEOFCODING_FACILITYHOSPITAL)) {
+                    intCounterFacilityHospital++;
+                    
+                    if(objCodingSpecs.Monthly_Revenue__c != null)
+                        dblRevenueforFacilityHospital += (objCodingSpecs.Monthly_Revenue__c).setScale(2);
+                    
+                    if(objCodingSpecs.Contract_Revenue__c != null)
+                        dblCustomerPriceFacilityHospital += (objCodingSpecs.Contract_Revenue__c).setScale(2);
+                   
+                    if(objCodingSpecs.Coder_Cost__c != null)
+                        dblCoderCostforFacilityHospital += (objCodingSpecs.Coder_Cost__c).setScale(2);
+                    
+                    if(objCodingSpecs.Revenue_Multiple__c != null)
+                        dblRevenueMultipletforFacilityHospital += (objCodingSpecs.Revenue_Multiple__c).setScale(2);
+                    
+                    if(objCodingSpecs.Monthly_Quantity__c != null)
+                        dblTotalQuantityforFacilityHospital += (objCodingSpecs.Monthly_Quantity__c).setScale(2);
+                    
+                    if(objCodingSpecs.Monthly_Cost__c != null)
+                        dblMonthlyCostforFacilityHospital += (objCodingSpecs.Monthly_Cost__c).setScale(2);
+                    
+                    if(objCodingSpecs.Estimated_Hourly_Pay__c != null)
+                        dblEstimatedHourPayforFacilityHospital += (objCodingSpecs.Estimated_Hourly_Pay__c).setScale(2);
+                    
+                    if(objCodingSpecs.Estimated_Charts_Per_Hour__c != null)
+                        dblEstimatedChartsforFacilityHospital += (objCodingSpecs.Estimated_Charts_Per_Hour__c).setScale(2);
+                        
+                    CodingSpecsToBeSelectClass objCodingSpecsToBeSelectClass = new CodingSpecsToBeSelectClass(false, objCodingSpecs, false);
+                    if(mapUserCustomSpecsId.get(objCodingSpecs.Id) == UserInfo.getUserId())
+                    {
+                        objCodingSpecsToBeSelectClass.isEditable = true;
+                    }  
+                    codingSpecs_FH_ToBeSelectList.add(objCodingSpecsToBeSelectClass);
+                     
+                }
+                else if(objCodingSpecs.Type_of_Coding__c.equals(TYPEOFCODING_OTHER)) {
+                    intCounterOther++;
+                    
+                    if(objCodingSpecs.Monthly_Revenue__c != null)
+                        dblRevenueforOther += (objCodingSpecs.Monthly_Revenue__c).setScale(2);
+                    
+                    if(objCodingSpecs.Contract_Revenue__c != null)
+                        dblCustomerPriceOther += (objCodingSpecs.Contract_Revenue__c).setScale(2);
+                   
+                    if(objCodingSpecs.Coder_Cost__c != null)
+                        dblCoderCostforOther += (objCodingSpecs.Coder_Cost__c).setScale(2);
+                    
+                    if(objCodingSpecs.Revenue_Multiple__c != null)
+                        dblRevenueMultipleforOther += (objCodingSpecs.Revenue_Multiple__c).setScale(2);
+                    
+                    if(objCodingSpecs.Monthly_Quantity__c != null)
+                        dblTotalQuantityforOther += (objCodingSpecs.Monthly_Quantity__c).setScale(2);
+                    
+                    if(objCodingSpecs.Monthly_Cost__c != null)
+                        dblMonthlyCostforOther += (objCodingSpecs.Monthly_Cost__c).setScale(2);
+                    
+                    if(objCodingSpecs.Estimated_Hourly_Pay__c != null)
+                        dblEstimatedHourPayforOther += (objCodingSpecs.Estimated_Hourly_Pay__c).setScale(2);
+                    
+                    if(objCodingSpecs.Estimated_Charts_Per_Hour__c != null)
+                        dblEstimatedChartsforOther += (objCodingSpecs.Estimated_Charts_Per_Hour__c).setScale(2);
+                        
+                    CodingSpecsToBeSelectClass objCodingSpecsToBeSelectClass = new CodingSpecsToBeSelectClass(false, objCodingSpecs, false);
+                    if(mapUserCustomSpecsId.get(objCodingSpecs.Id) == UserInfo.getUserId())
+                    {
+                        objCodingSpecsToBeSelectClass.isEditable = true;
+                    }  
+                    codingSpecs_O_ToBeSelectList.add(objCodingSpecsToBeSelectClass);
+                     
+                }
+            }
+        }
+        
+        if(intCounterProfessional != 0 && dblRevenueMultipleforProfessional != null)
+            dblAverageforProfessional =  (dblRevenueMultipleforProfessional/intCounterProfessional).setScale(2);
+        
+        if(intCounterFacilityASC != 0 && dblRevenueMultipleforFacilityASC != null)
+            dblAverageforFacilityASC =  (dblRevenueMultipleforFacilityASC/intCounterFacilityASC).setScale(2);
+        
+        if(intCounterAudit != 0 && dblRevenueMultipleforAudit != null)
+            dblAverageforAudit =  (dblRevenueMultipleforAudit/intCounterAudit).setScale(2);
+        
+        if(intCounterFacilityHospital != 0 && dblRevenueMultipletforFacilityHospital != null)
+            dblAverageforFacilityHospital =  (dblRevenueMultipletforFacilityHospital/intCounterFacilityHospital).setScale(2);
+            
+        if(intCounterOther != 0 && dblRevenueMultipleforOther != null)
+            dblAverageforOther =  (dblRevenueMultipleforOther/intCounterOther).setScale(2);
+        
+        dblTotalRevenue = ( dblRevenueforFacilityHospital
+                          + dblRevenueforAudit
+                          + dblRevenueforFacilityASC
+                          + dblRevenueforProfessional
+                          + dblRevenueforOther).setScale(2);
+        
+        dblTotalCost = ( dblCoderCostforFacilityHospital
+                       + dblCoderCostforAudit
+                       + dblCoderCostforFacilityASC
+                       + dblCoderCostforProfessional
+                       + dblCoderCostforOther).setScale(2);
+        
+        dblTotalPrice = ( dblCustomerPriceFacilityHospital
+                        + dblCustomerPriceAudit
+                        + dblCustomerPriceFacilityASC
+                        + dblCustomerPriceProfessional
+                        + dblCustomerPriceOther).setScale(2);
+        
+        dblTotalAvgMulRevenue = ( dblAverageforFacilityHospital
+                                + dblAverageforAudit
+                                + dblAverageforFacilityASC
+                                + dblAverageforProfessional
+                                + dblAverageforOther).setScale(2);
+        
+        dblTotalQuantity = ( dblTotalQuantityforFacilityHospital
+                           + dblTotalQuantityforAudit
+                           + dblTotalQuantityforFacilityASC
+                           + dblTotalQuantityforProfessional
+                           + dblTotalQuantityforOther).setScale(2);
+        
+        dblTotalMonthlyCost = ( dblMonthlyCostforFacilityHospital
+                              + dblMonthlyCostforAudit
+                              + dblMonthlyCostforFacilityASC
+                              + dblMonthlyCostforProfessional
+                              + dblMonthlyCostforOther).setScale(2);
+        
+        dblTotalEstimatedHourlyPay = ( dblEstimatedHourPayforFacilityHospital
+                                     + dblEstimatedHourPayforAudit
+                                     + dblEstimatedHourPayforFacilityASC
+                                     + dblEstimatedHourPayforProfessional
+                                     + dblEstimatedHourPayforOther).setScale(2);
+        
+        dblTotalEstimatedCharts = ( dblEstimatedChartsforFacilityHospital
+                                  + dblEstimatedChartsforAudit
+                                  + dblEstimatedChartsforFacilityASC
+                                  + dblEstimatedChartsforProfessional
+                                  + dblEstimatedChartsforOther).setScale(2);
+        submitRequest();
+    }
+    
+    public void submitRequest(){
+        set<Id>    setTargetObjectId = new set<Id>();
+        if(lstAllCodingSpecs != null && lstAllCodingSpecs.size() > 0) {
+            for(Coding_Specs__c objSpecs : lstAllCodingSpecs){
+                setTargetObjectId.add(objSpecs.Id);
+            }
+        }
+        
+        mapObjectIdToProcessInstance = new map<string , ProcessInstance>();
+        if(setTargetObjectId != null && setTargetObjectId.size() > 0) {
+            lstprocessInstance = [
+                           Select Id
+                                , Status
+                                , TargetObjectId
+                             From ProcessInstance
+                            WHERE TargetObjectId =: setTargetObjectId 
+                              And (Status !=: STATUS_APPROVED 
+                              And Status !=: STATUS_REJECTED)
+            ];
+        }
+        if(lstprocessInstance != null  && lstprocessInstance.size() > 0){
+            for(ProcessInstance objProcessInstance : lstprocessInstance){
+                mapObjectIdToProcessInstance.put(objProcessInstance.TargetObjectId , objProcessInstance);
+            }
+        }
+    }
+    
+    public list<Coding_Specs__c> getSelectedCodingSpecsRecords(){
+        lstCodingSpecsToSubmitforApproval = new list<Coding_Specs__c>();
+        
+        if(codingSpecs_PF_ToBeSelectList != null && codingSpecs_PF_ToBeSelectList.size() > 0) {
+            for(CodingSpecsToBeSelectClass codingSpec : codingSpecs_PF_ToBeSelectList) {
+                if(codingSpec.isSelect == true) {
+                    lstCodingSpecsToSubmitforApproval.add(codingSpec.codingSpecs);
+                }
+            }
+        }
+        
+        if(codingSpecs_FA_ToBeSelectList != null && codingSpecs_FA_ToBeSelectList.size() > 0) {
+            for(CodingSpecsToBeSelectClass codingSpec : codingSpecs_FA_ToBeSelectList) {
+                if(codingSpec.isSelect == true) {
+                    lstCodingSpecsToSubmitforApproval.add(codingSpec.codingSpecs);
+                }
+            }
+        }
+        
+        if(codingSpecs_A_ToBeSelectList != null && codingSpecs_A_ToBeSelectList.size() > 0) {
+            for(CodingSpecsToBeSelectClass codingSpec : codingSpecs_A_ToBeSelectList) {
+                if(codingSpec.isSelect == true) {
+                    lstCodingSpecsToSubmitforApproval.add(codingSpec.codingSpecs);
+                }
+            }
+        }
+        
+        if(codingSpecs_FH_ToBeSelectList != null && codingSpecs_FH_ToBeSelectList.size() > 0) {
+            for(CodingSpecsToBeSelectClass codingSpec : codingSpecs_FH_ToBeSelectList) {
+                if(codingSpec.isSelect == true) {
+                    lstCodingSpecsToSubmitforApproval.add(codingSpec.codingSpecs);
+                }
+            }
+        }
+        
+        if(codingSpecs_O_ToBeSelectList != null && codingSpecs_O_ToBeSelectList.size() > 0) {
+            for(CodingSpecsToBeSelectClass codingSpec : codingSpecs_O_ToBeSelectList) {
+                if(codingSpec.isSelect == true) {
+                    lstCodingSpecsToSubmitforApproval.add(codingSpec.codingSpecs);
+                }
+            }
+        }
+        return lstCodingSpecsToSubmitforApproval;
+    }
+    
+    public Pagereference SubmitForApproval(){
+        list<Coding_Specs__c> lstCodingSpecsToSubmitforApproval = getSelectedCodingSpecsRecords();
+        //save();
+        if(lstCodingSpecsToSubmitforApproval == null || lstCodingSpecsToSubmitforApproval.size() == 0) {
+            Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, SELECT_ATLEAST_RECORD));
+        }
+        else {
+            if(lstCodingSpecsToSubmitforApproval != null && lstCodingSpecsToSubmitforApproval.size() > 0){
+                for(Coding_Specs__c objSpecs : lstCodingSpecsToSubmitforApproval){
+                   if(objSpecs.Coder_Cost__c == null){
+                        Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, INSERT_CODER_CODE));
+                        return null;
+                    }
+                    
+                    if(!mapObjectIdToProcessInstance.containsKey(objSpecs.Id)){
+                        if(objSpecs.Approval_Stage__c == APPROVAL_STAGE ){
+                            Approval.Processsubmitrequest approvalRequest = new Approval.Processsubmitrequest();
+                            approvalRequest.setComments(SUBMITTED_FOR_APPROVAL);
+                            approvalRequest.setObjectId(objSpecs.Id);
+                            approvalRequest.setNextApproverIds(new ID[]{UserInfo.getUserId()});
+                            
+                            Approval.Processresult result = Approval.process(approvalRequest);
+                           
+                            system.assert(result.isSuccess());
+                        }
+                    }
+                }
+            }
+            CodingSpecsProfessionalFees();
+        }
+        
+        return null;
+    }
+    /*public Pagereference RecallFromApproval(){
+        list<Coding_Specs__c> lstCodingSpecsToSubmitforApproval = getSelectedCodingSpecsRecords();
+        
+        if(lstCodingSpecsToSubmitforApproval != null && lstCodingSpecsToSubmitforApproval.size() > 0){
+            for(Coding_Specs__c objSpecs : lstCodingSpecsToSubmitforApproval){
+                if(!mapObjectIdToProcessInstance.containsKey(objSpecs.Id))
+                {
+                        if(objSpecs.Approval_Stage__c == 'Pending VP of Sales Approval' )
+                        {
+                            Approval.ProcessWorkitemRequest PWR = new Approval.ProcessWorkitemRequest();
+                            //PWR.setComments(approverComment);
+                            PWR.setAction('Removed');
+                            PWR.setWorkitemId(objSpecs.Id);
+                            Approval.ProcessResult result =  Approval.process(PWR);
+                        }
+                }
+            }
+            
+        }
+        return null;
+    }*/
+    
+    public Id getWorkItemId(Id targetObjectId) {
+        Id retVal = null;
+        
+        for(ProcessInstanceWorkitem workItem  : [
+                                          Select Id
+                                               , ActorId
+                                            from ProcessInstanceWorkitem
+                                           where ProcessInstance.TargetObjectId =: targetObjectId
+        ]) {
+            retVal  =  workItem.Id;
+        }
+        
+        return retVal;
+    }
+    
+    public void recallFromApproval(){
+        list<Coding_Specs__c> lstCodingSpecsToBeRecalled = getSelectedCodingSpecsRecords();
+        
+        if(lstCodingSpecsToBeRecalled == null || lstCodingSpecsToBeRecalled.size() == 0) {
+            Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, SELECT_ATLEAST_RECORD));
+        }
+        else {
+            List<Approval.ProcessWorkitemRequest> lstRecalledRequest = new List<Approval.ProcessWorkitemRequest> ();
+            for(Coding_Specs__c obj : lstCodingSpecsToBeRecalled ){
+            Approval.ProcessWorkitemRequest req = new Approval.ProcessWorkitemRequest();
+            req.setComments('Recalling request');
+            req.setAction('Removed');
+            req.setNextApproverIds(new Id[] {UserInfo.getUserId()});
+            Id workItemId = getWorkItemId(obj.id);
+            
+            if(workItemId != null)
+            {
+                req.setWorkitemId(workItemId);
+            }
+            else
+            {
+                Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, RECORD_MUST_BE_SUBMITTED));
+            }
+            lstRecalledRequest.add(req);
+            system.debug('---lstRecalledRequest--->'+lstRecalledRequest);
+        }
+        Approval.ProcessResult[] processResults = null;
+            try {
+                processResults = Approval.process(lstRecalledRequest, true);
+            }
+            catch (System.DmlException e) {
+            	Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, CAN_NOT_BE_RECALLED));
+            }
+            system.debug('---processResults --->'+processResults );
+        }
+        
+        CodingSpecsProfessionalFees();
+    }
+  
+    public void approvedRecord(){
+    	
+        list<Coding_Specs__c> lstCodingSpecsToBeApproved = getSelectedCodingSpecsRecords();
+        system.debug('----lstCodingSpecsToBeApproved---->'+lstCodingSpecsToBeApproved);
+        update lstCodingSpecsToBeApproved ;
+        system.debug('----lstCodingSpecsToBeApproved--After-->'+lstCodingSpecsToBeApproved);
+        if(lstCodingSpecsToBeApproved == null || lstCodingSpecsToBeApproved.size() == 0) {
+            Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, SELECT_ATLEAST_RECORD));
+        }
+        else {
+            List<Approval.ProcessWorkitemRequest> lstApprovedRequest = new List<Approval.ProcessWorkitemRequest> ();
+            for(Coding_Specs__c obj : lstCodingSpecsToBeApproved){
+            Approval.ProcessWorkitemRequest req = new Approval.ProcessWorkitemRequest();
+            req.setComments('Approving request');
+            req.setAction('Approve');
+            req.setNextApproverIds(new Id[] {UserInfo.getUserId()});
+            Id workItemId = getWorkItemId(obj.id);
+            
+            if(workItemId != null)
+            {
+                req.setWorkitemId(workItemId);
+            }
+            else
+            {
+                Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, CAN_NOT_BE_APPROVED));
+            }
+            lstApprovedRequest.add(req);
+        }
+        Approval.ProcessResult[] processResults = null;
+            try {
+                processResults = Approval.process(lstApprovedRequest, true);
+            }
+            catch (System.DmlException e) {
+                //System.debug('Exception Is ' + e.getMessage());
+            }
+        }
+        CodingSpecsProfessionalFees();
+    }
+    
+    public PageReference save()
+    {
+        List<Coding_Specs__c> lstAllNewAddedCodingSpecs = new List<Coding_Specs__c>();
+        system.debug('----UserInfo.getProfileId()---->'+UserInfo.getProfileId());
+        system.debug('----UserInfo.getUserId()---->'+UserInfo.getUserId());
+        if(UserInfo.getProfileId() == PROFILE_ID || UserInfo.getUserId() == USER_ID)
+        {
+            //system.debug('!!!!!!!!!!!(UserInfo.getProfileId()'+UserInfo.getProfileId());
+            for(Coding_Specs__c objCodeUpdate : lstAllCodingSpecs)
+            {
+                if(objCodeUpdate.Coder_Cost__c == mapIdtoCoder.get(objCodeUpdate.Id))
+                {
+                    update lstAllCodingSpecs;
+                }
+                
+            else
+                
+            {
+                //system.debug('!!!!!!!!!!UserInfo.getProfileId()'+UserInfo.getProfileId());
+                Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, WENDY_CAN_EDIT_COST));
+            }
+            }
+        }
+        else
+        {
+            Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, WENDY_CAN_EDIT_COST));
+        }
+        system.debug('---lstAddnewforHosp---->'+lstAddnewforHosp);
+            
+            if(lstAddnewforHosp.size() > 0)
+            {
+                for(Coding_Specs__c objCodSpecsHosp : lstAddnewforHosp)
+                {
+                    Coding_Specs__c objCodSpecs = new Coding_Specs__c();
+                    objCodSpecs.Access__c = objCodSpecsHosp.Access__c;
+                    objCodSpecs.Approval_Stage__c = objCodSpecsHosp.Approval_Stage__c;
+                    objCodSpecs.Coder_Cost__c = objCodSpecsHosp.Coder_Cost__c;
+                    objCodSpecs.Coder_Cost_Notes__c = objCodSpecsHosp.Coder_Cost_Notes__c;
+                    objCodSpecs.Contract_Revenue__c = objCodSpecsHosp.Contract_Revenue__c;
+                    objCodSpecs.Estimated_Charts_Per_Hour__c = objCodSpecsHosp.Estimated_Charts_Per_Hour__c;
+                    //objCodSpecs.Estimated_Hourly_Pay__c = objCodSpecsHosp.Estimated_Hourly_Pay__c;
+                    //objCodSpecs.Monthly_Cost__c = objCodSpecsHosp.Monthly_Cost__c;
+                    objCodSpecs.Monthly_Quantity__c = objCodSpecsHosp.Monthly_Quantity__c;
+                    //objCodSpecs.Monthly_Revenue__c = objCodSpecsHosp.Monthly_Revenue__c;
+                    objCodSpecs.Name = objCodSpecsHosp.Name;
+                    objCodSpecs.Opportunity__c = OpportunityId;
+                    //objCodSpecs.Revenue_Multiple__c = objCodSpecsHosp.Revenue_Multiple__c;
+                    objCodSpecs.Specialty__c = objCodSpecsHosp.Specialty__c;
+                    objCodSpecs.Term__c = objCodSpecsHosp.Term__c;
+                    objCodSpecs.Type_of_Coding__c = TYPEOFCODING_FACILITYHOSPITAL;
+                    lstAllNewAddedCodingSpecs.add(objCodSpecs);
+                }
+            }
+            system.debug('---lstAddnewforAud---->'+lstAddnewforAud);
+            if(lstAddnewforAud.size() > 0)
+            {
+                for(Coding_Specs__c objCodSpecsAud : lstAddnewforAud)
+                {
+                    Coding_Specs__c objCodSpecs = new Coding_Specs__c();
+                    objCodSpecs.Access__c = objCodSpecsAud.Access__c;
+                    objCodSpecs.Approval_Stage__c = objCodSpecsAud.Approval_Stage__c;
+                    objCodSpecs.Coder_Cost__c = objCodSpecsAud.Coder_Cost__c;
+                    objCodSpecs.Coder_Cost_Notes__c = objCodSpecsAud.Coder_Cost_Notes__c;
+                    objCodSpecs.Contract_Revenue__c = objCodSpecsAud.Contract_Revenue__c;
+                    objCodSpecs.Estimated_Charts_Per_Hour__c = objCodSpecsAud.Estimated_Charts_Per_Hour__c;
+                    //objCodSpecs.Estimated_Hourly_Pay__c = objCodSpecsAud.Estimated_Hourly_Pay__c;
+                    //objCodSpecs.Monthly_Cost__c = objCodSpecsAud.Monthly_Cost__c;
+                    objCodSpecs.Monthly_Quantity__c = objCodSpecsAud.Monthly_Quantity__c;
+                    //objCodSpecs.Monthly_Revenue__c = objCodSpecsAud.Monthly_Revenue__c;
+                    objCodSpecs.Name = objCodSpecsAud.Name;
+                    objCodSpecs.Opportunity__c = OpportunityId;
+                    //objCodSpecs.Revenue_Multiple__c = objCodSpecsAud.Revenue_Multiple__c;
+                    objCodSpecs.Specialty__c = objCodSpecsAud.Specialty__c;
+                    objCodSpecs.Term__c = objCodSpecsAud.Term__c;
+                    objCodSpecs.Type_of_Coding__c = TYPEOFCODING_AUDIT;
+                    lstAllNewAddedCodingSpecs.add(objCodSpecs);
+                }
+            }
+            system.debug('---lstAddnewforAud---->'+lstAddnewforAud);
+            if(lstAddnewforASC.size() > 0)
+            {
+                for(Coding_Specs__c objCodSpecsASC : lstAddnewforASC)
+                {
+                    Coding_Specs__c objCodSpecs = new Coding_Specs__c();
+                    objCodSpecs.Access__c = objCodSpecsASC.Access__c;
+                    objCodSpecs.Approval_Stage__c = objCodSpecsASC.Approval_Stage__c;
+                    objCodSpecs.Coder_Cost__c = objCodSpecsASC.Coder_Cost__c;
+                    objCodSpecs.Coder_Cost_Notes__c = objCodSpecsASC.Coder_Cost_Notes__c;
+                    objCodSpecs.Contract_Revenue__c = objCodSpecsASC.Contract_Revenue__c;
+                    objCodSpecs.Estimated_Charts_Per_Hour__c = objCodSpecsASC.Estimated_Charts_Per_Hour__c;
+                    //objCodSpecs.Estimated_Hourly_Pay__c = objCodSpecsASC.Estimated_Hourly_Pay__c;
+                    //objCodSpecs.Monthly_Cost__c = objCodSpecsASC.Monthly_Cost__c;
+                    objCodSpecs.Monthly_Quantity__c = objCodSpecsASC.Monthly_Quantity__c;
+                    //objCodSpecs.Monthly_Revenue__c = objCodSpecsASC.Monthly_Revenue__c;
+                    objCodSpecs.Name = objCodSpecsASC.Name;
+                    objCodSpecs.Opportunity__c = OpportunityId;
+                    //objCodSpecs.Revenue_Multiple__c = objCodSpecsASC.Revenue_Multiple__c;
+                    objCodSpecs.Specialty__c = objCodSpecsASC.Specialty__c;
+                    objCodSpecs.Term__c = objCodSpecsASC.Term__c;
+                    objCodSpecs.Type_of_Coding__c = TYPEOFCODING_FACILITYASC;
+                    lstAllNewAddedCodingSpecs.add(objCodSpecs);
+                }
+            }
+            if(lstAddnewforProf.size() > 0)
+            {
+                for(Coding_Specs__c objCodSpecsProf : lstAddnewforProf)
+                {
+                    Coding_Specs__c objCodSpecs = new Coding_Specs__c();
+                    objCodSpecs.Access__c = objCodSpecsProf.Access__c;
+                    objCodSpecs.Approval_Stage__c = objCodSpecsProf.Approval_Stage__c;
+                    objCodSpecs.Coder_Cost__c = objCodSpecsProf.Coder_Cost__c;
+                    objCodSpecs.Coder_Cost_Notes__c = objCodSpecsProf.Coder_Cost_Notes__c;
+                    objCodSpecs.Contract_Revenue__c = objCodSpecsProf.Contract_Revenue__c;
+                    objCodSpecs.Estimated_Charts_Per_Hour__c = objCodSpecsProf.Estimated_Charts_Per_Hour__c;
+                    //objCodSpecs.Estimated_Hourly_Pay__c = objCodSpecsProf.Estimated_Hourly_Pay__c;
+                    //objCodSpecs.Monthly_Cost__c = objCodSpecsProf.Monthly_Cost__c;
+                    objCodSpecs.Monthly_Quantity__c = objCodSpecsProf.Monthly_Quantity__c;
+                    //objCodSpecs.Monthly_Revenue__c = objCodSpecsProf.Monthly_Revenue__c;
+                    objCodSpecs.Name = objCodSpecsProf.Name;
+                    objCodSpecs.Opportunity__c = OpportunityId;
+                    //objCodSpecs.Revenue_Multiple__c = objCodSpecsProf.Revenue_Multiple__c;
+                    objCodSpecs.Specialty__c = objCodSpecsProf.Specialty__c;
+                    objCodSpecs.Term__c = objCodSpecsProf.Term__c;
+                    objCodSpecs.Type_of_Coding__c = TYPEOFCODING_PROFESSIONALFEES;
+                    lstAllNewAddedCodingSpecs.add(objCodSpecs);
+                }
+            }
+            if(lstAddnewforOther.size() > 0)
+            {
+                for(Coding_Specs__c objCodSpecsProf : lstAddnewforOther)
+                {
+                    Coding_Specs__c objCodSpecs = new Coding_Specs__c();
+                    objCodSpecs.Access__c = objCodSpecsProf.Access__c;
+                    objCodSpecs.Approval_Stage__c = objCodSpecsProf.Approval_Stage__c;
+                    objCodSpecs.Coder_Cost__c = objCodSpecsProf.Coder_Cost__c;
+                    objCodSpecs.Coder_Cost_Notes__c = objCodSpecsProf.Coder_Cost_Notes__c;
+                    objCodSpecs.Contract_Revenue__c = objCodSpecsProf.Contract_Revenue__c;
+                    objCodSpecs.Estimated_Charts_Per_Hour__c = objCodSpecsProf.Estimated_Charts_Per_Hour__c;
+                    //objCodSpecs.Estimated_Hourly_Pay__c = objCodSpecsProf.Estimated_Hourly_Pay__c;
+                    //objCodSpecs.Monthly_Cost__c = objCodSpecsProf.Monthly_Cost__c;
+                    objCodSpecs.Monthly_Quantity__c = objCodSpecsProf.Monthly_Quantity__c;
+                    //objCodSpecs.Monthly_Revenue__c = objCodSpecsProf.Monthly_Revenue__c;
+                    objCodSpecs.Name = objCodSpecsProf.Name;
+                    objCodSpecs.Opportunity__c = OpportunityId;
+                    //objCodSpecs.Revenue_Multiple__c = objCodSpecsProf.Revenue_Multiple__c;
+                    objCodSpecs.Specialty__c = objCodSpecsProf.Specialty__c;
+                    objCodSpecs.Term__c = objCodSpecsProf.Term__c;
+                    objCodSpecs.Type_of_Coding__c = TYPEOFCODING_OTHER;
+                    lstAllNewAddedCodingSpecs.add(objCodSpecs);
+                }
+            }
+            if(lstAllNewAddedCodingSpecs.size() > 0)
+            {
+                upsert lstAllNewAddedCodingSpecs;
+            }
+            system.debug('----lstAllNewAddedCodingSpecs--->'+lstAllNewAddedCodingSpecs);
+            PageReference oppPage = new Pagereference('/apex/CodingPricingsListView?id='+OpportunityId);
+            oppPage.setRedirect(true);
+            return oppPage;
+        }
+        
+        public void addNewRowforProf()
+        {
+            showTableforProf = true;
+            Coding_Specs__c objCoding = new Coding_Specs__c();
+            objCoding.Opportunity__c = OpportunityId;
+            lstAddnewforProf.add(objCoding);
+            
+        }
+        
+        public void addNewRowforASC()
+        {
+            showTableforASC = true;
+            Coding_Specs__c objCoding = new Coding_Specs__c();
+            objCoding.Opportunity__c = OpportunityId;
+            lstAddnewforASC.add(objCoding);
+            
+        }
+        
+        public void addNewRowforAudit()
+        {
+            showTableforAudit = true;
+            Coding_Specs__c objCoding = new Coding_Specs__c();
+            objCoding.Opportunity__c = OpportunityId;
+            lstAddnewforAud.add(objCoding);
+            
+        }
+        
+        public void addNewRowforHosp()
+        {
+            showTableforHosp = true;
+            Coding_Specs__c objCoding = new Coding_Specs__c();
+            objCoding.Opportunity__c = OpportunityId;
+            lstAddnewforHosp.add(objCoding);
+            
+        }
+        
+        public void addNewRowforOther()
+        {
+            showTableforOther = true;
+            Coding_Specs__c objCoding = new Coding_Specs__c();
+            objCoding.Opportunity__c = OpportunityId;
+            lstAddnewforOther.add(objCoding);
+            
+        }
+        public PageReference cancel()
+        {
+            PageReference oppPage = new Pagereference('/apex/CodingPricingsListView?id='+OpportunityId);
+            oppPage.setRedirect(true);
+            return oppPage;
+        }
+    
+    public void rejectRecord(){
+        list<Coding_Specs__c> lstCodingSpecsToBeRejected = getSelectedCodingSpecsRecords();
+        
+        if(lstCodingSpecsToBeRejected == null || lstCodingSpecsToBeRejected.size() == 0) {
+            Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, SELECT_ATLEAST_RECORD));
+        }
+        else {
+            list<Approval.ProcessWorkitemRequest> lstRejectRequests = new list<Approval.ProcessWorkitemRequest> ();
+            for(Coding_Specs__c obj : lstCodingSpecsToBeRejected){
+            Approval.ProcessWorkitemRequest req = new Approval.ProcessWorkitemRequest();
+            req.setComments('Reject request');
+            req.setAction('Reject');
+            //req.setNextApproverIds(new Id[] {UserInfo.getUserId()});
+            Id workItemId = getWorkItemId(obj.id);
+            //opp.addError(workItemId);
+     
+            if(workItemId != null)
+            {
+                req.setWorkitemId(workItemId);
+            }
+            else
+            {
+                Apexpages.addMessage(new ApexPages.Message(ApexPages.Severity.Error, CAN_NOT_BE_REJECTED));
+            }
+            lstRejectRequests.add(req);
+            }
+            Approval.ProcessResult[] processResults = null;
+            try {
+                processResults = Approval.process(lstRejectRequests, true);
+            }
+            catch (System.DmlException e) {
+                //System.debug('Exception Is ' + e.getMessage());
+            }
+        }
+        CodingSpecsProfessionalFees();
+    }
+    
+    //Inner class for Coding_Specs__c
+    public class CodingSpecsToBeSelectClass {
+        public Boolean isSelect {get;set;}
+        public Coding_Specs__c codingSpecs {get;set;}
+        public Boolean isEditable{get;set;}
+        
+        public CodingSpecsToBeSelectClass(Boolean isSelect, Coding_Specs__c codingSpecs, Boolean isEditable) {
+            this.isSelect = isSelect;
+            this.codingSpecs = codingSpecs;
+            this.isEditable = false;
+        }
+    }
+}

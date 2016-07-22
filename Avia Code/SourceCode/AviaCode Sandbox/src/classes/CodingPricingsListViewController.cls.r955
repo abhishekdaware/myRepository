@@ -1,0 +1,232 @@
+/*
+    Revision History:
+    Version     Version Author      Date            Comments
+    1.0         Lochan Karle        1st Oct'14      Create UI for Coding Specs sections
+    1.1         Kiran Patil         3rd Oct'14      Change in UI
+
+*/
+
+public class CodingPricingsListViewController {
+
+    public static final String TYPEOFCODING_PROFESSIONALFEES = 'Professional Fees';
+    public static final String TYPEOFCODING_FACILITYASC = 'Facility - ASC';
+    public static final String TYPEOFCODING_AUDIT = 'Audit';
+    public static final String TYPEOFCODING_FACILITYHOSPITAL = 'Facility - Hospital';
+
+    private Id OpportunityId;
+    public Integer intCounterProfessional;
+    public Integer intCounterFacilityASC;
+    public Integer intCounterAudit;
+    public Integer intCounterFacilityHospital;
+    
+    public Boolean isProfessionalFees                                           {get;set;}
+    public Boolean isFacilityASC                                                {get;set;}
+    public Boolean isSpecsAudit                                                 {get;set;}
+    public Boolean isFacilityHospital                                           {get;set;}
+    
+    public Double dblRevenueforProfessional                                     {get;set;}
+    public Double dblRevenueforFacilityASC                                      {get;set;}
+    public Double dblRevenueforAudit                                            {get;set;}
+    public Double dblRevenueforFacilityHospital                                 {get;set;}
+    
+    public Double dblCustomerPriceProfessional                                  {get;set;}
+    public Double dblCustomerPriceFacilityASC                                   {get;set;}
+    public Double dblCustomerPriceAudit                                         {get;set;}
+    public Double dblCustomerPriceFacilityHospital                              {get;set;}
+    
+    public Double dblCoderCostforProfessional                                   {get;set;}
+    public Double dblCoderCostforFacilityASC                                    {get;set;}
+    public Double dblCoderCostforAudit                                          {get;set;}
+    public Double dblCoderCostforFacilityHospital                               {get;set;}
+    
+    public Double dblRevenueMultipleforProfessional                             {get;set;}
+    public Double dblRevenueMultipleforFacilityASC                              {get;set;}
+    public Double dblRevenueMultipleforAudit                                    {get;set;}
+    public Double dblRevenueMultipletforFacilityHospital                        {get;set;}
+    
+    public Double dblAverageforProfessional                                     {get;set;}
+    public Double dblAverageforFacilityASC                                      {get;set;}
+    public Double dblAverageforAudit                                            {get;set;}
+    public Double dblAverageforFacilityHospital                                 {get;set;}
+    
+    public Double dblTotalRevenue                                               {get;set;}
+    public Double dblTotalCost                                                  {get;set;}
+    public Double dblTotalPrice                                                 {get;set;}
+    
+    public list<Coding_Specs__c> lstCodingSpecsFacilityASC                      {get;set;}
+    public list<Coding_Specs__c> lstCodingSpecsAudit                            {get;set;}
+    public list<Coding_Specs__c> lstCodingSpecsFacilityHospital                 {get;set;}
+    
+    public list<CodingSpecsToBeSelectClass> codingSpecs_PF_ToBeSelectList       {get;set;}
+    public list<CodingSpecsToBeSelectClass> codingSpecs_FA_ToBeSelectList       {get;set;}
+    public list<CodingSpecsToBeSelectClass> codingSpecs_A_ToBeSelectList        {get;set;}
+    public list<CodingSpecsToBeSelectClass> codingSpecs_FH_ToBeSelectList       {get;set;}
+
+    public CodingPricingsListViewController(ApexPages.StandardController controller) {
+        OpportunityId = ApexPages.currentPage().getParameters().get('Id');
+        system.debug('--- OpportunityId --->' + OpportunityId);
+        
+        lstCodingSpecsFacilityASC = new List<Coding_Specs__c>();
+        lstCodingSpecsAudit = new List<Coding_Specs__c>();
+        lstCodingSpecsFacilityHospital = new List<Coding_Specs__c>();
+        
+        codingSpecs_PF_ToBeSelectList = new List<CodingSpecsToBeSelectClass>();
+        codingSpecs_FA_ToBeSelectList = new List<CodingSpecsToBeSelectClass>();
+        codingSpecs_A_ToBeSelectList = new List<CodingSpecsToBeSelectClass>();
+        codingSpecs_FH_ToBeSelectList = new List<CodingSpecsToBeSelectClass>();
+        
+        dblRevenueforFacilityASC = 0;
+        dblRevenueforProfessional = 0;
+        dblRevenueforAudit = 0;
+        dblRevenueforFacilityHospital = 0;
+        
+        dblCustomerPriceProfessional = 0;
+        dblCustomerPriceFacilityASC = 0;
+        dblCustomerPriceAudit = 0;
+        dblCustomerPriceFacilityHospital = 0;
+        
+        dblCoderCostforProfessional = 0;
+        dblCoderCostforFacilityASC = 0;
+        dblCoderCostforAudit = 0;
+        dblCoderCostforFacilityHospital = 0;
+        
+        dblRevenueMultipleforProfessional = 0;
+        dblRevenueMultipleforFacilityASC = 0;
+        dblRevenueMultipleforAudit = 0;
+        dblRevenueMultipletforFacilityHospital = 0;
+        
+        dblAverageforProfessional = 0;
+        dblAverageforFacilityASC = 0;
+        dblAverageforAudit = 0;
+        dblAverageforFacilityHospital = 0;
+        
+        intCounterProfessional = 0;
+        intCounterFacilityASC = 0;
+        intCounterAudit = 0;
+        intCounterFacilityHospital = 0;
+        
+        CodingSpecsProfessionalFees();
+    }
+    
+    public void CodingSpecsProfessionalFees() {
+        for(Coding_Specs__c objCodingSpecs : [
+                                       SELECT Id
+                                            , Name
+                                            , Specialty__c
+                                            , Access__c
+                                            , Type_of_Coding__c
+                                            , Coder_Cost__c
+                                            , Contract_Revenue__c
+                                            , Revenue_Multiple__c
+                                            , Monthly_Revenue__c
+                                            , Approval_Stage__c
+                                         from Coding_Specs__c 
+                                        where Opportunity__c =: OpportunityId
+                                          and (Type_of_Coding__c =: TYPEOFCODING_PROFESSIONALFEES
+                                           OR  Type_of_Coding__c =: TYPEOFCODING_FACILITYASC
+                                           OR  Type_of_Coding__c =: TYPEOFCODING_AUDIT
+                                           OR  Type_of_Coding__c =: TYPEOFCODING_FACILITYHOSPITAL)
+        ]) {
+            if(objCodingSpecs.Type_of_Coding__c.equals(TYPEOFCODING_PROFESSIONALFEES)) {
+                intCounterProfessional++;
+                CodingSpecsToBeSelectClass objCodingSpecsToBeSelectClass = new CodingSpecsToBeSelectClass(false, objCodingSpecs);
+                codingSpecs_PF_ToBeSelectList.add(objCodingSpecsToBeSelectClass);
+                
+                if(objCodingSpecs.Monthly_Revenue__c != null)
+                    dblRevenueforProfessional += objCodingSpecs.Monthly_Revenue__c;
+                
+                if(objCodingSpecs.Contract_Revenue__c != null)
+                    dblCustomerPriceProfessional += objCodingSpecs.Contract_Revenue__c;
+                
+                if(objCodingSpecs.Coder_Cost__c != null)
+                    dblCoderCostforProfessional += objCodingSpecs.Coder_Cost__c;
+                
+                if(objCodingSpecs.Revenue_Multiple__c != null)
+                    dblRevenueMultipleforProfessional += objCodingSpecs.Revenue_Multiple__c;
+            }
+            else if (objCodingSpecs.Type_of_Coding__c.equals(TYPEOFCODING_FACILITYASC)) {
+                intCounterFacilityASC++;
+                CodingSpecsToBeSelectClass objCodingSpecsToBeSelectClass = new CodingSpecsToBeSelectClass(false, objCodingSpecs);
+                codingSpecs_FA_ToBeSelectList.add(objCodingSpecsToBeSelectClass);
+                
+                if(objCodingSpecs.Monthly_Revenue__c != null)
+                    dblRevenueforFacilityASC += objCodingSpecs.Monthly_Revenue__c;
+                
+                if(objCodingSpecs.Contract_Revenue__c != null)
+                    dblCustomerPriceFacilityASC += objCodingSpecs.Contract_Revenue__c;
+               
+                if(objCodingSpecs.Coder_Cost__c != null)
+                    dblCoderCostforFacilityASC += objCodingSpecs.Coder_Cost__c;
+                
+                if(objCodingSpecs.Revenue_Multiple__c != null)
+                    dblRevenueMultipleforFacilityASC += objCodingSpecs.Revenue_Multiple__c;
+            }
+            else if (objCodingSpecs.Type_of_Coding__c.equals(TYPEOFCODING_AUDIT)) {
+                intCounterAudit++;
+                CodingSpecsToBeSelectClass objCodingSpecsToBeSelectClass = new CodingSpecsToBeSelectClass(false, objCodingSpecs);
+                codingSpecs_A_ToBeSelectList.add(objCodingSpecsToBeSelectClass);
+                
+                if(objCodingSpecs.Monthly_Revenue__c != null)
+                    dblRevenueforAudit += objCodingSpecs.Monthly_Revenue__c;
+                
+                if(objCodingSpecs.Contract_Revenue__c != null) 
+                    dblCustomerPriceAudit += objCodingSpecs.Contract_Revenue__c;
+               
+                if(objCodingSpecs.Coder_Cost__c != null)
+                    dblCoderCostforAudit += objCodingSpecs.Coder_Cost__c;
+               
+                if(objCodingSpecs.Revenue_Multiple__c != null)
+                    dblRevenueMultipleforAudit += objCodingSpecs.Revenue_Multiple__c;
+            }
+            else if(objCodingSpecs.Type_of_Coding__c.equals(TYPEOFCODING_FACILITYHOSPITAL)) {
+                intCounterFacilityHospital++;
+                CodingSpecsToBeSelectClass objCodingSpecsToBeSelectClass = new CodingSpecsToBeSelectClass(false, objCodingSpecs);
+                codingSpecs_FH_ToBeSelectList.add(objCodingSpecsToBeSelectClass);
+                
+                if(objCodingSpecs.Monthly_Revenue__c != null)
+                    dblRevenueforFacilityHospital += objCodingSpecs.Monthly_Revenue__c;
+                
+                if(objCodingSpecs.Contract_Revenue__c != null)
+                    dblCustomerPriceFacilityHospital += objCodingSpecs.Contract_Revenue__c;
+               
+                if(objCodingSpecs.Coder_Cost__c != null)
+                    dblCoderCostforFacilityHospital += objCodingSpecs.Coder_Cost__c;
+                
+                if(objCodingSpecs.Revenue_Multiple__c != null)
+                    dblRevenueMultipletforFacilityHospital += objCodingSpecs.Revenue_Multiple__c;
+            }
+        }
+        system.debug('--- codingSpecs_PF_ToBeSelectList --->' + codingSpecs_PF_ToBeSelectList);
+        system.debug('--- codingSpecs_FA_ToBeSelectList --->' + codingSpecs_FA_ToBeSelectList);
+        system.debug('--- codingSpecs_A_ToBeSelectList --->' + codingSpecs_A_ToBeSelectList);
+        system.debug('--- codingSpecs_FH_ToBeSelectList --->' + codingSpecs_FH_ToBeSelectList);
+        
+        if(intCounterProfessional != 0 && dblRevenueMultipleforProfessional != null)
+            dblAverageforProfessional =  dblRevenueMultipleforProfessional/intCounterProfessional;
+        
+        if(intCounterFacilityASC != 0 && dblRevenueMultipleforFacilityASC != null)
+            dblAverageforFacilityASC =  dblRevenueMultipleforFacilityASC/intCounterFacilityASC;
+        
+        if(intCounterAudit != 0 && dblRevenueMultipleforAudit != null)
+            dblAverageforAudit =  dblRevenueMultipleforAudit/intCounterAudit;
+        
+        if(intCounterFacilityHospital != 0 && dblRevenueMultipletforFacilityHospital != null)
+            dblAverageforFacilityHospital =  dblRevenueMultipletforFacilityHospital/intCounterFacilityHospital;
+        
+        dblTotalRevenue = dblRevenueforFacilityHospital + dblRevenueforAudit + dblRevenueforFacilityASC +dblRevenueforProfessional;
+        
+        dblTotalCost = dblCoderCostforFacilityHospital + dblCoderCostforAudit + dblCoderCostforFacilityASC + dblCoderCostforProfessional;
+        dblTotalPrice = dblCustomerPriceFacilityHospital + dblCustomerPriceAudit + dblCustomerPriceFacilityASC + dblCustomerPriceProfessional;
+    }
+    
+    //Inner class for Coding_Specs__c
+    public class CodingSpecsToBeSelectClass {
+        public Boolean isSelect {get;set;}
+        public Coding_Specs__c codingSpecs {get;set;}
+        
+        public CodingSpecsToBeSelectClass(Boolean isSelect, Coding_Specs__c codingSpecs) {
+            this.isSelect = isSelect;
+            this.codingSpecs = codingSpecs;
+        }
+    }
+}
